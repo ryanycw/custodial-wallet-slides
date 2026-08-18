@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 39 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 44 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 > 參考資料在 slide 上的呈現：內容頁左下角有「參考：…」小字（短網域），圖片頁右下角有「來源：…」；本文件保留完整連結。
@@ -350,19 +350,42 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 30 · 大評比 ②：Feature & UX
+## Page 30 · MPC 加分題：還是講白話
 
-- **Fireblocks**：政策引擎長在託管層，直通交易所 / OTC 流動性
-- **BitGo**：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
-- **Safe**：EVM 生態整合之王，模組化、DAO 治理最順手
+- **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
+- 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
+- **Offline Signing**：前置回合預先算好，正式簽名一趟搞定
 
-> 【藍色橫幅】好不好用，取決於資產住哪條鏈、誰負責按按鈕
+> 【黑色橫幅】⚠️ 但注意：服務商若握有足夠碎片，本質上還是託管（custodial）
 
-> 參考：[Fireblocks: Wallet Infrastructure](https://www.fireblocks.com/blog/wallet-infrastructure-institution-competitive-edge) · [BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/) · [Safe: Best Wallets for Institutions](https://safe.global/blog/the-best-crypto-wallets-for-institutions)
+> 【灰字註解】※ 本章不少內容出自 Fireblocks 官方資料，立場與數據請自行斟酌
+
+> 參考：[Fireblocks: 7 Reasons Why MPC](https://www.fireblocks.com/blog/7-reasons-why-mpc-is-the-next-generation-of-private-key-security)
 
 ---
 
-## Page 31 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 31 · 大評比 ②：Feature & UX — 結算網路對決（左右兩欄）
+
+**Fireblocks Network（米色卡）**
+- 2,400+ 交易對手，月結算 $70B+
+- 穩定幣月流量 $200B+，150+ 條鏈
+- CEX off-exchange 結算：Deribit · Bybit · OKX
+- 原生 DeFi、NFT、raw signing 全都有
+- 可編程 treasury：排程歸集、閾值再平衡
+
+**BitGo Go Network（黃卡）**
+- 450 交易對手
+- 69+ 條鏈、20+ 交易所整合
+- DeFi 靠第三方串接（非原生）
+- 無 raw signing、無 deposit routing
+
+> 【藍色橫幅】結算網路的規模差距，往往就是機構選邊站的主因 ⚖️
+
+> 參考：[Fireblocks: Compare Treasury Management](https://www.fireblocks.com/report/compare-treasury-management) · [BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/)
+
+---
+
+## Page 32 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -380,34 +403,102 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 32 · 大評比 ④：Compliance Level
+## Page 33 · 大評比 ④：Compliance 六大要件
 
-- **基本盤**：牌照、KYC / CDD、AML 交易監控、Travel Rule
-- **進階**：資產隔離、儲備證明（PoR）、稅務申報
-- **銀行級**：MiCA、DORA、Basel、NIST CSF 2.0 全套
-- 託管商代勞：制裁名單篩查、鏈上鑑識、行為基線分析
+六顆彩色數字圈，專有名詞保留英文：
+
+1. **Strict Licensing Frameworks** — 各轄區牌照
+2. **KYC & Customer Due Diligence** — 你的客戶是誰
+3. **AML & Transaction Monitoring** — 可疑金流監控
+4. **The Travel Rule** — 轉帳雙方資訊必須隨行
+5. **Asset Segregation & Proof of Reserves** — 資產隔離與儲備證明
+6. **Tax Reporting Obligations** — 稅務申報
 
 > 【綠色橫幅】合規等級決定你能服務誰：散戶、企業，還是銀行 🏛️
 
-> 參考：[Compliance Need 筆記（HackMD）](https://hackmd.io/vE8eb0sTT2OKB3UAhOP3bA#Compliance-Need) · [Fireblocks: Custody Compliance for Banks](https://www.fireblocks.com/blog/digital-asset-custody-compliance-banks) · [Fireblocks: Stablecoin Compliance](https://www.fireblocks.com/blog/how-to-navigate-stablecoin-compliance-kyc-travel-rule-transaction-monitoring)
+**Speaker Notes**：銀行級還要再疊 MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。
+
+> 參考：[Compliance Need 筆記（HackMD）](https://hackmd.io/vE8eb0sTT2OKB3UAhOP3bA#Compliance-Need) · [BitGo: Understanding Crypto Regulation](https://www.bitgo.com/resources/blog/understanding-crypto-regulation-compliance/) · [Fireblocks: Custody Compliance for Banks](https://www.fireblocks.com/blog/digital-asset-custody-compliance-banks)
 
 ---
 
-## Page 33 · MPC 加分題：還是講白話
+## Page 34 · 合規成績單：Fireblocks vs. BitGo（左右兩欄）
 
-- **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
-- 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
-- **Offline Signing**：前置回合預先算好，正式簽名一趟搞定
+**Fireblocks：技術認證路線（米色卡）**
+- SOC 1 & SOC 2 Type II 雙認證
+- ISO 27001 / 27017 / 27018 / 22301
+- CCSS Level 3
+- 整合 Chainalysis · Elliptic · Notabene
 
-> 【黑色橫幅】⚠️ 但注意：服務商若握有足夠碎片，本質上還是託管（custodial）
+**BitGo：牌照與保險路線（黃卡）**
+- Qualified Custodian：多轄區牌照
+- $250M 保險
+- TRUST Network 成員
+- Travel Rule 流程內建（下頁詳解）
 
-> 【灰字註解】※ 本章不少內容出自 Fireblocks 官方資料，立場與數據請自行斟酌
+> 【黑色橫幅】一個走技術認證路線，一個走牌照與保險路線 📜
 
-> 參考：[Fireblocks: 7 Reasons Why MPC](https://www.fireblocks.com/blog/7-reasons-why-mpc-is-the-next-generation-of-private-key-security)
+> 參考：[BitGo: Understanding Crypto Regulation](https://www.bitgo.com/resources/blog/understanding-crypto-regulation-compliance/) · [Fireblocks: Compare Treasury Management](https://www.fireblocks.com/report/compare-treasury-management)
 
 ---
 
-## Page 34 · Part 3 章節頁【綠底】
+## Page 35 · BitGo 的 Travel Rule 實戰（決策流程圖・逐步顯示）
+
+流程圖：💸 出金一筆（黑卡）→ 分岔：
+- 🏛 **對象：VASP**（紫卡・交易所、託管商）→ 再分岔：
+  - ✅ **已在 TRUST Network**（綠卡）→ 名單內，直接交易
+  - 📝 **不在名單**（黃卡）→ 補對方 VASP 資料進白名單 → 交易
+- 👤 **對象：外部 EOA**（藍卡・自家硬體/軟體錢包）→
+  - 🔬 **Small Deposit Test**（粉卡）→ 24 小時內小額轉入，證明地址是你的
+- 底部標籤：📥 收到不明入金？管理員需補寄件人身分與居住地資料
+
+**Speaker Notes**：TRUST = Travel Rule Universal Solution Technology；Small Deposit Test 又叫 Satoshi Test；不明入金時管理員要補寄件人分類與居住地。
+
+> 參考：[BitGo: Travel Rule](https://www.bitgo.com/resource-center/travel-rule/) · [Notabene: Safe Connect](https://notabene.id/solutions/safe-connect)
+
+---
+
+## Page 36 · Travel Rule 生態系：合規也要拉幫結派
+
+| 規模 | 聯盟 | 說明 |
+|------|------|------|
+| 2,100+（藍） | Sumsub | 覆蓋最廣的合規服務商 |
+| 200+（紫） | TRUST Alliance | Coinbase · Kraken · OKX · PayPal · Circle… |
+| 200+（粉） | Chainalysis × Notabene | 鏈上鑑識 × Travel Rule 訊息層 |
+| 150+（綠） | VerifyVASP | Bitfinex · Crypto.com · Bitget · WooX… |
+| 116（黑） | Global Travel Rule | Binance 主導，Sumsub × Fireblocks 助攻 |
+
+> 【灰字註解】※ 不少交易所腳踏多條船：Crypto.com、Bitget、Amber 都同時掛在兩個聯盟
+
+> 參考：[TRUST VASP 名單（PDF）](https://25554024.fs1.hubspotusercontent-eu1.net/hubfs/25554024/TRUST%20list%20of%20VASPs%20download.pdf) · [VerifyVASP Alliance](https://www.verifyvasp.com/en/alliance/) · [Global Travel Rule](https://www.globaltravelrule.com/en/home) · [TRUST × 擴張報導（LinkedIn）](https://www.linkedin.com/pulse/trust-expands-travel-rule-network-adoption-through-partnership-wivqc/)
+
+---
+
+## Page 37 · 下一步：Travel Rule 的開放標準
+
+- 各聯盟各說各話 → **21 Analytics** 推動 **TRP**（Travel Rule Protocol）
+- **IVMS 101**：inter-VASP 訊息統一格式，大家先講同一種語言
+- 站台的有：**Sygna · Notabene · VerifyVASP · TRUST Alliance**
+
+> 【紫色橫幅】從拉幫結派走向開放標準 — 合規的 TCP/IP 時刻 🌐
+
+> 參考：[21 Analytics: IVMS 標準](https://www.21analytics.co/glossary/inter-vasp-messaging-standard-ivms/)
+
+---
+
+## Page 38 · Safe 也殺進企業戰場
+
+- **Liminal**：基於 Safe 打造的企業級託管平台
+- AML 交給 **TRM Labs**，Travel Rule 交給 **Notabene**
+- 多簽底座＋合規外掛 = DAO 之外的新戰場
+
+> 【綠色橫幅】開源多簽長出機構級合規 — Safe 的第二曲線 📈
+
+> 參考：[Liminal × Safe](https://www.liminalcustody.com/blog/building-on-safe-has-become-extra-beneficial-with-liminals-superpowers/)
+
+---
+
+## Page 39 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -415,7 +506,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 35 · 挑錢包前，先問三個維度
+## Page 40 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -425,7 +516,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 36 · 個人指南：看金額對號入座
+## Page 41 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -436,7 +527,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 37 · 團隊指南：透明 or 靈活，選一邊
+## Page 42 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -448,7 +539,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 38 · Closing「帶走三件事 🎒」【黃底】
+## Page 43 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -458,7 +549,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 39 · 特別感謝【粉底】
+## Page 44 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐

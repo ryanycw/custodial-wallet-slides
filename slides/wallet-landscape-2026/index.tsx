@@ -718,7 +718,7 @@ const FlowNode = ({
   fg?: string;
   emoji: string;
   title: string;
-  years: string;
+  years?: string;
   desc: string;
 }) => (
   <div
@@ -740,18 +740,20 @@ const FlowNode = ({
     <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: 36, fontWeight: 900, lineHeight: 1.2 }}>
       {title}
     </div>
-    <div
-      style={{
-        alignSelf: 'flex-start',
-        fontSize: 20,
-        fontWeight: 800,
-        background: fg === '#ffffff' ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.10)',
-        borderRadius: 999,
-        padding: '4px 16px',
-      }}
-    >
-      {years}
-    </div>
+    {years ? (
+      <div
+        style={{
+          alignSelf: 'flex-start',
+          fontSize: 20,
+          fontWeight: 800,
+          background: fg === '#ffffff' ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.10)',
+          borderRadius: 999,
+          padding: '4px 16px',
+        }}
+      >
+        {years}
+      </div>
+    ) : null}
     <div style={{ fontSize: 24, lineHeight: 1.45, opacity: 0.95 }}>{desc}</div>
   </div>
 );
@@ -1456,36 +1458,52 @@ const PerfShowdown: Page = () => (
 /* ------------------------------------------------ Showdown ② · Feature & UX */
 
 const FeatureUx: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '100px 120px' }}>
     <Heading>
-      大評比 ②：<span style={{ color: blue }}>Feature & UX</span>
+      大評比 ②：<span style={{ color: blue }}>Feature & UX — 結算網路對決</span>
     </Heading>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
-      <Bullet dot={blue}>
-        <B c={blue}>Fireblocks</B>：政策引擎長在託管層，直通交易所 / OTC 流動性
-      </Bullet>
-      <Bullet dot={blue}>
-        <B c={blue}>BitGo</B>：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
-      </Bullet>
-      <Bullet dot={blue}>
-        <B c={blue}>Safe</B>：EVM 生態整合之王，模組化、DAO 治理最順手
-      </Bullet>
+    <div style={{ display: 'flex', gap: 32, marginTop: 52 }}>
+      <ProtoCard
+        bg="#f4f1ea"
+        title="Fireblocks Network"
+        rows={
+          <>
+            <VsRow dot={pink}>2,400+ 交易對手，月結算 $70B+</VsRow>
+            <VsRow dot={pink}>穩定幣月流量 $200B+，150+ 條鏈</VsRow>
+            <VsRow dot={pink}>CEX off-exchange 結算：Deribit · Bybit · OKX</VsRow>
+            <VsRow dot={pink}>原生 DeFi、NFT、raw signing 全都有</VsRow>
+            <VsRow dot={pink}>可編程 treasury：排程歸集、閾值再平衡</VsRow>
+          </>
+        }
+      />
+      <ProtoCard
+        bg={yellow}
+        title="BitGo Go Network"
+        rows={
+          <>
+            <VsRow dot={ink}>450 交易對手</VsRow>
+            <VsRow dot={ink}>69+ 條鏈、20+ 交易所整合</VsRow>
+            <VsRow dot={ink}>DeFi 靠第三方串接（非原生）</VsRow>
+            <VsRow dot={ink}>無 raw signing、無 deposit routing</VsRow>
+          </>
+        }
+      />
     </div>
     <div
       style={{
-        marginTop: 64,
+        marginTop: 40,
         background: blue,
         color: '#ffffff',
         borderRadius: 'var(--osd-radius)',
-        padding: '36px 52px',
-        fontSize: 36,
+        padding: '28px 52px',
+        fontSize: 32,
         fontWeight: 800,
         lineHeight: 1.45,
       }}
     >
-      好不好用，取決於資產住哪條鏈、誰負責按按鈕
+      結算網路的規模差距，往往就是機構選邊站的主因 ⚖️
     </div>
-    <PageRefs>fireblocks.com · bitgo.com · safe.global</PageRefs>
+    <PageRefs>fireblocks.com（compare treasury）· bitgo.com</PageRefs>
   </div>
 );
 
@@ -1541,40 +1559,268 @@ const SecurityShowdown: Page = () => (
 
 /* ------------------------------------------------ Showdown ④ · Compliance */
 
+const ReqRow = ({ bg, num, children }: { bg: string; num: string; children: ReactNode }) => (
+  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 26 }}>
+    <span
+      style={{
+        background: bg,
+        color: '#ffffff',
+        borderRadius: 999,
+        width: 52,
+        height: 52,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 28,
+        fontWeight: 900,
+        flexShrink: 0,
+      }}
+    >
+      {num}
+    </span>
+    <span style={{ fontSize: 32, lineHeight: 1.45, paddingTop: 4 }}>{children}</span>
+  </div>
+);
+
 const ComplianceShowdown: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '100px 120px' }}>
     <Heading>
-      大評比 ④：<span style={{ color: green }}>Compliance Level</span>
+      大評比 ④：<span style={{ color: green }}>Compliance 六大要件</span>
     </Heading>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
-      <Bullet dot={green}>
-        <B c={green}>基本盤</B>：牌照、KYC / CDD、AML 交易監控、Travel Rule
-      </Bullet>
-      <Bullet dot={green}>
-        <B c={green}>進階</B>：資產隔離、儲備證明（PoR）、稅務申報
-      </Bullet>
-      <Bullet dot={green}>
-        <B c={green}>銀行級</B>：MiCA、DORA、Basel、NIST CSF 2.0 全套
-      </Bullet>
-      <Bullet dot={green}>
-        託管商代勞：制裁名單篩查、鏈上鑑識、行為基線分析
-      </Bullet>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 26, marginTop: 52 }}>
+      <ReqRow bg={blue} num="1">
+        <B c={blue}>Strict Licensing Frameworks</B> — 各轄區牌照
+      </ReqRow>
+      <ReqRow bg={purple} num="2">
+        <B c={purple}>KYC & Customer Due Diligence</B> — 你的客戶是誰
+      </ReqRow>
+      <ReqRow bg={pink} num="3">
+        <B c={pink}>AML & Transaction Monitoring</B> — 可疑金流監控
+      </ReqRow>
+      <ReqRow bg={green} num="4">
+        <B c={green}>The Travel Rule</B> — 轉帳雙方資訊必須隨行
+      </ReqRow>
+      <ReqRow bg={ink} num="5">
+        <B c={ink}>Asset Segregation & Proof of Reserves</B> — 資產隔離與儲備證明
+      </ReqRow>
+      <ReqRow bg={blue} num="6">
+        <B c={blue}>Tax Reporting Obligations</B> — 稅務申報
+      </ReqRow>
     </div>
     <div
       style={{
-        marginTop: 56,
+        marginTop: 48,
         background: green,
         color: '#ffffff',
         borderRadius: 'var(--osd-radius)',
-        padding: '32px 52px',
-        fontSize: 36,
+        padding: '28px 52px',
+        fontSize: 32,
         fontWeight: 800,
         lineHeight: 1.45,
       }}
     >
       合規等級決定你能服務誰：散戶、企業，還是銀行 🏛️
     </div>
-    <PageRefs>hackmd.io（Compliance Need）· fireblocks.com</PageRefs>
+    <PageRefs>hackmd.io（Compliance Need）· bitgo.com（crypto regulation）</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Compliance scorecard */
+
+const ComplianceScorecard: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '100px 120px' }}>
+    <Heading>
+      合規成績單：<span style={{ color: pink }}>Fireblocks</span> vs. <span style={{ color: purple }}>BitGo</span>
+    </Heading>
+    <div style={{ display: 'flex', gap: 32, marginTop: 52 }}>
+      <ProtoCard
+        bg="#f4f1ea"
+        title="Fireblocks：技術認證路線"
+        rows={
+          <>
+            <VsRow dot={pink}>SOC 1 & SOC 2 Type II 雙認證</VsRow>
+            <VsRow dot={pink}>ISO 27001 / 27017 / 27018 / 22301</VsRow>
+            <VsRow dot={pink}>CCSS Level 3</VsRow>
+            <VsRow dot={pink}>整合 Chainalysis · Elliptic · Notabene</VsRow>
+          </>
+        }
+      />
+      <ProtoCard
+        bg={yellow}
+        title="BitGo：牌照與保險路線"
+        rows={
+          <>
+            <VsRow dot={ink}>Qualified Custodian：多轄區牌照</VsRow>
+            <VsRow dot={ink}>$250M 保險</VsRow>
+            <VsRow dot={ink}>TRUST Network 成員</VsRow>
+            <VsRow dot={ink}>Travel Rule 流程內建（下頁詳解）</VsRow>
+          </>
+        }
+      />
+    </div>
+    <div
+      style={{
+        marginTop: 40,
+        background: ink,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '28px 52px',
+        fontSize: 32,
+        fontWeight: 700,
+      }}
+    >
+      一個走技術認證路線，一個走牌照與保險路線 📜
+    </div>
+    <PageRefs>bitgo.com（crypto regulation compliance）· fireblocks.com（compare treasury）</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Travel Rule flow (BitGo) */
+
+const TravelRuleFlow: Page = () => (
+  <div style={flowStage}>
+    <FlowHeading>
+      BitGo 的 <span style={{ color: green }}>Travel Rule</span> 實戰
+    </FlowHeading>
+    <Steps>
+      <FlowNode left={100} top={430} w={340} bg={ink} emoji="💸" title="出金一筆" desc="對象是誰？" />
+      <Step>
+        <div>
+          <FlowLink x1={440} y1={537} x2={610} y2={327} />
+          <FlowLink x1={440} y1={537} x2={610} y2={767} />
+          <FlowNode left={620} top={220} w={400} bg={purple} emoji="🏛" title="對象：VASP" desc="交易所、託管商" />
+          <FlowNode left={620} top={660} w={400} bg={blue} emoji="👤" title="對象：外部 EOA" desc="自家硬體 / 軟體錢包" />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1020} y1={327} x2={1230} y2={247} />
+          <FlowLink x1={1020} y1={327} x2={1230} y2={527} />
+          <FlowNode left={1240} top={140} w={560} bg={green} emoji="✅" title="已在 TRUST Network" desc="名單內 → 直接交易" />
+          <FlowNode
+            left={1240}
+            top={420}
+            w={560}
+            bg={yellow}
+            fg={ink}
+            emoji="📝"
+            title="不在名單"
+            desc="補對方 VASP 資料進白名單 → 交易"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1020} y1={767} x2={1230} y2={807} />
+          <FlowNode
+            left={1240}
+            top={700}
+            w={560}
+            bg={pink}
+            emoji="🔬"
+            title="Small Deposit Test"
+            desc="24 小時內小額轉入，證明地址是你的"
+          />
+          <FlowLabel left={100} top={975}>
+            📥 收到不明入金？管理員需補寄件人身分與居住地資料
+          </FlowLabel>
+        </div>
+      </Step>
+    </Steps>
+    <PageRefs>bitgo.com/resource-center/travel-rule · notabene.id</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Travel Rule ecosystem */
+
+const TravelRuleEco: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      Travel Rule 生態系：<span style={{ color: green }}>合規也要拉幫結派</span>
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 40, marginTop: 60 }}>
+      <TimeNode bg={blue} year="2,100+" name="Sumsub" desc="覆蓋最廣的合規服務商" />
+      <TimeNode bg={purple} year="200+" name="TRUST Alliance" desc="Coinbase · Kraken · OKX · PayPal · Circle…" />
+      <TimeNode bg={pink} year="200+" name="Chainalysis × Notabene" desc="鏈上鑑識 × Travel Rule 訊息層" />
+      <TimeNode bg={green} year="150+" name="VerifyVASP" desc="Bitfinex · Crypto.com · Bitget · WooX…" />
+      <TimeNode bg={ink} year="116" name="Global Travel Rule" desc="Binance 主導，Sumsub × Fireblocks 助攻" />
+    </div>
+    <div style={{ marginTop: 48, fontSize: 26, fontWeight: 600, color: muted }}>
+      ※ 不少交易所腳踏多條船：Crypto.com、Bitget、Amber 都同時掛在兩個聯盟
+    </div>
+    <PageRefs>verifyvasp.com · globaltravelrule.com · sumsub.com</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Travel Rule open standard */
+
+const TravelRuleStandard: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      下一步：Travel Rule 的<span style={{ color: purple }}>開放標準</span>
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
+      <Bullet dot={purple}>
+        各聯盟各說各話 → <B c={purple}>21 Analytics</B> 推動 <B c={purple}>TRP</B>（Travel Rule Protocol）
+      </Bullet>
+      <Bullet dot={purple}>
+        <B c={purple}>IVMS 101</B>：inter-VASP 訊息統一格式，大家先講同一種語言
+      </Bullet>
+      <Bullet dot={purple}>
+        站台的有：<B c={purple}>Sygna · Notabene · VerifyVASP · TRUST Alliance</B>
+      </Bullet>
+    </div>
+    <div
+      style={{
+        marginTop: 64,
+        background: purple,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '32px 52px',
+        fontSize: 34,
+        fontWeight: 800,
+        lineHeight: 1.45,
+      }}
+    >
+      從拉幫結派走向開放標準 — 合規的 TCP/IP 時刻 🌐
+    </div>
+    <PageRefs>21analytics.co（IVMS / TRP）</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Safe in enterprise */
+
+const SafeEnterprise: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      <span style={{ color: green }}>Safe</span> 也殺進企業戰場
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
+      <Bullet dot={green}>
+        <B c={green}>Liminal</B>：基於 Safe 打造的企業級託管平台
+      </Bullet>
+      <Bullet dot={green}>
+        AML 交給 <B c={green}>TRM Labs</B>，Travel Rule 交給 <B c={green}>Notabene</B>
+      </Bullet>
+      <Bullet dot={green}>
+        多簽底座＋合規外掛 = DAO 之外的新戰場
+      </Bullet>
+    </div>
+    <div
+      style={{
+        marginTop: 64,
+        background: green,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '32px 52px',
+        fontSize: 34,
+        fontWeight: 800,
+        lineHeight: 1.45,
+      }}
+    >
+      開源多簽長出機構級合規 — Safe 的第二曲線 📈
+    </div>
+    <PageRefs>liminalcustody.com · trmlabs.com · notabene.id</PageRefs>
   </div>
 );
 
@@ -1851,16 +2097,21 @@ export const notes: (string | undefined)[] = [
   'DKLs = Doerner · Kondi · Lee · shelat（Brown / Northeastern 系）；CMP = Canetti · Makriyannis · Peled（Boston University）。兩個協議名都是作者姓氏縮寫 — 可以開玩笑說檯面上是 BitGo vs Fireblocks，檯面下是密碼學家的校際較勁。', // 27 Key Management
   'ZKP 怎麼講：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大數字搞破壞（out-of-bound attack）？CMP 要求每則密文附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。術語：Paillier 在做 secret share 的同態運算；VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議。Proactive refresh 在 CMP 中相對重要，因為 Paillier 的 key generation 運算成本較高。', // 28 CMP vs TSS
   '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 29 效能對決
-  undefined, // 30 Feature & UX
-  undefined, // 31 TEE vs HSM
-  undefined, // 32 Compliance
-  undefined, // 33 MPC 加分題
-  undefined, // 34 Part 3 divider
-  undefined, // 35 三維度
-  undefined, // 36 個人指南
-  undefined, // 37 團隊指南
-  undefined, // 38 Closing
-  undefined, // 39 Thanks
+  undefined, // 30 MPC 加分題
+  undefined, // 31 Feature & UX（結算網路對決）
+  undefined, // 32 TEE vs HSM
+  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 33 Compliance 六大要件
+  undefined, // 34 合規成績單
+  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 35 Travel Rule 流程
+  undefined, // 36 Travel Rule 生態系
+  undefined, // 37 Travel Rule 開放標準
+  undefined, // 38 Safe in Enterprise
+  undefined, // 39 Part 3 divider
+  undefined, // 40 三維度
+  undefined, // 41 個人指南
+  undefined, // 42 團隊指南
+  undefined, // 43 Closing
+  undefined, // 44 Thanks
 ];
 
 export const meta: SlideMeta = {
@@ -1898,10 +2149,15 @@ export default [
   KeyManagement,
   CmpVsTss,
   PerfShowdown,
+  MpcBonus,
   FeatureUx,
   SecurityShowdown,
   ComplianceShowdown,
-  MpcBonus,
+  ComplianceScorecard,
+  TravelRuleFlow,
+  TravelRuleEco,
+  TravelRuleStandard,
+  SafeEnterprise,
   Divider3,
   Dimensions,
   PersonalGuide,
