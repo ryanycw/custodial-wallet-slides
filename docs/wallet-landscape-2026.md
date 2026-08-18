@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 38 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 39 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 > 參考資料在 slide 上的呈現：內容頁左下角有「參考：…」小字（短網域），圖片頁右下角有「來源：…」；本文件保留完整連結。
@@ -304,6 +304,8 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 > 【黃色橫幅】檯面上是廠商大戰，檯面下是 Brown vs. BU 的學術較勁 XD
 
+> 【灰字註解】※ DKLs = Doerner · Kondi · Lee · shelat｜CMP = Canetti · Makriyannis · Peled — 都是作者姓氏縮寫
+
 > 參考：[Silence Labs DKLs23（GitHub）](https://github.com/silence-laboratories/silent-shard-dkls23-ll) · [CMP 論文（ePrint 2020/492）](https://eprint.iacr.org/2020/492)
 
 ---
@@ -311,22 +313,43 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 ## Page 28 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
-- Paillier 同態加密處理跨項相乘
-- 簽名最佳化到 1 round，支援離線預簽
-- Proactive refresh 定期洗牌碎片
+- Paillier 同態加密算跨項相乘
+- 全程附 ZK proof：防超界、防作弊
+- 線上 1 round 出簽（離線預算 3 rounds）
+- Proactive refresh：碎片定期洗牌
 
 **MPC-TSS / DKLs（BitGo・黃卡）**
-- 以 OT 不經意傳輸為基礎，免 Paillier
-- 理論 6 rounds，實務約 3 rounds
-- 開源實作（Silence Labs），運算更輕
+- OT 不經意傳輸＋VOLE 驗算，免 Paillier
+- EC 驗證點做統計一致性檢查
+- 2019 年 6 rounds → 2023 年 3 rounds
+- 與 Silence Labs 合作打造
 
-> 【黑色橫幅】殊途同歸：鏈上最後都只是一筆標準單簽 ✍️
+> 【黑色橫幅】殊途同歸：鏈上都只是標準單簽 ✍️ — 而且兩邊都有開源實作
+
+講者備註（ZKP 怎麼介紹）：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大的數字搞破壞（out-of-bound attack）？CMP 要求每則密文都附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。
+講者備註（術語）：VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議；Proactive refresh 是 Paillier 版 keygen 才有的特殊玩法。
 
 > 參考：[CMP 論文（ePrint 2020/492）](https://eprint.iacr.org/2020/492) · [Silence Labs DKLs23（GitHub）](https://github.com/silence-laboratories/silent-shard-dkls23-ll) · [Fireblocks: What is MPC](https://www.fireblocks.com/report/what-is-mpc)
 
 ---
 
-## Page 29 · 大評比 ②：Feature & UX
+## Page 29 · 加映場 II：效能對決（左右兩欄）
+
+**MPC-CMP（Fireblocks・米色卡）**
+- 頻寬較低：每方約 15 KB
+- 運算較重：秒級（Paillier 大數運算）
+
+**MPC-TSS / DKLs（BitGo・黃卡）**
+- 頻寬較高：每方約 49 KB
+- 運算較輕：毫秒級（EC 運算為主）
+
+> 【黑色橫幅】🐢 數據難以一比一比較，但瓶頸從來不是 MPC — 合格託管卡在人工審核與法遵檢查
+
+> 參考：[CMP 論文（ePrint 2020/492）](https://eprint.iacr.org/2020/492) · [Silence Labs DKLs23（GitHub）](https://github.com/silence-laboratories/silent-shard-dkls23-ll)
+
+---
+
+## Page 30 · 大評比 ②：Feature & UX
 
 - **Fireblocks**：政策引擎長在託管層，直通交易所 / OTC 流動性
 - **BitGo**：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
@@ -338,7 +361,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 30 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 31 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -356,7 +379,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 31 · 大評比 ④：Compliance Level
+## Page 32 · 大評比 ④：Compliance Level
 
 - **基本盤**：牌照、KYC / CDD、AML 交易監控、Travel Rule
 - **進階**：資產隔離、儲備證明（PoR）、稅務申報
@@ -369,7 +392,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 32 · MPC 加分題：還是講白話
+## Page 33 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -377,11 +400,13 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 > 【黑色橫幅】⚠️ 但注意：服務商若握有足夠碎片，本質上還是託管（custodial）
 
+> 【灰字註解】※ 本章不少內容出自 Fireblocks 官方資料，立場與數據請自行斟酌
+
 > 參考：[Fireblocks: 7 Reasons Why MPC](https://www.fireblocks.com/blog/7-reasons-why-mpc-is-the-next-generation-of-private-key-security)
 
 ---
 
-## Page 33 · Part 3 章節頁【綠底】
+## Page 34 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -389,7 +414,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 34 · 挑錢包前，先問三個維度
+## Page 35 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -399,7 +424,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 35 · 個人指南：看金額對號入座
+## Page 36 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -410,7 +435,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 36 · 團隊指南：透明 or 靈活，選一邊
+## Page 37 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -422,7 +447,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 37 · Closing「帶走三件事 🎒」【黃底】
+## Page 38 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -432,7 +457,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 38 · 特別感謝【粉底】
+## Page 39 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐

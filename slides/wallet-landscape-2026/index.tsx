@@ -1333,6 +1333,9 @@ const KeyManagement: Page = () => (
     >
       檯面上是廠商大戰，檯面下是 Brown vs. BU 的學術較勁 XD
     </div>
+    <div style={{ marginTop: 24, fontSize: 24, fontWeight: 600, color: muted }}>
+      ※ DKLs = Doerner · Kondi · Lee · shelat｜CMP = Canetti · Makriyannis · Peled — 都是作者姓氏縮寫
+    </div>
     <PageRefs>github.com/silence-laboratories · eprint.iacr.org/2020/492</PageRefs>
   </div>
 );
@@ -1365,9 +1368,10 @@ const CmpVsTss: Page = () => (
         title="MPC-CMP（Fireblocks）"
         rows={
           <>
-            <VsRow dot={pink}>Paillier 同態加密處理跨項相乘</VsRow>
-            <VsRow dot={pink}>簽名最佳化到 1 round，支援離線預簽</VsRow>
-            <VsRow dot={pink}>Proactive refresh 定期洗牌碎片</VsRow>
+            <VsRow dot={pink}>Paillier 同態加密算跨項相乘</VsRow>
+            <VsRow dot={pink}>全程附 ZK proof：防超界、防作弊</VsRow>
+            <VsRow dot={pink}>線上 1 round 出簽（離線預算 3 rounds）</VsRow>
+            <VsRow dot={pink}>Proactive refresh：碎片定期洗牌</VsRow>
           </>
         }
       />
@@ -1376,9 +1380,56 @@ const CmpVsTss: Page = () => (
         title="MPC-TSS / DKLs（BitGo）"
         rows={
           <>
-            <VsRow dot={ink}>以 OT 不經意傳輸為基礎，免 Paillier</VsRow>
-            <VsRow dot={ink}>理論 6 rounds，實務約 3 rounds</VsRow>
-            <VsRow dot={ink}>開源實作（Silence Labs），運算更輕</VsRow>
+            <VsRow dot={ink}>OT 不經意傳輸＋VOLE 驗算，免 Paillier</VsRow>
+            <VsRow dot={ink}>EC 驗證點做統計一致性檢查</VsRow>
+            <VsRow dot={ink}>2019 年 6 rounds → 2023 年 3 rounds</VsRow>
+            <VsRow dot={ink}>與 Silence Labs 合作打造</VsRow>
+          </>
+        }
+      />
+    </div>
+    <div
+      style={{
+        marginTop: 40,
+        background: ink,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '28px 52px',
+        fontSize: 32,
+        fontWeight: 700,
+      }}
+    >
+      殊途同歸：鏈上都只是標準單簽 ✍️ — 而且兩邊都有開源實作
+    </div>
+    <PageRefs>eprint.iacr.org/2020/492 · github.com/silence-laboratories</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown ①++ · Performance */
+
+const PerfShowdown: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '100px 120px' }}>
+    <Heading>
+      加映場 II：<span style={{ color: pink }}>效能對決</span>
+    </Heading>
+    <div style={{ display: 'flex', gap: 32, marginTop: 52 }}>
+      <ProtoCard
+        bg="#f4f1ea"
+        title="MPC-CMP（Fireblocks）"
+        rows={
+          <>
+            <VsRow dot={pink}>頻寬較低：每方約 15 KB</VsRow>
+            <VsRow dot={pink}>運算較重：秒級（Paillier 大數運算）</VsRow>
+          </>
+        }
+      />
+      <ProtoCard
+        bg={yellow}
+        title="MPC-TSS / DKLs（BitGo）"
+        rows={
+          <>
+            <VsRow dot={ink}>頻寬較高：每方約 49 KB</VsRow>
+            <VsRow dot={ink}>運算較輕：毫秒級（EC 運算為主）</VsRow>
           </>
         }
       />
@@ -1390,11 +1441,13 @@ const CmpVsTss: Page = () => (
         color: '#ffffff',
         borderRadius: 'var(--osd-radius)',
         padding: '30px 52px',
-        fontSize: 34,
+        fontSize: 32,
         fontWeight: 700,
+        lineHeight: 1.5,
       }}
     >
-      殊途同歸：鏈上最後都只是一筆標準單簽 ✍️
+      🐢 數據難以一比一比較，但瓶頸從來不是 MPC —
+      合格託管卡在人工審核與法遵檢查
     </div>
     <PageRefs>eprint.iacr.org/2020/492 · github.com/silence-laboratories</PageRefs>
   </div>
@@ -1556,6 +1609,9 @@ const MpcBonus: Page = () => (
       }}
     >
       ⚠️ 但注意：服務商若握有足夠碎片，<span style={{ color: yellow }}>本質上還是託管</span>（custodial）
+    </div>
+    <div style={{ marginTop: 24, fontSize: 24, fontWeight: 600, color: muted }}>
+      ※ 本章不少內容出自 Fireblocks 官方資料，立場與數據請自行斟酌
     </div>
     <PageRefs>fireblocks.com（7 Reasons Why MPC）</PageRefs>
   </div>
@@ -1798,6 +1854,7 @@ export default [
   ShowdownOverview,
   KeyManagement,
   CmpVsTss,
+  PerfShowdown,
   FeatureUx,
   SecurityShowdown,
   ComplianceShowdown,
