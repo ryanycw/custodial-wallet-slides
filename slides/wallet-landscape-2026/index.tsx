@@ -335,59 +335,165 @@ const EverydayWallets: Page = () => (
   </div>
 );
 
-/* ------------------------------------------------ 06 · AA & Agentic */
+/* ------------------------------------------------ 06 · AA wallets */
 
-const NewSpecies: Page = () => (
+const AAWallets: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
     <Heading>
-      新物種：<span style={{ color: pink }}>AA 與 Agentic 錢包</span>
+      新物種 I：<span style={{ color: blue }}>帳戶抽象 AA</span>
     </Heading>
-    <div style={{ display: 'flex', gap: 32, marginTop: 60 }}>
-      <div
-        style={{
-          flex: 1,
-          background: blue,
-          color: '#ffffff',
-          borderRadius: 'var(--osd-radius)',
-          padding: '44px 48px',
-        }}
-      >
-        <div style={{ fontSize: 40, fontWeight: 900, marginBottom: 24 }}>帳戶抽象 AA</div>
-        <div style={{ fontSize: 30, lineHeight: 1.55 }}>
-          EIP-4337 / 3074 / 7702：免助記詞、gas 代付、social recovery
-          <br />
-          <span style={{ opacity: 0.85 }}>玩家：Privy · Dynamic · ZeroDev</span>
-        </div>
-      </div>
-      <div
-        style={{
-          flex: 1,
-          background: pink,
-          color: '#ffffff',
-          borderRadius: 'var(--osd-radius)',
-          padding: '44px 48px',
-        }}
-      >
-        <div style={{ fontSize: 40, fontWeight: 900, marginBottom: 24 }}>Agentic 錢包</div>
-        <div style={{ fontSize: 30, lineHeight: 1.55 }}>
-          讓 AI agent 自己持有錢包、自動簽名與付款
-          <br />
-          <span style={{ opacity: 0.85 }}>玩家：Circle · Coinbase · Cloudflare · MetaMask</span>
-        </div>
-      </div>
+    <div
+      style={{
+        marginTop: 48,
+        background: blue,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '36px 52px',
+        fontSize: 40,
+        fontWeight: 800,
+        lineHeight: 1.4,
+      }}
+    >
+      「帳戶不再是一把私鑰，而是一個可編程的合約」
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 56 }}>
+      <Bullet dot={blue}>
+        <B c={blue}>EIP-4337 / 3074 / 7702</B>：把 EOA 一步步升級成智能帳戶
+      </Bullet>
+      <Bullet dot={blue}>
+        免助記詞、<B c={blue}>gas 代付</B>、批次交易、passkey 登入
+      </Bullet>
+      <Bullet dot={blue}>
+        <B c={blue}>Social recovery</B>：手機掉了找朋友救，不用抄 24 個單字
+      </Bullet>
+      <Bullet dot={blue}>
+        玩家：<B c={blue}>Privy · Dynamic · ZeroDev</B>
+      </Bullet>
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ 07 · Agentic wallets */
+
+const AgenticWallets: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      新物種 II：<span style={{ color: pink }}>Agentic 錢包</span>
+    </Heading>
+    <div
+      style={{
+        marginTop: 48,
+        background: pink,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '36px 52px',
+        fontSize: 40,
+        fontWeight: 800,
+        lineHeight: 1.4,
+      }}
+    >
+      「人類設規則，AI 自己花錢」
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 32, marginTop: 48 }}>
+      <Bullet dot={pink}>
+        AI agent <B c={pink}>自己持有錢包</B>：自動簽名、付款、訂閱服務
+      </Bullet>
+      <Bullet dot={pink}>
+        搭配<B c={pink}>政策引擎</B>：限額、白名單、例外才找人類批准
+      </Bullet>
+      <Bullet dot={pink}>
+        機器對機器的付款協議（如 <B c={pink}>x402</B>）開始成形
+      </Bullet>
+      <Bullet dot={pink}>
+        玩家：<B c={pink}>Circle · Coinbase · Cloudflare · MetaMask</B>
+      </Bullet>
     </div>
     <div
       style={{
-        marginTop: 40,
+        marginTop: 44,
         background: '#f4f1ea',
         borderRadius: 'var(--osd-radius)',
-        padding: '32px 48px',
-        fontSize: 32,
+        padding: '24px 44px',
+        fontSize: 28,
         fontWeight: 600,
       }}
     >
-      而多簽老大哥 <B c={purple}>Safe</B>（前 Gnosis Safe）依然是個人與機構的金庫標配 →
-      下一章詳談
+      而多簽老大哥 <B c={purple}>Safe</B>（前 Gnosis Safe）依然是金庫標配 → 下一章詳談
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ 08 · Evolution flow */
+
+const EraRow = ({ bg, name, desc }: { bg: string; name: string; desc: string }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+    <span
+      style={{
+        background: bg,
+        color: '#ffffff',
+        borderRadius: 999,
+        padding: '8px 26px',
+        fontSize: 30,
+        fontWeight: 800,
+        flexShrink: 0,
+      }}
+    >
+      {name}
+    </span>
+    <span style={{ fontSize: 30 }}>{desc}</span>
+  </div>
+);
+
+const PainRow = ({ children }: { children: ReactNode }) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
+      marginLeft: 32,
+      color: muted,
+      fontSize: 26,
+      fontWeight: 600,
+    }}
+  >
+    <span>↓</span>
+    <span>⚡ 痛點：{children}</span>
+  </div>
+);
+
+const EvolutionFlow: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      一張圖看懂：<span style={{ color: blue }}>痛點推著錢包演化</span>
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 22, marginTop: 48 }}>
+      <Steps>
+        <EraRow bg={ink} name="⌨️ CLI / Mist" desc="2009–2016：一切靠指令列與桌面錢包" />
+        <Step>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            <PainRow>難用到勸退普通人，跟不上多鏈與 DeFi</PainRow>
+            <EraRow bg={blue} name="🧩 擴充 & 硬體" desc="2016–：MetaMask 讓人人能上鏈" />
+          </div>
+        </Step>
+        <Step>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            <PainRow>一把私鑰單點風險，助記詞一丟全歸零</PainRow>
+            <EraRow bg={purple} name="🔐 Multisig" desc="2017–：多把鑰匙互相制衡（Safe）" />
+          </div>
+        </Step>
+        <Step>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            <PainRow>跨鏈不通用、改組要上鏈、流程死板</PainRow>
+            <EraRow bg={pink} name="🧮 MPC & AA" desc="2019–：碎片化私鑰＋合約帳戶救 UX" />
+          </div>
+        </Step>
+        <Step>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
+            <PainRow>安全搞定了，但還是要人盯著按簽名</PainRow>
+            <EraRow bg={green} name="🤖 Agentic" desc="2025–：AI 代理自己管錢包、自動執行" />
+          </div>
+        </Step>
+      </Steps>
     </div>
   </div>
 );
@@ -430,7 +536,7 @@ const CustodyTimeline: Page = () => (
         </Step>
         <Step>
           <div style={{ marginBottom: 44 }}>
-            <TimeNode bg={blue} year="2013" name="BitGo" desc="機構級 Multisig 2-of-3 開山祖師" />
+            <TimeNode bg={blue} year="2013" name="BitGo" desc="Multisig 2-of-3 開山，後來也擁抱 MPC-TSS" />
           </div>
         </Step>
         <Step>
@@ -481,7 +587,7 @@ const MultisigPlain: Page = () => (
         每把私鑰<B c={purple}>獨立簽名</B>，鏈上合約驗證門檻（2-of-3、3-of-5）
       </Bullet>
       <Bullet dot={purple}>
-        代表：<B c={purple}>Safe</B>（EVM 標配）、<B c={purple}>BitGo 2-of-3</B>（機構鼻祖）
+        代表：<B c={purple}>Safe</B>（EVM 標配）、<B c={purple}>BitGo 2-of-3</B>（機構鼻祖，也有 MPC 版）
       </Bullet>
       <Bullet dot={purple}>
         鏈上<B c={purple}>看得一清二楚</B>：門檻、簽名者、每次改組（P2SH / P2WSH）
@@ -522,7 +628,7 @@ const MpcPlain: Page = () => (
         鏈上看起來就是<B c={pink}>普通單簽交易</B>，門檻大小外人看不出
       </Bullet>
       <Bullet dot={pink}>
-        代表：<B c={pink}>Fireblocks MPC-CMP</B>、<B c={pink}>Coinbase Custody</B>
+        代表：<B c={pink}>Fireblocks MPC-CMP</B>、<B c={pink}>BitGo MPC-TSS</B>、Coinbase Custody
       </Bullet>
     </div>
   </div>
@@ -607,6 +713,247 @@ const Versus: Page = () => (
           </Step>
         </Steps>
       </div>
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown · overview */
+
+const ShowdownOverview: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      Multisig vs. MPC <span style={{ color: purple }}>大評比：四個維度</span>
+    </Heading>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 32,
+        marginTop: 64,
+      }}
+    >
+      <CatCard bg={purple} title="🔑 Key Management" names="協議是誰發明的、碎片由誰保管" />
+      <CatCard bg={blue} title="🧰 Feature & UX" names="政策引擎、流動性串接、日常好用度" />
+      <CatCard bg={pink} title="🛡️ Security" names="TEE vs. HSM：碎片放哪裡才安心" />
+      <CatCard bg={green} title="📋 Compliance" names="KYC / AML / Travel Rule 扛得動嗎" />
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown ① · Key management */
+
+const KeyManagement: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      大評比 ①：<span style={{ color: purple }}>Key Management</span>
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
+      <Bullet dot={purple}>
+        <B c={purple}>BitGo × Silence Labs</B>：採 DKLs 協議，走 MPC-TSS 路線
+      </Bullet>
+      <Bullet dot={purple}>
+        執筆人 Jack Doerner、Yashvanth Kondi — <B c={purple}>Brown / Northeastern</B> 學派
+      </Bullet>
+      <Bullet dot={purple}>
+        <B c={purple}>Fireblocks × Ran Canetti</B>：CMP 協議 — <B c={purple}>Boston University</B> 學派
+      </Bullet>
+    </div>
+    <div
+      style={{
+        marginTop: 64,
+        background: yellow,
+        borderRadius: 'var(--osd-radius)',
+        padding: '36px 52px',
+        fontSize: 36,
+        fontWeight: 800,
+        lineHeight: 1.45,
+      }}
+    >
+      檯面上是廠商大戰，檯面下是 Brown vs. BU 的學術較勁 XD
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown ①+ · CMP vs TSS */
+
+const ProtoCard = ({ bg, color = '#111111', title, rows }: { bg: string; color?: string; title: string; rows: ReactNode }) => (
+  <div
+    style={{
+      flex: 1,
+      background: bg,
+      color,
+      borderRadius: 'var(--osd-radius)',
+      padding: '40px 44px',
+    }}
+  >
+    <div style={{ fontSize: 38, fontWeight: 900, marginBottom: 32 }}>{title}</div>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>{rows}</div>
+  </div>
+);
+
+const CmpVsTss: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '100px 120px' }}>
+    <Heading>
+      加映場：<span style={{ color: pink }}>MPC-CMP</span> vs. <span style={{ color: purple }}>MPC-TSS</span>
+    </Heading>
+    <div style={{ display: 'flex', gap: 32, marginTop: 52 }}>
+      <ProtoCard
+        bg="#f4f1ea"
+        title="MPC-CMP（Fireblocks）"
+        rows={
+          <>
+            <VsRow dot={pink}>Paillier 同態加密處理跨項相乘</VsRow>
+            <VsRow dot={pink}>簽名最佳化到 1 round，支援離線預簽</VsRow>
+            <VsRow dot={pink}>Proactive refresh 定期洗牌碎片</VsRow>
+          </>
+        }
+      />
+      <ProtoCard
+        bg={yellow}
+        title="MPC-TSS / DKLs（BitGo）"
+        rows={
+          <>
+            <VsRow dot={ink}>以 OT 不經意傳輸為基礎，免 Paillier</VsRow>
+            <VsRow dot={ink}>理論 6 rounds，實務約 3 rounds</VsRow>
+            <VsRow dot={ink}>開源實作（Silence Labs），運算更輕</VsRow>
+          </>
+        }
+      />
+    </div>
+    <div
+      style={{
+        marginTop: 44,
+        background: ink,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '30px 52px',
+        fontSize: 34,
+        fontWeight: 700,
+      }}
+    >
+      殊途同歸：鏈上最後都只是一筆標準單簽 ✍️
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown ② · Feature & UX */
+
+const FeatureUx: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      大評比 ②：<span style={{ color: blue }}>Feature & UX</span>
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
+      <Bullet dot={blue}>
+        <B c={blue}>Fireblocks</B>：政策引擎長在託管層，直通交易所 / OTC 流動性
+      </Bullet>
+      <Bullet dot={blue}>
+        <B c={blue}>BitGo</B>：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
+      </Bullet>
+      <Bullet dot={blue}>
+        <B c={blue}>Safe</B>：EVM 生態整合之王，模組化、DAO 治理最順手
+      </Bullet>
+    </div>
+    <div
+      style={{
+        marginTop: 64,
+        background: blue,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '36px 52px',
+        fontSize: 36,
+        fontWeight: 800,
+        lineHeight: 1.45,
+      }}
+    >
+      好不好用，取決於資產住哪條鏈、誰負責按按鈕
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown ③ · Security */
+
+const SecurityShowdown: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '100px 120px' }}>
+    <Heading>
+      大評比 ③：<span style={{ color: pink }}>TEE</span> vs. <span style={{ color: purple }}>HSM</span>
+    </Heading>
+    <div style={{ display: 'flex', gap: 32, marginTop: 52 }}>
+      <ProtoCard
+        bg={blue}
+        color="#ffffff"
+        title="TEE：處理器裡的隔離小房間"
+        rows={
+          <>
+            <VsRow dot="#ffffff">主晶片劃出的安全區（SGX、AWS Nitro）</VsRow>
+            <VsRow dot="#ffffff">便宜、彈性、可軟體更新</VsRow>
+            <VsRow dot="#ffffff">Fireblocks 的 MPC 碎片住這裡</VsRow>
+          </>
+        }
+      />
+      <ProtoCard
+        bg={purple}
+        color="#ffffff"
+        title="HSM：獨立的專職保險櫃"
+        rows={
+          <>
+            <VsRow dot="#ffffff">專用防拆硬體，只管金鑰與加密</VsRow>
+            <VsRow dot="#ffffff">防篡改、可自毀、簽名效能強</VsRow>
+            <VsRow dot="#ffffff">BitGo 的金鑰材料住這裡</VsRow>
+          </>
+        }
+      />
+    </div>
+    <div
+      style={{
+        marginTop: 44,
+        background: ink,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '30px 52px',
+        fontSize: 34,
+        fontWeight: 700,
+      }}
+    >
+      成熟方案通常兩個都用：分層防禦 🛡️
+    </div>
+  </div>
+);
+
+/* ------------------------------------------------ Showdown ④ · Compliance */
+
+const ComplianceShowdown: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+    <Heading>
+      大評比 ④：<span style={{ color: green }}>Compliance Level</span>
+    </Heading>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
+      <Bullet dot={green}>
+        <B c={green}>基本盤</B>：牌照、KYC / CDD、AML 交易監控、Travel Rule
+      </Bullet>
+      <Bullet dot={green}>
+        <B c={green}>進階</B>：資產隔離、儲備證明（PoR）、稅務申報
+      </Bullet>
+      <Bullet dot={green}>
+        <B c={green}>銀行級</B>：MiCA、DORA、Basel、NIST CSF 2.0 全套
+      </Bullet>
+      <Bullet dot={green}>
+        託管商代勞：制裁名單篩查、鏈上鑑識、行為基線分析
+      </Bullet>
+    </div>
+    <div
+      style={{
+        marginTop: 56,
+        background: green,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '32px 52px',
+        fontSize: 36,
+        fontWeight: 800,
+        lineHeight: 1.45,
+      }}
+    >
+      合規等級決定你能服務誰：散戶、企業，還是銀行 🏛️
     </div>
   </div>
 );
@@ -810,6 +1157,43 @@ const Closing: Page = () => (
   </div>
 );
 
+/* ------------------------------------------------ Thanks */
+
+const Thanks: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: pink,
+      color: '#ffffff',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      textAlign: 'center',
+      padding: '0 160px',
+    }}
+  >
+    <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 8, marginBottom: 44, opacity: 0.9 }}>
+      SPECIAL THANKS
+    </div>
+    <div
+      style={{
+        fontFamily: 'var(--osd-font-display)',
+        fontSize: 130,
+        fontWeight: 900,
+        lineHeight: 1.1,
+        letterSpacing: -2,
+      }}
+    >
+      特別感謝 💐
+    </div>
+    <div style={{ fontSize: 52, fontWeight: 800, marginTop: 72 }}>Nic · Mason · PJ</div>
+    <div style={{ fontSize: 36, fontWeight: 600, marginTop: 36, opacity: 0.95 }}>
+      還有跟我一起 cowork 的遠距工作閒人們
+    </div>
+  </div>
+);
+
 export const meta: SlideMeta = {
   title: '2026 錢包大盤點',
   createdAt: '2026-08-17T20:15:24.239Z',
@@ -821,16 +1205,25 @@ export default [
   Divider1,
   EarlyEra,
   EverydayWallets,
-  NewSpecies,
+  AAWallets,
+  AgenticWallets,
+  EvolutionFlow,
   CustodyTimeline,
   Divider2,
   MultisigPlain,
   MpcPlain,
   Versus,
+  ShowdownOverview,
+  KeyManagement,
+  CmpVsTss,
+  FeatureUx,
+  SecurityShowdown,
+  ComplianceShowdown,
   MpcBonus,
   Divider3,
   Dimensions,
   PersonalGuide,
   TeamGuide,
   Closing,
+  Thanks,
 ] satisfies Page[];

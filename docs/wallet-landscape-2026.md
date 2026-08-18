@@ -1,8 +1,8 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 26 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
-> 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字。
+> 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 
 ---
 
@@ -12,6 +12,8 @@
 - 主標：**2026 錢包大盤點**
 - 副標：Wallet Landscape in 2026 — 從一把私鑰，到沒有完整私鑰
 - 三顆膠囊：`錢包進化史`（藍）｜`MULTISIG vs. MPC`（紫）｜`挑選指南`（綠）
+
+> 參考：[完整研究筆記（HackMD）](https://hackmd.io/@ryanycw/S1tJs_sIMe)
 
 ---
 
@@ -41,6 +43,8 @@
 
 > 【黃色橫幅・逐步顯示】跟不上多鏈、DeFi、NFT 的爆發 → 集體退場 👋
 
+> 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/) · [Top 7 Ethereum Wallets](https://cryptomus.com/tw/blog/top-7-ethereum-wallets)
+
 ---
 
 ## Page 5 · 百花齊放：日常錢包四大流派
@@ -52,34 +56,66 @@
 | 📱 行動優先新勢力（粉） | Fluidkey · Peanut · Payy |
 | 🏦 交易所錢包（綠） | Coinbase · Binance · OKX · Bybit · Bitget |
 
----
-
-## Page 6 · 新物種：AA 與 Agentic 錢包
-
-**帳戶抽象 AA（藍卡）**
-- EIP-4337 / 3074 / 7702：免助記詞、gas 代付、social recovery
-- 玩家：Privy · Dynamic · ZeroDev
-
-**Agentic 錢包（粉卡）**
-- 讓 AI agent 自己持有錢包、自動簽名與付款
-- 玩家：Circle · Coinbase · Cloudflare · MetaMask
-
-> 【底部備註】而多簽老大哥 **Safe**（前 Gnosis Safe）依然是個人與機構的金庫標配 → 下一章詳談
+> 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/)
 
 ---
 
-## Page 7 · 支線任務：機構託管進化史（時間軸・逐步顯示）
+## Page 6 · 新物種 I：帳戶抽象 AA
+
+> 【藍色橫幅】「帳戶不再是一把私鑰，而是一個可編程的合約」
+
+- **EIP-4337 / 3074 / 7702**：把 EOA 一步步升級成智能帳戶
+- 免助記詞、**gas 代付**、批次交易、passkey 登入
+- **Social recovery**：手機掉了找朋友救，不用抄 24 個單字
+- 玩家：**Privy · Dynamic · ZeroDev**
+
+> 參考：[EIP-4337](https://eips.ethereum.org/EIPS/eip-4337) · [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702)
+
+---
+
+## Page 7 · 新物種 II：Agentic 錢包
+
+> 【粉色橫幅】「人類設規則，AI 自己花錢」
+
+- AI agent **自己持有錢包**：自動簽名、付款、訂閱服務
+- 搭配**政策引擎**：限額、白名單、例外才找人類批准
+- 機器對機器的付款協議（如 **x402**）開始成形
+- 玩家：**Circle · Coinbase · Cloudflare · MetaMask**
+
+> 【底部備註】而多簽老大哥 **Safe**（前 Gnosis Safe）依然是金庫標配 → 下一章詳談
+
+> 參考：[Narval](https://www.narval.xyz/) · [Fireblocks: Wallet Infrastructure](https://www.fireblocks.com/blog/wallet-infrastructure-institution-competitive-edge)
+
+---
+
+## Page 8 · 一張圖看懂：痛點推著錢包演化（流線圖・逐步顯示）
+
+| 世代 | 年代與定位 | ⚡ 推向下一代的痛點 |
+|------|------------|----------------------|
+| ⌨️ CLI / Mist（黑） | 2009–2016：一切靠指令列與桌面錢包 | 難用到勸退普通人，跟不上多鏈與 DeFi |
+| 🧩 擴充 & 硬體（藍） | 2016–：MetaMask 讓人人能上鏈 | 一把私鑰單點風險，助記詞一丟全歸零 |
+| 🔐 Multisig（紫） | 2017–：多把鑰匙互相制衡（Safe） | 跨鏈不通用、改組要上鏈、流程死板 |
+| 🧮 MPC & AA（粉） | 2019–：碎片化私鑰＋合約帳戶救 UX | 安全搞定了，但還是要人盯著按簽名 |
+| 🤖 Agentic（綠） | 2025–：AI 代理自己管錢包、自動執行 | — |
+
+> 參考：[Fireblocks: MPC vs Multi-sig](https://www.fireblocks.com/blog/mpc-vs-multi-sig) · [完整研究筆記](https://hackmd.io/@ryanycw/S1tJs_sIMe)
+
+---
+
+## Page 9 · 支線任務：機構託管進化史（時間軸・逐步顯示）
 
 | 年份 | 事件 | 說明 |
 |------|------|------|
 | 2010（黑） | Mt. Gox | 交易所託管元年（也是慘案元年） |
-| 2013（藍） | BitGo | 機構級 Multisig 2-of-3 開山祖師 |
+| 2013（藍） | BitGo | Multisig 2-of-3 開山，後來也擁抱 MPC-TSS |
 | 2018（紫） | Coinbase Custody | 合規機構託管正式上線 |
 | 現在（綠） | Fireblocks 等 | MPC 成為機構標配（Anchorage · Cobo · Fidelity） |
 
+> 參考：[BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/) · [Fireblocks: Custody Strategy for Banks](https://www.fireblocks.com/blog/digital-asset-custody-strategy-banks)
+
 ---
 
-## Page 8 · Part 2 章節頁【紫底】
+## Page 10 · Part 2 章節頁【紫底】
 
 - PART 02
 - 主標：Multisig vs. MPC 白話文
@@ -87,28 +123,32 @@
 
 ---
 
-## Page 9 · Multisig：多把鑰匙開一個保險箱
+## Page 11 · Multisig：多把鑰匙開一個保險箱
 
 > 【紫色橫幅】「保險箱配 N 把鑰匙，開箱要同時湊滿 M 把」
 
 - 每把私鑰**獨立簽名**，鏈上合約驗證門檻（2-of-3、3-of-5）
-- 代表：**Safe**（EVM 標配）、**BitGo 2-of-3**（機構鼻祖）
+- 代表：**Safe**（EVM 標配）、**BitGo 2-of-3**（機構鼻祖，也有 MPC 版）
 - 鏈上**看得一清二楚**：門檻、簽名者、每次改組（P2SH / P2WSH）
+
+> 參考：[Safe: Best Wallets for Institutions](https://safe.global/blog/the-best-crypto-wallets-for-institutions) · [Spark: MPC vs Multisig Custody](https://www.spark.money/research/bitcoin-mpc-vs-multisig-custody)
 
 ---
 
-## Page 10 · MPC：一把鑰匙磨成碎片
+## Page 12 · MPC：一把鑰匙磨成碎片
 
 > 【粉色橫幅】「完整私鑰，從頭到尾都沒存在過」
 
 - 私鑰以 **key share 碎片**分散在多方裝置與雲端 TEE
 - 簽名是一場**鏈下多方運算**：湊門檻，但不拼回私鑰
 - 鏈上看起來就是**普通單簽交易**，門檻大小外人看不出
-- 代表：**Fireblocks MPC-CMP**、**Coinbase Custody**
+- 代表：**Fireblocks MPC-CMP**、**BitGo MPC-TSS**、Coinbase Custody
+
+> 參考：[Fireblocks: What is MPC](https://www.fireblocks.com/report/what-is-mpc) · [Fireblocks: 7 Reasons Why MPC](https://www.fireblocks.com/blog/7-reasons-why-mpc-is-the-next-generation-of-private-key-security)
 
 ---
 
-## Page 11 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
+## Page 13 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
 
 **Multisig 的痛點（米色卡）**
 - 每條鏈實作不同，跨鏈不通用
@@ -122,9 +162,95 @@
 - 簽名者輪替不動鏈上任何東西
 - 門檻隱形，保留操作隱私
 
+> 參考：[Fireblocks: MPC vs Multi-sig](https://www.fireblocks.com/blog/mpc-vs-multi-sig) · [Spark: MPC vs Multisig Custody](https://www.spark.money/research/bitcoin-mpc-vs-multisig-custody)
+
 ---
 
-## Page 12 · MPC 加分題：還是講白話
+## Page 14 · Multisig vs. MPC 大評比：四個維度
+
+| 卡片 | 說明 |
+|------|------|
+| 🔑 Key Management（紫） | 協議是誰發明的、碎片由誰保管 |
+| 🧰 Feature & UX（藍） | 政策引擎、流動性串接、日常好用度 |
+| 🛡️ Security（粉） | TEE vs. HSM：碎片放哪裡才安心 |
+| 📋 Compliance（綠） | KYC / AML / Travel Rule 扛得動嗎 |
+
+---
+
+## Page 15 · 大評比 ①：Key Management
+
+- **BitGo × Silence Labs**：採 DKLs 協議，走 MPC-TSS 路線
+- 執筆人 Jack Doerner、Yashvanth Kondi — **Brown / Northeastern** 學派
+- **Fireblocks × Ran Canetti**：CMP 協議 — **Boston University** 學派
+
+> 【黃色橫幅】檯面上是廠商大戰，檯面下是 Brown vs. BU 的學術較勁 XD
+
+> 參考：[Silence Labs DKLs23（GitHub）](https://github.com/silence-laboratories/silent-shard-dkls23-ll) · [CMP 論文（ePrint 2020/492）](https://eprint.iacr.org/2020/492)
+
+---
+
+## Page 16 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
+
+**MPC-CMP（Fireblocks・米色卡）**
+- Paillier 同態加密處理跨項相乘
+- 簽名最佳化到 1 round，支援離線預簽
+- Proactive refresh 定期洗牌碎片
+
+**MPC-TSS / DKLs（BitGo・黃卡）**
+- 以 OT 不經意傳輸為基礎，免 Paillier
+- 理論 6 rounds，實務約 3 rounds
+- 開源實作（Silence Labs），運算更輕
+
+> 【黑色橫幅】殊途同歸：鏈上最後都只是一筆標準單簽 ✍️
+
+> 參考：[CMP 論文（ePrint 2020/492）](https://eprint.iacr.org/2020/492) · [Silence Labs DKLs23（GitHub）](https://github.com/silence-laboratories/silent-shard-dkls23-ll) · [Fireblocks: What is MPC](https://www.fireblocks.com/report/what-is-mpc)
+
+---
+
+## Page 17 · 大評比 ②：Feature & UX
+
+- **Fireblocks**：政策引擎長在託管層，直通交易所 / OTC 流動性
+- **BitGo**：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
+- **Safe**：EVM 生態整合之王，模組化、DAO 治理最順手
+
+> 【藍色橫幅】好不好用，取決於資產住哪條鏈、誰負責按按鈕
+
+> 參考：[Fireblocks: Wallet Infrastructure](https://www.fireblocks.com/blog/wallet-infrastructure-institution-competitive-edge) · [BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/) · [Safe: Best Wallets for Institutions](https://safe.global/blog/the-best-crypto-wallets-for-institutions)
+
+---
+
+## Page 18 · 大評比 ③：TEE vs. HSM（左右兩欄）
+
+**TEE：處理器裡的隔離小房間（藍卡）**
+- 主晶片劃出的安全區（SGX、AWS Nitro）
+- 便宜、彈性、可軟體更新
+- Fireblocks 的 MPC 碎片住這裡
+
+**HSM：獨立的專職保險櫃（紫卡）**
+- 專用防拆硬體，只管金鑰與加密
+- 防篡改、可自毀、簽名效能強
+- BitGo 的金鑰材料住這裡
+
+> 【黑色橫幅】成熟方案通常兩個都用：分層防禦 🛡️
+
+> 參考：[Embitel: TEE vs HSM](https://www.embitel.com/blog/embedded-blog/choosing-between-tee-and-hsm-for-automotive-security-mechanism)
+
+---
+
+## Page 19 · 大評比 ④：Compliance Level
+
+- **基本盤**：牌照、KYC / CDD、AML 交易監控、Travel Rule
+- **進階**：資產隔離、儲備證明（PoR）、稅務申報
+- **銀行級**：MiCA、DORA、Basel、NIST CSF 2.0 全套
+- 託管商代勞：制裁名單篩查、鏈上鑑識、行為基線分析
+
+> 【綠色橫幅】合規等級決定你能服務誰：散戶、企業，還是銀行 🏛️
+
+> 參考：[Compliance Need 筆記（HackMD）](https://hackmd.io/vE8eb0sTT2OKB3UAhOP3bA#Compliance-Need) · [Fireblocks: Custody Compliance for Banks](https://www.fireblocks.com/blog/digital-asset-custody-compliance-banks) · [Fireblocks: Stablecoin Compliance](https://www.fireblocks.com/blog/how-to-navigate-stablecoin-compliance-kyc-travel-rule-transaction-monitoring)
+
+---
+
+## Page 20 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -132,9 +258,11 @@
 
 > 【黑色橫幅】⚠️ 但注意：服務商若握有足夠碎片，本質上還是託管（custodial）
 
+> 參考：[Fireblocks: 7 Reasons Why MPC](https://www.fireblocks.com/blog/7-reasons-why-mpc-is-the-next-generation-of-private-key-security)
+
 ---
 
-## Page 13 · Part 3 章節頁【綠底】
+## Page 21 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -142,7 +270,7 @@
 
 ---
 
-## Page 14 · 挑錢包前，先問三個維度
+## Page 22 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -152,16 +280,18 @@
 
 ---
 
-## Page 15 · 個人指南：看金額對號入座
+## Page 23 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
 - **大額長期** → Safe 多簽或 MPC 服務，拒絕單點失誤歸零
 - **加分題** → AA 錢包 social recovery，「弄丟助記詞」變可救
 
+> 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/)
+
 ---
 
-## Page 16 · 團隊指南：透明 or 靈活，選一邊
+## Page 24 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -169,12 +299,23 @@
 
 > 【綠色橫幅】靈魂拷問：誰握有足夠的鑰匙（或碎片），誰就是真正的託管方 🔑
 
+> 參考：[Safe: Best Wallets for Institutions](https://safe.global/blog/the-best-crypto-wallets-for-institutions) · [Fireblocks: Custody Strategy for Banks](https://www.fireblocks.com/blog/digital-asset-custody-strategy-banks)
+
 ---
 
-## Page 17 · Closing「帶走三件事 🎒」【黃底】
+## Page 25 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
 3. （綠）挑錢包 = UX × Feature × Safety，看金額與團隊決定
 
 - 結尾：Thanks! — @ryanycw · 完整研究筆記：hackmd.io/@ryanycw
+
+---
+
+## Page 26 · 特別感謝【粉底】
+
+- Eyebrow：`SPECIAL THANKS`
+- 主標：特別感謝 💐
+- **Nic · Mason · PJ**
+- 還有跟我一起 cowork 的遠距工作閒人們
