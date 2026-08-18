@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta, SlideTransition } from '@open-slide/core';
-import { Step, Steps } from '@open-slide/core';
+import { MorphElement, Step, Steps } from '@open-slide/core';
 
 export const design: DesignSystem = {
   palette: { bg: '#ffffff', text: '#111111', accent: '#fe5100' },
@@ -423,117 +423,285 @@ const AgenticWallets: Page = () => (
   </div>
 );
 
-/* ------------------------------------------------ 08 · Evolution flow (horizontal) */
+/* ------------------------------------------------ 08–09 · Evolution flow (branching timeline, morph-linked) */
 
-const FlowCard = ({
+const morphTransition: SlideTransition = {
+  duration: 280,
+  exit: { duration: 224, easing: EASE_IN, keyframes: [{ opacity: 1 }, { opacity: 0 }] },
+  enter: { duration: 308, delay: 112, easing: EASE_OUT, keyframes: [{ opacity: 0 }, { opacity: 1 }] },
+  morph: { duration: 868, easing: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+};
+
+const flowStage = {
+  ...fill,
+  background: 'var(--osd-bg)',
+  color: 'var(--osd-text)',
+  position: 'relative',
+  overflow: 'hidden',
+} as const;
+
+const FlowHeading = ({ children }: { children: ReactNode }) => (
+  <h2
+    style={{
+      position: 'absolute',
+      left: 100,
+      top: 84,
+      margin: 0,
+      fontFamily: 'var(--osd-font-display)',
+      fontSize: 60,
+      fontWeight: 900,
+      lineHeight: 1.2,
+      letterSpacing: -1,
+    }}
+  >
+    {children}
+  </h2>
+);
+
+const FlowNode = ({
+  left,
+  top,
+  w,
   bg,
   emoji,
-  name,
+  title,
   years,
   desc,
-  pain,
 }: {
+  left: number;
+  top: number;
+  w: number;
   bg: string;
   emoji: string;
-  name: string;
+  title: string;
   years: string;
   desc: string;
-  pain?: string;
 }) => (
-  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24, minWidth: 0 }}>
+  <div
+    style={{
+      position: 'absolute',
+      left,
+      top,
+      width: w,
+      background: bg,
+      color: '#ffffff',
+      borderRadius: 'var(--osd-radius)',
+      padding: '32px 36px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 14,
+    }}
+  >
+    <div style={{ fontSize: 44, lineHeight: 1 }}>{emoji}</div>
+    <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: 36, fontWeight: 900, lineHeight: 1.2 }}>
+      {title}
+    </div>
     <div
       style={{
-        background: bg,
-        color: '#ffffff',
-        borderRadius: 'var(--osd-radius)',
-        padding: '40px 28px',
-        height: 360,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        gap: 18,
+        alignSelf: 'flex-start',
+        fontSize: 20,
+        fontWeight: 800,
+        background: 'rgba(255,255,255,0.22)',
+        borderRadius: 999,
+        padding: '4px 16px',
       }}
     >
-      <div style={{ fontSize: 60, lineHeight: 1 }}>{emoji}</div>
-      <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: 34, fontWeight: 900, lineHeight: 1.2 }}>
-        {name}
+      {years}
+    </div>
+    <div style={{ fontSize: 24, lineHeight: 1.45, opacity: 0.95 }}>{desc}</div>
+  </div>
+);
+
+const FlowLink = ({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: number }) => {
+  const pad = 24;
+  const left = Math.min(x1, x2) - pad;
+  const top = Math.min(y1, y2) - pad;
+  const wdt = Math.abs(x2 - x1) + pad * 2;
+  const hgt = Math.abs(y2 - y1) + pad * 2;
+  const ax = x1 - left;
+  const ay = y1 - top;
+  const bx = x2 - left;
+  const by = y2 - top;
+  const mx = ax + (bx - ax) / 2;
+  return (
+    <svg style={{ position: 'absolute', left, top, pointerEvents: 'none' }} width={wdt} height={hgt}>
+      <path
+        d={`M ${ax} ${ay} C ${mx} ${ay}, ${mx} ${by}, ${bx - 12} ${by}`}
+        stroke="#111111"
+        strokeWidth={5}
+        fill="none"
+        strokeLinecap="round"
+      />
+      <polygon points={`${bx - 20},${by - 12} ${bx},${by} ${bx - 20},${by + 12}`} fill="#111111" />
+    </svg>
+  );
+};
+
+const FlowLabel = ({ left, top, children }: { left: number; top: number; children: ReactNode }) => (
+  <div style={{ position: 'absolute', left, top, fontSize: 24, fontWeight: 700, color: muted }}>
+    {children}
+  </div>
+);
+
+// AA node appears on both flow pages with the same morph id — it glides across the cut.
+const AANode = ({ left, top }: { left: number; top: number }) => (
+  <MorphElement id="aa-node">
+    <div
+      style={{
+        position: 'absolute',
+        left,
+        top,
+        width: 480,
+        background: pink,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '32px 36px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 14,
+      }}
+    >
+      <div style={{ fontSize: 44, lineHeight: 1 }}>🪄</div>
+      <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: 36, fontWeight: 900, lineHeight: 1.2 }}>
+        Account Abstraction
       </div>
       <div
         style={{
-          fontSize: 22,
+          alignSelf: 'flex-start',
+          fontSize: 20,
           fontWeight: 800,
           background: 'rgba(255,255,255,0.22)',
           borderRadius: 999,
-          padding: '6px 20px',
+          padding: '4px 16px',
         }}
       >
-        {years}
+        2023–
       </div>
-      <div style={{ fontSize: 25, lineHeight: 1.45, opacity: 0.95 }}>{desc}</div>
+      <div style={{ fontSize: 24, lineHeight: 1.45, opacity: 0.95 }}>
+        為了 UX 而生：免助記詞、gas 代付
+      </div>
     </div>
-    {pain ? (
-      <div style={{ fontSize: 23, lineHeight: 1.45, fontWeight: 700, color: muted, textAlign: 'center' }}>
-        ⚡ {pain}
-      </div>
-    ) : (
-      <div style={{ fontSize: 23, lineHeight: 1.45, fontWeight: 800, color: green, textAlign: 'center' }}>
-        🚀 現在進行式
-      </div>
-    )}
-  </div>
+  </MorphElement>
 );
 
-const FlowArrow = () => (
-  <div style={{ fontSize: 46, fontWeight: 900, color: ink, marginTop: 155, flexShrink: 0 }}>→</div>
-);
-
-const EvolutionFlow: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '110px 100px' }}>
-    <Heading>
-      一張圖看懂：<span style={{ color: blue }}>痛點推著錢包演化</span>
-    </Heading>
-    <div style={{ display: 'flex', gap: 20, marginTop: 72, alignItems: 'flex-start' }}>
-      <FlowCard
+const EvolutionFlowA: Page = () => (
+  <div style={flowStage}>
+    <FlowHeading>
+      演化上半場：<span style={{ color: blue }}>私鑰的分岔路</span>
+    </FlowHeading>
+    <Steps>
+      <FlowNode
+        left={100}
+        top={420}
+        w={360}
         bg={ink}
         emoji="⌨️"
-        name="CLI / Mist"
+        title="CLI / Mist"
         years="2009–2016"
-        desc="指令列與桌面錢包"
-        pain="難用勸退普通人，跟不上多鏈 DeFi"
+        desc="指令列與桌面錢包，工程師限定"
       />
-      <FlowArrow />
-      <FlowCard
-        bg={blue}
-        emoji="🧩"
-        name="擴充 & 硬體"
-        years="2016–"
-        desc="MetaMask 讓人人能上鏈"
-        pain="一把私鑰單點風險，助記詞丟了歸零"
-      />
-      <FlowArrow />
-      <FlowCard
-        bg={purple}
-        emoji="🔐"
-        name="Multisig"
-        years="2017–"
-        desc="多把鑰匙互相制衡（Safe）"
-        pain="跨鏈不通用，改組還要上鏈"
-      />
-      <FlowArrow />
-      <FlowCard
-        bg={pink}
-        emoji="🧮"
-        name="MPC & AA"
-        years="2019–"
-        desc="碎片私鑰＋合約帳戶救 UX"
-        pain="安全搞定了，但還是要人按簽名"
-      />
-      <FlowArrow />
-      <FlowCard bg={green} emoji="🤖" name="Agentic" years="2025–" desc="AI 代理自己管錢包、自動執行" />
-    </div>
+      <Step>
+        <div>
+          <FlowLink x1={460} y1={570} x2={630} y2={402} />
+          <FlowLink x1={460} y1={570} x2={630} y2={762} />
+          <FlowNode
+            left={640}
+            top={270}
+            w={420}
+            bg={blue}
+            emoji="🧩"
+            title="Extension Base"
+            years="2016–"
+            desc="MetaMask 世代，日常操作主力"
+          />
+          <FlowNode
+            left={640}
+            top={630}
+            w={420}
+            bg={purple}
+            emoji="🧊"
+            title="Cold Wallet"
+            years="2014–"
+            desc="Ledger · Trezor，大額冷保管"
+          />
+          <FlowLabel left={100} top={745}>
+            ⚡ 難用，一般人進不來
+          </FlowLabel>
+          <FlowLabel left={640} top={915}>
+            🥶 安全，但日常用不動
+          </FlowLabel>
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1060} y1={402} x2={1310} y2={400} />
+          <FlowLabel left={1080} top={330}>
+            ⚡ 助記詞＋gas 勸退人
+          </FlowLabel>
+          <AANode left={1320} top={270} />
+        </div>
+      </Step>
+    </Steps>
   </div>
 );
+EvolutionFlowA.transition = morphTransition;
+
+const EvolutionFlowB: Page = () => (
+  <div style={flowStage}>
+    <FlowHeading>
+      演化下半場：<span style={{ color: pink }}>AA 開枝散葉</span>
+    </FlowHeading>
+    <Steps>
+      <AANode left={100} top={400} />
+      <Step>
+        <div>
+          <FlowLink x1={580} y1={532} x2={890} y2={272} />
+          <FlowNode
+            left={900}
+            top={140}
+            w={900}
+            bg={blue}
+            emoji="📱"
+            title="大 PayFi 時代"
+            years="2024–"
+            desc="Mobile 端起飛：穩定幣付款日常化（Fluidkey · Peanut · Payy）"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={580} y1={532} x2={890} y2={572} />
+          <FlowNode
+            left={900}
+            top={440}
+            w={900}
+            bg={purple}
+            emoji="🏦"
+            title="交易所全押 AA"
+            years="2024–"
+            desc="Coinbase · Binance 用智能帳戶搶佔 onchain 版圖"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={580} y1={532} x2={890} y2={872} />
+          <FlowNode
+            left={900}
+            top={740}
+            w={900}
+            bg={green}
+            emoji="🤖"
+            title="大 AI 時代：Agentic"
+            years="2025–"
+            desc="AI 代理自己持錢包、自動付款（Coinbase Agentic Wallets · x402）"
+          />
+        </div>
+      </Step>
+    </Steps>
+  </div>
+);
+EvolutionFlowB.transition = morphTransition;
 
 /* ------------------------------------------------ 07 · Custody timeline */
 
@@ -1244,7 +1412,8 @@ export default [
   EverydayWallets,
   AAWallets,
   AgenticWallets,
-  EvolutionFlow,
+  EvolutionFlowA,
+  EvolutionFlowB,
   CustodyTimeline,
   Divider2,
   MultisigPlain,

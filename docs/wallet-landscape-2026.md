@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 26 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 27 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 
@@ -88,23 +88,36 @@
 
 ---
 
-## Page 8 · 一張圖看懂：痛點推著錢包演化（橫向流程圖）
+## Page 8 · 演化上半場：私鑰的分岔路（分岔流程圖・逐步顯示）
 
-五張色卡由左至右以「→」串接，每張卡下方標出推動下一代的痛點：
+橫向分岔圖：CLI / Mist 起點 → 分岔成兩條路 → Extension 那條路長出 AA。
+AA 節點會用 morph 動畫「滑」到下一頁，兩頁形成連貫 timeline。
 
-| 世代（卡片） | 年代 | 定位 | ⚡ 卡片下方的痛點 |
-|------|------|------|----------------------|
-| ⌨️ CLI / Mist（黑） | 2009–2016 | 指令列與桌面錢包 | 難用勸退普通人，跟不上多鏈 DeFi |
-| 🧩 擴充 & 硬體（藍） | 2016– | MetaMask 讓人人能上鏈 | 一把私鑰單點風險，助記詞丟了歸零 |
-| 🔐 Multisig（紫） | 2017– | 多把鑰匙互相制衡（Safe） | 跨鏈不通用，改組還要上鏈 |
-| 🧮 MPC & AA（粉） | 2019– | 碎片私鑰＋合約帳戶救 UX | 安全搞定了，但還是要人按簽名 |
-| 🤖 Agentic（綠） | 2025– | AI 代理自己管錢包、自動執行 | 🚀 現在進行式 |
+- 起點：⌨️ **CLI / Mist**（黑卡）2009–2016 — 指令列與桌面錢包，工程師限定
+  - ⚡ 痛點：難用，一般人進不來 → 分岔出兩條路
+- 分岔 ①：🧩 **Extension Base**（藍卡）2016– — MetaMask 世代，日常操作主力
+- 分岔 ②：🧊 **Cold Wallet**（紫卡）2014– — Ledger · Trezor，大額冷保管
+  - 🥶 安全，但日常用不動（此路線到此為止）
+- Extension Base → ⚡ 助記詞＋gas 勸退人 → 🪄 **Account Abstraction**（粉卡）2023– — 為了 UX 而生：免助記詞、gas 代付
 
-> 參考：[Fireblocks: MPC vs Multi-sig](https://www.fireblocks.com/blog/mpc-vs-multi-sig) · [完整研究筆記](https://hackmd.io/@ryanycw/S1tJs_sIMe)
+> 參考：[帳戶抽象（AA）與智能合約錢包完整解析（vocus）](https://vocus.cc/article/6a30eb88fd8978000120723c) · [EIP-4337](https://eips.ethereum.org/EIPS/eip-4337)
 
 ---
 
-## Page 9 · 支線任務：機構託管進化史（時間軸・逐步顯示）
+## Page 9 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
+
+AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
+
+- 🪄 **Account Abstraction**（粉卡，與上一頁同一顆節點）
+- → 📱 **大 PayFi 時代**（藍卡）2024– — Mobile 端起飛：穩定幣付款日常化（Fluidkey · Peanut · Payy）
+- → 🏦 **交易所全押 AA**（紫卡）2024– — Coinbase · Binance 用智能帳戶搶佔 onchain 版圖
+- → 🤖 **大 AI 時代：Agentic**（綠卡）2025– — AI 代理自己持錢包、自動付款（Coinbase Agentic Wallets · x402）
+
+> 參考：[The Block: Coinbase rolls out Agentic Wallets](https://www.theblock.co/news/business/2026-02-11-coinbase-rolls-out-ai-tool-to-give-any-agent-a-wallet-389524) · [Coinbase: Agentic Wallets](https://www.coinbase.com/zh-tw/developer-platform/discover/launches/agentic-wallets) · [imToken: 從 Web2 到 Web3 走向 Agentic Wallet](https://support.token.im/hc/zh-tw/articles/59120924972697)
+
+---
+
+## Page 10 · 支線任務：機構託管進化史（時間軸・逐步顯示）
 
 | 年份 | 事件 | 說明 |
 |------|------|------|
@@ -117,7 +130,7 @@
 
 ---
 
-## Page 10 · Part 2 章節頁【紫底】
+## Page 11 · Part 2 章節頁【紫底】
 
 - PART 02
 - 主標：Multisig vs. MPC 白話文
@@ -125,7 +138,7 @@
 
 ---
 
-## Page 11 · Multisig：多把鑰匙開一個保險箱
+## Page 12 · Multisig：多把鑰匙開一個保險箱
 
 > 【紫色橫幅】「保險箱配 N 把鑰匙，開箱要同時湊滿 M 把」
 
@@ -137,7 +150,7 @@
 
 ---
 
-## Page 12 · MPC：一把鑰匙磨成碎片
+## Page 13 · MPC：一把鑰匙磨成碎片
 
 > 【粉色橫幅】「完整私鑰，從頭到尾都沒存在過」
 
@@ -150,7 +163,7 @@
 
 ---
 
-## Page 13 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
+## Page 14 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
 
 **Multisig 的痛點（米色卡）**
 - 每條鏈實作不同，跨鏈不通用
@@ -168,7 +181,7 @@
 
 ---
 
-## Page 14 · Multisig vs. MPC 大評比：四個維度
+## Page 15 · Multisig vs. MPC 大評比：四個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -179,7 +192,7 @@
 
 ---
 
-## Page 15 · 大評比 ①：Key Management
+## Page 16 · 大評比 ①：Key Management
 
 - **BitGo × Silence Labs**：採 DKLs 協議，走 MPC-TSS 路線
 - 執筆人 Jack Doerner、Yashvanth Kondi — **Brown / Northeastern** 學派
@@ -191,7 +204,7 @@
 
 ---
 
-## Page 16 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
+## Page 17 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
 - Paillier 同態加密處理跨項相乘
@@ -209,7 +222,7 @@
 
 ---
 
-## Page 17 · 大評比 ②：Feature & UX
+## Page 18 · 大評比 ②：Feature & UX
 
 - **Fireblocks**：政策引擎長在託管層，直通交易所 / OTC 流動性
 - **BitGo**：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
@@ -221,7 +234,7 @@
 
 ---
 
-## Page 18 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 19 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -239,7 +252,7 @@
 
 ---
 
-## Page 19 · 大評比 ④：Compliance Level
+## Page 20 · 大評比 ④：Compliance Level
 
 - **基本盤**：牌照、KYC / CDD、AML 交易監控、Travel Rule
 - **進階**：資產隔離、儲備證明（PoR）、稅務申報
@@ -252,7 +265,7 @@
 
 ---
 
-## Page 20 · MPC 加分題：還是講白話
+## Page 21 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -264,7 +277,7 @@
 
 ---
 
-## Page 21 · Part 3 章節頁【綠底】
+## Page 22 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -272,7 +285,7 @@
 
 ---
 
-## Page 22 · 挑錢包前，先問三個維度
+## Page 23 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -282,7 +295,7 @@
 
 ---
 
-## Page 23 · 個人指南：看金額對號入座
+## Page 24 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -293,7 +306,7 @@
 
 ---
 
-## Page 24 · 團隊指南：透明 or 靈活，選一邊
+## Page 25 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -305,7 +318,7 @@
 
 ---
 
-## Page 25 · Closing「帶走三件事 🎒」【黃底】
+## Page 26 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -315,7 +328,7 @@
 
 ---
 
-## Page 26 · 特別感謝【粉底】
+## Page 27 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐
