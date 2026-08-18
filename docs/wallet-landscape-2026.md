@@ -67,7 +67,16 @@
 
 ---
 
-## Page 7 · 迎接 L2-Centric 時代【圖】
+## Page 7 · 迎來 Mass Adoption 年代【圖】
+
+- Lead：所有東西都要 Abstraction
+- 圖：`assets/Ethereum is different.png`
+
+> 參考：[Vitalik: Layer 2s as cultural extensions of Ethereum](https://vitalik.eth.limo/general/2024/05/29/l2culture.html)
+
+---
+
+## Page 8 · 迎接 L2-Centric 時代【圖】
 
 - 三顆膠囊：`流動性破碎`（藍）｜`相容性問題`（紫）｜`UX 很差`（粉）
 - 圖：`assets/53L2s.png`
@@ -76,19 +85,10 @@
 
 ---
 
-## Page 8 · 大 Abstraction 時代【圖】
+## Page 9 · 大 Abstraction 時代【圖】
 
 - Lead：L2 大戰之後，大家開始重新思考既有的解法
 - 圖：`assets/JacksonPollock.png`
-
----
-
-## Page 9 · 迎來 Mass Adoption 年代【圖】
-
-- Lead：所有東西都要 Abstraction
-- 圖：`assets/Ethereum is different.png`
-
-> 參考：[Vitalik: Layer 2s as cultural extensions of Ethereum](https://vitalik.eth.limo/general/2024/05/29/l2culture.html)
 
 ---
 
@@ -437,3 +437,9 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 - 主標：特別感謝 💐
 - **Nic · Mason · PJ**
 - 還有跟我一起 cowork 的遠距工作閒人們
+
+--- 
+
+加一頁：
+宣傳 ETHTaipei
+宣傳 AMD
