@@ -635,23 +635,9 @@ const EvolutionFlowA: Page = () => (
       <Step>
         <div>
           <FlowLink x1={1060} y1={402} x2={1310} y2={400} />
-          <div
-            style={{
-              position: 'absolute',
-              left: 1060,
-              top: 428,
-              width: 250,
-              fontSize: 22,
-              fontWeight: 700,
-              color: muted,
-              textAlign: 'center',
-              lineHeight: 1.4,
-            }}
-          >
-            ⚡ 助記詞＋gas
-            <br />
-            太勸退人
-          </div>
+          <FlowLabel left={640} top={554}>
+            ⚡ 助記詞＋gas 太勸退人
+          </FlowLabel>
           <AANode left={1320} top={270} />
         </div>
       </Step>
