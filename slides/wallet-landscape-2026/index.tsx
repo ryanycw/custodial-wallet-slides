@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta, SlideTransition } from '@open-slide/core';
-import { ImagePlaceholder, MorphElement, Step, Steps } from '@open-slide/core';
+import { MorphElement, Step, Steps } from '@open-slide/core';
 import imgInfiniteGarden from '@assets/Infinite Garden.png';
+import imgL2Beat from '@assets/L2Beat.png';
 import img53L2s from '@assets/53L2s.png';
 import imgJacksonPollock from '@assets/JacksonPollock.png';
 import imgEthereumIsDifferent from '@assets/Ethereum is different.png';
@@ -490,44 +491,15 @@ const AbstractionProblems: Page = () => (
 );
 
 const L2BeatPage: Page = () => (
-  <div
-    style={{
-      ...fill,
-      background: 'var(--osd-bg)',
-      color: 'var(--osd-text)',
-      padding: '90px 100px',
-      display: 'flex',
-      flexDirection: 'column',
-    }}
-  >
-    <h2
-      style={{
-        fontFamily: 'var(--osd-font-display)',
-        fontSize: 64,
-        fontWeight: 900,
-        margin: 0,
-        lineHeight: 1.2,
-        letterSpacing: -1,
-      }}
-    >
-      看不完的 L2？交給 <span style={{ color: blue }}>L2Beat</span>
-    </h2>
-    <div
-      style={{
-        flex: 1,
-        minHeight: 0,
-        marginTop: 36,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <ImagePlaceholder hint="L2Beat 首頁截圖（l2beat.com）" />
-    </div>
-    <div style={{ marginTop: 20, fontSize: 22, fontWeight: 600, color: muted, textAlign: 'right' }}>
-      l2beat.com
-    </div>
-  </div>
+  <ImageSlide
+    title={
+      <>
+        看不完的 L2？交給 <span style={{ color: blue }}>L2Beat</span>
+      </>
+    }
+    img={imgL2Beat}
+    cap="來源：l2beat.com"
+  />
 );
 
 /* ------------------------------------------------ 06 · AA wallets */

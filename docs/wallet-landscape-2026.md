@@ -110,10 +110,9 @@
 
 ---
 
-## Page 12 · 看不完的 L2？交給 L2Beat【截圖 Placeholder】
+## Page 12 · 看不完的 L2？交給 L2Beat【圖】
 
-- 目前放的是 `ImagePlaceholder`（提示：L2Beat 首頁截圖）— 到 dev UI 的 Assets 面板上傳截圖替換
-- 右下標註：l2beat.com
+- 圖：`assets/L2Beat.png`（來源標註：l2beat.com）
 
 > 參考：[L2Beat](https://l2beat.com/)
 
