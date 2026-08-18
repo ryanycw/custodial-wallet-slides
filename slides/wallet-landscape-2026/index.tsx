@@ -79,7 +79,24 @@ const fill = {
   width: '100%',
   height: '100%',
   fontFamily: 'var(--osd-font-body)',
+  position: 'relative',
 } as const;
+
+const PageRefs = ({ children }: { children: ReactNode }) => (
+  <div
+    style={{
+      position: 'absolute',
+      left: 120,
+      bottom: 36,
+      fontSize: 20,
+      fontWeight: 600,
+      color: muted,
+      opacity: 0.85,
+    }}
+  >
+    參考：{children}
+  </div>
+);
 
 const Pill = ({ bg, color = '#ffffff', children }: { bg: string; color?: string; children: ReactNode }) => (
   <span
@@ -302,6 +319,7 @@ const EarlyEra: Page = () => (
         </Step>
       </Steps>
     </div>
+    <PageRefs>ethereum.org · cryptomus.com</PageRefs>
   </div>
 );
 
@@ -342,6 +360,7 @@ const EverydayWallets: Page = () => (
       <CatCard bg={pink} title="📱 行動優先新勢力" names="Fluidkey · Peanut · Payy" />
       <CatCard bg={green} title="🏦 交易所錢包" names="Coinbase · Binance · OKX · Bybit · Bitget" />
     </div>
+    <PageRefs>ethereum.org/wallets/find-wallet</PageRefs>
   </div>
 );
 
@@ -588,6 +607,7 @@ const AAWallets: Page = () => (
         曾經的玩家：<B c={blue}>Privy · Dynamic · ZeroDev</B>
       </Bullet>
     </div>
+    <PageRefs>eips.ethereum.org（EIP-4337 · EIP-7702）· vocus.cc</PageRefs>
   </div>
 );
 
@@ -626,6 +646,7 @@ const AgenticWallets: Page = () => (
         玩家：<B c={pink}>Circle · Coinbase · Cloudflare · MetaMask</B>
       </Bullet>
     </div>
+    <PageRefs>narval.xyz · fireblocks.com · theblock.co</PageRefs>
   </div>
 );
 
@@ -889,6 +910,7 @@ const EvolutionFlowA: Page = () => (
         </div>
       </Step>
     </Steps>
+    <PageRefs>ethereum.org/wallets</PageRefs>
   </div>
 );
 EvolutionFlowA.transition = morphTransition;
@@ -932,6 +954,7 @@ const EvolutionFlowMid: Page = () => (
         </div>
       </Step>
     </Steps>
+    <PageRefs>vocus.cc · vitalik.eth.limo · therollup.co</PageRefs>
   </div>
 );
 EvolutionFlowMid.transition = morphTransition;
@@ -989,6 +1012,7 @@ const EvolutionFlowB: Page = () => (
         </div>
       </Step>
     </Steps>
+    <PageRefs>theblock.co · coinbase.com · token.im</PageRefs>
   </div>
 );
 EvolutionFlowB.transition = morphTransition;
@@ -1085,6 +1109,7 @@ const CustodyTimeline: Page = () => (
     >
       而多簽老大哥 <B c={purple}>Safe</B>（前 Gnosis Safe）依然是個人與機構的金庫標配 → 下一章詳談
     </div>
+    <PageRefs>bitgo.com · fireblocks.com</PageRefs>
   </div>
 );
 
@@ -1127,6 +1152,7 @@ const MultisigPlain: Page = () => (
         鏈上<B c={purple}>看得一清二楚</B>：門檻、簽名者、每次改組（P2SH / P2WSH）
       </Bullet>
     </div>
+    <PageRefs>safe.global · spark.money</PageRefs>
   </div>
 );
 
@@ -1165,6 +1191,7 @@ const MpcPlain: Page = () => (
         代表：<B c={pink}>Fireblocks MPC-CMP</B>、<B c={pink}>BitGo MPC-TSS</B>、Coinbase Custody
       </Bullet>
     </div>
+    <PageRefs>fireblocks.com（What is MPC）</PageRefs>
   </div>
 );
 
@@ -1248,6 +1275,7 @@ const Versus: Page = () => (
         </Steps>
       </div>
     </div>
+    <PageRefs>fireblocks.com · spark.money</PageRefs>
   </div>
 );
 
@@ -1305,6 +1333,7 @@ const KeyManagement: Page = () => (
     >
       檯面上是廠商大戰，檯面下是 Brown vs. BU 的學術較勁 XD
     </div>
+    <PageRefs>github.com/silence-laboratories · eprint.iacr.org/2020/492</PageRefs>
   </div>
 );
 
@@ -1367,6 +1396,7 @@ const CmpVsTss: Page = () => (
     >
       殊途同歸：鏈上最後都只是一筆標準單簽 ✍️
     </div>
+    <PageRefs>eprint.iacr.org/2020/492 · github.com/silence-laboratories</PageRefs>
   </div>
 );
 
@@ -1402,6 +1432,7 @@ const FeatureUx: Page = () => (
     >
       好不好用，取決於資產住哪條鏈、誰負責按按鈕
     </div>
+    <PageRefs>fireblocks.com · bitgo.com · safe.global</PageRefs>
   </div>
 );
 
@@ -1451,6 +1482,7 @@ const SecurityShowdown: Page = () => (
     >
       成熟方案通常兩個都用：分層防禦 🛡️
     </div>
+    <PageRefs>embitel.com（TEE vs HSM）</PageRefs>
   </div>
 );
 
@@ -1489,6 +1521,7 @@ const ComplianceShowdown: Page = () => (
     >
       合規等級決定你能服務誰：散戶、企業，還是銀行 🏛️
     </div>
+    <PageRefs>hackmd.io（Compliance Need）· fireblocks.com</PageRefs>
   </div>
 );
 
@@ -1524,6 +1557,7 @@ const MpcBonus: Page = () => (
     >
       ⚠️ 但注意：服務商若握有足夠碎片，<span style={{ color: yellow }}>本質上還是託管</span>（custodial）
     </div>
+    <PageRefs>fireblocks.com（7 Reasons Why MPC）</PageRefs>
   </div>
 );
 
@@ -1588,6 +1622,7 @@ const PersonalGuide: Page = () => (
         <B c={green}>加分題</B> → AA 錢包 social recovery，「弄丟助記詞」變可救
       </Bullet>
     </div>
+    <PageRefs>ethereum.org/wallets/find-wallet</PageRefs>
   </div>
 );
 
@@ -1623,6 +1658,7 @@ const TeamGuide: Page = () => (
     >
       靈魂拷問：誰握有足夠的鑰匙（或碎片），誰就是真正的託管方 🔑
     </div>
+    <PageRefs>safe.global · fireblocks.com</PageRefs>
   </div>
 );
 
