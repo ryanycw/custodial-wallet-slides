@@ -1369,22 +1369,9 @@ const CmpVsTss: Page = () => (
         rows={
           <>
             <VsRow dot={pink}>Paillier 同態加密算跨項相乘</VsRow>
-            <VsRow dot={pink}>全程附 ZK proof：防超界、防作弊</VsRow>
+            <VsRow dot={pink}>全程附 ZK proof：防超界作弊</VsRow>
             <VsRow dot={pink}>線上 1 round 出簽（離線預算 3 rounds）</VsRow>
             <VsRow dot={pink}>Proactive refresh：碎片定期洗牌</VsRow>
-            <div
-              style={{
-                marginTop: 12,
-                background: ink,
-                color: '#ffffff',
-                borderRadius: 14,
-                padding: '16px 24px',
-                fontSize: 26,
-                fontWeight: 800,
-              }}
-            >
-              📶 頻寬低 15 KB/方 · 🧮 運算重（秒級）
-            </div>
           </>
         }
       />
@@ -1397,19 +1384,6 @@ const CmpVsTss: Page = () => (
             <VsRow dot={ink}>EC 驗證點做 Statistical Consistency Checks</VsRow>
             <VsRow dot={ink}>2019 年 6 rounds → 2023 年 3 rounds</VsRow>
             <VsRow dot={ink}>與 Silence Labs 合作打造</VsRow>
-            <div
-              style={{
-                marginTop: 12,
-                background: ink,
-                color: '#ffffff',
-                borderRadius: 14,
-                padding: '16px 24px',
-                fontSize: 26,
-                fontWeight: 800,
-              }}
-            >
-              📶 頻寬高 49 KB/方 · 🧮 運算輕（毫秒級）
-            </div>
           </>
         }
       />
@@ -1444,7 +1418,7 @@ const PerfShowdown: Page = () => (
         title="MPC-CMP（Fireblocks）"
         rows={
           <>
-            <VsRow dot={pink}>頻寬較低：每方約 15 KB</VsRow>
+            <VsRow dot={pink}>頻寬較低：每 party 約 15 KB</VsRow>
             <VsRow dot={pink}>運算較重：秒級（Paillier 大數運算）</VsRow>
           </>
         }
@@ -1454,7 +1428,7 @@ const PerfShowdown: Page = () => (
         title="MPC-TSS / DKLs（BitGo）"
         rows={
           <>
-            <VsRow dot={ink}>頻寬較高：每方約 49 KB</VsRow>
+            <VsRow dot={ink}>頻寬較高：每 party 約 49 KB</VsRow>
             <VsRow dot={ink}>運算較輕：毫秒級（EC 運算為主）</VsRow>
           </>
         }

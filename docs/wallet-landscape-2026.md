@@ -316,7 +316,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 **MPC-CMP（Fireblocks・米色卡）**
 - Paillier 同態加密算跨項相乘
-- 全程附 ZK proof：防超界、防作弊
+- 全程附 ZK proof：防超界作弊
 - 線上 1 round 出簽（離線預算 3 rounds）
 - Proactive refresh：碎片定期洗牌
 
@@ -325,10 +325,6 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 - EC 驗證點做 Statistical Consistency Checks
 - 2019 年 6 rounds → 2023 年 3 rounds
 - 與 Silence Labs 合作打造
-
-兩張卡底部各有一條**黑底突顯列**：
-- CMP：📶 頻寬低 15 KB/方 · 🧮 運算重（秒級）
-- DKLs：📶 頻寬高 49 KB/方 · 🧮 運算輕（毫秒級）
 
 > 【黑色橫幅】殊途同歸：鏈上都只是標準單簽 ✍️ — 而且兩邊都有開源實作
 
@@ -341,11 +337,11 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 ## Page 29 · 加映場 II：效能對決（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
-- 頻寬較低：每方約 15 KB
+- 頻寬較低：每 party 約 15 KB
 - 運算較重：秒級（Paillier 大數運算）
 
 **MPC-TSS / DKLs（BitGo・黃卡）**
-- 頻寬較高：每方約 49 KB
+- 頻寬較高：每 party 約 49 KB
 - 運算較輕：毫秒級（EC 運算為主）
 
 > 【黑色橫幅】🐢 數據難以一比一比較，但瓶頸從來不是 MPC — 合格託管卡在人工審核與法遵檢查
