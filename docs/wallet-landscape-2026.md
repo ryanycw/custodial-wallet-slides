@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 27 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 37 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 
@@ -60,7 +60,66 @@
 
 ---
 
-## Page 6 · 新物種 I：帳戶抽象 AA
+## Page 6 · EF 的新論述：Infinite Garden【圖】
+
+- Lead：隨著生態百花齊放，以太坊基金會開啟一個新敘事
+- 圖：`assets/Infinite Garden.png`（來源標註：Ethereum Foundation）
+
+---
+
+## Page 7 · 迎接 L2-Centric 時代【圖】
+
+- 三顆膠囊：`流動性破碎`（藍）｜`相容性問題`（紫）｜`UX 很差`（粉）
+- 圖：`assets/53L2s.png`
+
+> 參考：[DefiLlama — Ethereum chains](https://defillama.com/chains/ethereum)
+
+---
+
+## Page 8 · 大 Abstraction 時代【圖】
+
+- Lead：L2 大戰之後，大家開始重新思考既有的解法
+- 圖：`assets/JacksonPollock.png`
+
+---
+
+## Page 9 · 迎來 Mass Adoption 年代【圖】
+
+- Lead：所有東西都要 Abstraction
+- 圖：`assets/Ethereum is different.png`
+
+> 參考：[Vitalik: Layer 2s as cultural extensions of Ethereum](https://vitalik.eth.limo/general/2024/05/29/l2culture.html)
+
+---
+
+## Page 10 · 發展出各種技術和產品【圖】
+
+- Lead：Chain Abstraction 的生態地圖
+- 圖：`assets/CAStack.png`
+
+> 參考：[The Rollup: Chain Abstraction Market Map](https://therollup.co/research/chain-abstraction-market-map-and-ecosystem-overivew)
+
+---
+
+## Page 11 · 開始收斂：Abstraction 要解決什麼【圖】
+
+- Lead：接下來幾年，各家想解的問題漸漸對齊
+- 圖：`assets/Abstraction Problems.png`
+
+> 參考：[@AustinKing 推文](https://x.com/AustinKing/status/1841599481344606498)
+
+---
+
+## Page 12 · 看不完的 L2？交給 L2Beat【截圖 Placeholder】
+
+- 目前放的是 `ImagePlaceholder`（提示：L2Beat 首頁截圖）— 到 dev UI 的 Assets 面板上傳截圖替換
+- 右下標註：l2beat.com
+
+> 參考：[L2Beat](https://l2beat.com/)
+
+---
+
+## Page 13 · 新物種 I：帳戶抽象 AA
 
 > 【藍色橫幅】「帳戶不再是一把私鑰，而是一個可編程的合約」
 
@@ -73,7 +132,7 @@
 
 ---
 
-## Page 7 · 新物種 II：Agentic 錢包
+## Page 14 · 新物種 II：Agentic 錢包
 
 > 【粉色橫幅】「人類設規則，AI 自己花錢」
 
@@ -88,7 +147,15 @@
 
 ---
 
-## Page 8 · 演化上半場：私鑰的分岔路（分岔流程圖・逐步顯示）
+## Page 15 · AA 也從 Account 變成 Agentic【圖】
+
+- 圖：`assets/From AA to Agentic.png`
+
+> 參考：[@elytro_eth 推文](https://x.com/elytro_eth/status/1579224421403070464)
+
+---
+
+## Page 16 · 演化上半場：私鑰的分岔路（分岔流程圖・逐步顯示）
 
 橫向分岔圖：CLI / Mist 起點 → 分岔成兩條路 → Extension 那條路長出 AA。
 AA 節點會用 morph 動畫「滑」到下一頁，兩頁形成連貫 timeline。
@@ -104,7 +171,7 @@ AA 節點會用 morph 動畫「滑」到下一頁，兩頁形成連貫 timeline�
 
 ---
 
-## Page 9 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
+## Page 17 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
 
 AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
@@ -117,7 +184,24 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 10 · 支線任務：機構託管進化史（時間軸・逐步顯示）
+## Page 18 · 錢包界的 L2Beat：Walletbeat【圖】
+
+- Lead：把各家錢包一字排開，逐項檢視功能與去中心化程度
+- 圖：`assets/Walletbeat.png`
+
+> 參考：[@walletbeat 推文](https://x.com/walletbeat/status/2088497593940606991) · [beta.walletbeat.eth.limo](https://beta.walletbeat.eth.limo/)
+
+---
+
+## Page 19 · Self Custody 漸漸式微？【圖】
+
+- Lead：UX 與 Mass Adoption 的浪潮下，自我保管越來越小眾
+- 圖：`assets/Self Custody.png`（原檔名含 `???` 已改名，`?` 會讓打包工具誤判）
+- 承接下一頁：機構託管進化史
+
+---
+
+## Page 20 · 支線任務：機構託管進化史（時間軸・逐步顯示）
 
 | 年份 | 事件 | 說明 |
 |------|------|------|
@@ -130,7 +214,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 11 · Part 2 章節頁【紫底】
+## Page 21 · Part 2 章節頁【紫底】
 
 - PART 02
 - 主標：Multisig vs. MPC 白話文
@@ -138,7 +222,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 12 · Multisig：多把鑰匙開一個保險箱
+## Page 22 · Multisig：多把鑰匙開一個保險箱
 
 > 【紫色橫幅】「保險箱配 N 把鑰匙，開箱要同時湊滿 M 把」
 
@@ -150,7 +234,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 13 · MPC：一把鑰匙磨成碎片
+## Page 23 · MPC：一把鑰匙磨成碎片
 
 > 【粉色橫幅】「完整私鑰，從頭到尾都沒存在過」
 
@@ -163,7 +247,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 14 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
+## Page 24 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
 
 **Multisig 的痛點（米色卡）**
 - 每條鏈實作不同，跨鏈不通用
@@ -181,7 +265,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 15 · Multisig vs. MPC 大評比：四個維度
+## Page 25 · Multisig vs. MPC 大評比：四個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -192,7 +276,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 16 · 大評比 ①：Key Management
+## Page 26 · 大評比 ①：Key Management
 
 - **BitGo × Silence Labs**：採 DKLs 協議，走 MPC-TSS 路線
 - 執筆人 Jack Doerner、Yashvanth Kondi — **Brown / Northeastern** 學派
@@ -204,7 +288,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 17 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
+## Page 27 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
 - Paillier 同態加密處理跨項相乘
@@ -222,7 +306,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 18 · 大評比 ②：Feature & UX
+## Page 28 · 大評比 ②：Feature & UX
 
 - **Fireblocks**：政策引擎長在託管層，直通交易所 / OTC 流動性
 - **BitGo**：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
@@ -234,7 +318,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 19 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 29 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -252,7 +336,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 20 · 大評比 ④：Compliance Level
+## Page 30 · 大評比 ④：Compliance Level
 
 - **基本盤**：牌照、KYC / CDD、AML 交易監控、Travel Rule
 - **進階**：資產隔離、儲備證明（PoR）、稅務申報
@@ -265,7 +349,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 21 · MPC 加分題：還是講白話
+## Page 31 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -277,7 +361,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 22 · Part 3 章節頁【綠底】
+## Page 32 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -285,7 +369,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 23 · 挑錢包前，先問三個維度
+## Page 33 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -295,7 +379,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 24 · 個人指南：看金額對號入座
+## Page 34 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -306,7 +390,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 25 · 團隊指南：透明 or 靈活，選一邊
+## Page 35 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -318,7 +402,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 26 · Closing「帶走三件事 🎒」【黃底】
+## Page 36 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -328,7 +412,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 27 · 特別感謝【粉底】
+## Page 37 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐

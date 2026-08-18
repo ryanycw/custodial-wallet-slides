@@ -1,6 +1,15 @@
 import type { ReactNode } from 'react';
 import type { DesignSystem, Page, SlideMeta, SlideTransition } from '@open-slide/core';
-import { MorphElement, Step, Steps } from '@open-slide/core';
+import { ImagePlaceholder, MorphElement, Step, Steps } from '@open-slide/core';
+import imgInfiniteGarden from '@assets/Infinite Garden.png';
+import img53L2s from '@assets/53L2s.png';
+import imgJacksonPollock from '@assets/JacksonPollock.png';
+import imgEthereumIsDifferent from '@assets/Ethereum is different.png';
+import imgCAStack from '@assets/CAStack.png';
+import imgAbstractionProblems from '@assets/Abstraction Problems.png';
+import imgFromAAToAgentic from '@assets/From AA to Agentic.png';
+import imgWalletbeat from '@assets/Walletbeat.png';
+import imgSelfCustody from '@assets/Self Custody.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#ffffff', text: '#111111', accent: '#fe5100' },
@@ -335,6 +344,192 @@ const EverydayWallets: Page = () => (
   </div>
 );
 
+/* ------------------------------------------------ Image-led pages (shared layout) */
+
+const ImageSlide = ({
+  title,
+  lead,
+  img,
+  cap,
+  chips,
+}: {
+  title: ReactNode;
+  lead?: string;
+  img: string;
+  cap?: string;
+  chips?: ReactNode;
+}) => (
+  <div
+    style={{
+      ...fill,
+      background: 'var(--osd-bg)',
+      color: 'var(--osd-text)',
+      padding: '90px 100px',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <h2
+      style={{
+        fontFamily: 'var(--osd-font-display)',
+        fontSize: 64,
+        fontWeight: 900,
+        margin: 0,
+        lineHeight: 1.2,
+        letterSpacing: -1,
+      }}
+    >
+      {title}
+    </h2>
+    {lead ? (
+      <p style={{ fontSize: 32, fontWeight: 600, color: muted, margin: '24px 0 0' }}>{lead}</p>
+    ) : null}
+    {chips ? <div style={{ display: 'flex', gap: 20, marginTop: 28 }}>{chips}</div> : null}
+    <div
+      style={{
+        flex: 1,
+        minHeight: 0,
+        marginTop: 36,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <img
+        src={img}
+        style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 16 }}
+      />
+    </div>
+    {cap ? (
+      <div style={{ marginTop: 20, fontSize: 22, fontWeight: 600, color: muted, textAlign: 'right' }}>
+        {cap}
+      </div>
+    ) : null}
+  </div>
+);
+
+/* ------------------------------------------------ Ecosystem era pages */
+
+const InfiniteGarden: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        EF 的新論述：<span style={{ color: green }}>Infinite Garden</span>
+      </>
+    }
+    lead="隨著生態百花齊放，以太坊基金會開啟一個新敘事"
+    img={imgInfiniteGarden}
+    cap="來源：Ethereum Foundation"
+  />
+);
+
+const L2Centric: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        迎接 <span style={{ color: blue }}>L2-Centric</span> 時代
+      </>
+    }
+    img={img53L2s}
+    cap="來源：defillama.com/chains/ethereum"
+    chips={
+      <>
+        <Pill bg={blue}>流動性破碎</Pill>
+        <Pill bg={purple}>相容性問題</Pill>
+        <Pill bg={pink}>UX 很差</Pill>
+      </>
+    }
+  />
+);
+
+const AbstractionEra: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        大 <span style={{ color: purple }}>Abstraction</span> 時代
+      </>
+    }
+    lead="L2 大戰之後，大家開始重新思考既有的解法"
+    img={imgJacksonPollock}
+  />
+);
+
+const MassAdoption: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        迎來 <span style={{ color: pink }}>Mass Adoption</span> 年代
+      </>
+    }
+    lead="所有東西都要 Abstraction"
+    img={imgEthereumIsDifferent}
+    cap="來源：vitalik.eth.limo — Layer 2s as cultural extensions of Ethereum"
+  />
+);
+
+const CAStack: Page = () => (
+  <ImageSlide
+    title="發展出各種技術和產品"
+    lead="Chain Abstraction 的生態地圖"
+    img={imgCAStack}
+    cap="來源：therollup.co — Chain Abstraction Market Map"
+  />
+);
+
+const AbstractionProblems: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        開始收斂：<span style={{ color: purple }}>Abstraction 要解決什麼</span>
+      </>
+    }
+    lead="接下來幾年，各家想解的問題漸漸對齊"
+    img={imgAbstractionProblems}
+    cap="來源：@AustinKing"
+  />
+);
+
+const L2BeatPage: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: 'var(--osd-bg)',
+      color: 'var(--osd-text)',
+      padding: '90px 100px',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <h2
+      style={{
+        fontFamily: 'var(--osd-font-display)',
+        fontSize: 64,
+        fontWeight: 900,
+        margin: 0,
+        lineHeight: 1.2,
+        letterSpacing: -1,
+      }}
+    >
+      看不完的 L2？交給 <span style={{ color: blue }}>L2Beat</span>
+    </h2>
+    <div
+      style={{
+        flex: 1,
+        minHeight: 0,
+        marginTop: 36,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <ImagePlaceholder hint="L2Beat 首頁截圖（l2beat.com）" />
+    </div>
+    <div style={{ marginTop: 20, fontSize: 22, fontWeight: 600, color: muted, textAlign: 'right' }}>
+      l2beat.com
+    </div>
+  </div>
+);
+
 /* ------------------------------------------------ 06 · AA wallets */
 
 const AAWallets: Page = () => (
@@ -421,6 +616,21 @@ const AgenticWallets: Page = () => (
       而多簽老大哥 <B c={purple}>Safe</B>（前 Gnosis Safe）依然是金庫標配 → 下一章詳談
     </div>
   </div>
+);
+
+/* ------------------------------------------------ From AA to Agentic */
+
+const AAToAgentic: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        AA 也從 <span style={{ color: blue }}>Account</span> 變成{' '}
+        <span style={{ color: pink }}>Agentic</span>
+      </>
+    }
+    img={imgFromAAToAgentic}
+    cap="來源：@elytro_eth"
+  />
 );
 
 /* ------------------------------------------------ 08–09 · Evolution flow (branching timeline, morph-linked) */
@@ -702,6 +912,33 @@ const EvolutionFlowB: Page = () => (
   </div>
 );
 EvolutionFlowB.transition = morphTransition;
+
+/* ------------------------------------------------ Walletbeat & self-custody */
+
+const WalletbeatPage: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        錢包界的 L2Beat：<span style={{ color: green }}>Walletbeat</span>
+      </>
+    }
+    lead="把各家錢包一字排開，逐項檢視功能與去中心化程度"
+    img={imgWalletbeat}
+    cap="來源：@walletbeat · beta.walletbeat.eth.limo"
+  />
+);
+
+const SelfCustodyFading: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        <span style={{ color: purple }}>Self Custody</span> 漸漸式微？
+      </>
+    }
+    lead="UX 與 Mass Adoption 的浪潮下，自我保管越來越小眾"
+    img={imgSelfCustody}
+  />
+);
 
 /* ------------------------------------------------ 07 · Custody timeline */
 
@@ -1410,10 +1647,20 @@ export default [
   Divider1,
   EarlyEra,
   EverydayWallets,
+  InfiniteGarden,
+  L2Centric,
+  AbstractionEra,
+  MassAdoption,
+  CAStack,
+  AbstractionProblems,
+  L2BeatPage,
   AAWallets,
   AgenticWallets,
+  AAToAgentic,
   EvolutionFlowA,
   EvolutionFlowB,
+  WalletbeatPage,
+  SelfCustodyFading,
   CustodyTimeline,
   Divider2,
   MultisigPlain,
