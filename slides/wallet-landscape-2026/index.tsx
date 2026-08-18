@@ -585,7 +585,7 @@ const AAWallets: Page = () => (
         <B c={blue}>Social recovery</B>：手機掉了找朋友救，不用抄 24 個單字
       </Bullet>
       <Bullet dot={blue}>
-        玩家：<B c={blue}>Privy · Dynamic · ZeroDev</B>
+        曾經的玩家：<B c={blue}>Privy · Dynamic · ZeroDev</B>
       </Bullet>
     </div>
   </div>

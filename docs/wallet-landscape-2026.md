@@ -131,7 +131,7 @@
 - **EIP-4337 / 3074 / 7702**：把 EOA 一步步升級成智能帳戶
 - 免助記詞、**gas 代付**、批次交易、passkey 登入
 - **Social recovery**：手機掉了找朋友救，不用抄 24 個單字
-- 玩家：**Privy · Dynamic · ZeroDev**
+- 曾經的玩家：**Privy · Dynamic · ZeroDev**
 
 > 參考：[EIP-4337](https://eips.ethereum.org/EIPS/eip-4337) · [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702)
 
