@@ -250,6 +250,8 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 - 代表：**Safe**（EVM 標配）、**BitGo 2-of-3**（機構鼻祖，也有 MPC 版）
 - 鏈上**看得一清二楚**：門檻、簽名者、每次改組（P2SH / P2WSH）
 
+**Speaker Notes**：P2SH / P2WSH = 比特幣的「腳本式付款」格式，花錢時要攤開完整規則給全網驗證，所以門檻與簽名者全公開 — 正是 MPC「門檻隱形」的對比點。
+
 > 參考：[Safe: Best Wallets for Institutions](https://safe.global/blog/the-best-crypto-wallets-for-institutions) · [Spark: MPC vs Multisig Custody](https://www.spark.money/research/bitcoin-mpc-vs-multisig-custody)
 
 ---
@@ -320,14 +322,17 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 **MPC-TSS / DKLs（BitGo・黃卡）**
 - OT 不經意傳輸＋VOLE 驗算，免 Paillier
-- EC 驗證點做統計一致性檢查
+- EC 驗證點做 Statistical Consistency Checks
 - 2019 年 6 rounds → 2023 年 3 rounds
 - 與 Silence Labs 合作打造
 
+兩張卡底部各有一條**黑底突顯列**：
+- CMP：📶 頻寬低 15 KB/方 · 🧮 運算重（秒級）
+- DKLs：📶 頻寬高 49 KB/方 · 🧮 運算輕（毫秒級）
+
 > 【黑色橫幅】殊途同歸：鏈上都只是標準單簽 ✍️ — 而且兩邊都有開源實作
 
-講者備註（ZKP 怎麼介紹）：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大的數字搞破壞（out-of-bound attack）？CMP 要求每則密文都附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。
-講者備註（術語）：VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議；Proactive refresh 是 Paillier 版 keygen 才有的特殊玩法。
+**Speaker Notes（已寫入 slide，presenter mode 按 F 後可見）**：ZKP 介紹話術（密封考卷附防偽章）＋術語（Paillier 做 secret share 同態運算；VOLE 驗證 OT 乘法正確性；proactive refresh 在 CMP 重要因為 Paillier keygen 貴）。
 
 > 參考：[CMP 論文（ePrint 2020/492）](https://eprint.iacr.org/2020/492) · [Silence Labs DKLs23（GitHub）](https://github.com/silence-laboratories/silent-shard-dkls23-ll) · [Fireblocks: What is MPC](https://www.fireblocks.com/report/what-is-mpc)
 

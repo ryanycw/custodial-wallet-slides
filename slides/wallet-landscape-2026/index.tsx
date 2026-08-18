@@ -1372,6 +1372,19 @@ const CmpVsTss: Page = () => (
             <VsRow dot={pink}>全程附 ZK proof：防超界、防作弊</VsRow>
             <VsRow dot={pink}>線上 1 round 出簽（離線預算 3 rounds）</VsRow>
             <VsRow dot={pink}>Proactive refresh：碎片定期洗牌</VsRow>
+            <div
+              style={{
+                marginTop: 12,
+                background: ink,
+                color: '#ffffff',
+                borderRadius: 14,
+                padding: '16px 24px',
+                fontSize: 26,
+                fontWeight: 800,
+              }}
+            >
+              📶 頻寬低 15 KB/方 · 🧮 運算重（秒級）
+            </div>
           </>
         }
       />
@@ -1381,9 +1394,22 @@ const CmpVsTss: Page = () => (
         rows={
           <>
             <VsRow dot={ink}>OT 不經意傳輸＋VOLE 驗算，免 Paillier</VsRow>
-            <VsRow dot={ink}>EC 驗證點做統計一致性檢查</VsRow>
+            <VsRow dot={ink}>EC 驗證點做 Statistical Consistency Checks</VsRow>
             <VsRow dot={ink}>2019 年 6 rounds → 2023 年 3 rounds</VsRow>
             <VsRow dot={ink}>與 Silence Labs 合作打造</VsRow>
+            <div
+              style={{
+                marginTop: 12,
+                background: ink,
+                color: '#ffffff',
+                borderRadius: 14,
+                padding: '16px 24px',
+                fontSize: 26,
+                fontWeight: 800,
+              }}
+            >
+              📶 頻寬高 49 KB/方 · 🧮 運算輕（毫秒級）
+            </div>
           </>
         }
       />
@@ -1819,6 +1845,49 @@ const Thanks: Page = () => (
     </div>
   </div>
 );
+
+// Presenter-mode speaker notes — one entry per page, aligned with the export default order.
+export const notes: (string | undefined)[] = [
+  undefined, // 01 Cover
+  undefined, // 02 Agenda
+  undefined, // 03 Part 1 divider
+  undefined, // 04 早期時代
+  undefined, // 05 四大流派
+  undefined, // 06 Infinite Garden
+  undefined, // 07 Mass Adoption
+  undefined, // 08 L2-Centric
+  undefined, // 09 大 Abstraction 時代
+  undefined, // 10 CA Stack
+  undefined, // 11 Abstraction Problems
+  undefined, // 12 L2Beat
+  undefined, // 13 AA
+  undefined, // 14 Agentic
+  undefined, // 15 From AA to Agentic
+  undefined, // 16 演化上半場
+  undefined, // 17 演化中場
+  undefined, // 18 演化下半場
+  undefined, // 19 Walletbeat
+  undefined, // 20 Self Custody
+  undefined, // 21 機構託管進化史
+  undefined, // 22 Part 2 divider
+  'P2SH / P2WSH 白話：比特幣的「腳本式付款」格式 — 錢付給一段規則（腳本）的雜湊，開箱花錢時必須攤開完整規則（哪三把公鑰、湊滿幾個簽名）給全網驗證。P2SH 是 2012 年 BIP-16、地址 3 開頭；P2WSH 是 SegWit 升級版、bc1q 開頭，手續費更便宜，但門檻與簽名者照樣全公開。這正是下一頁 MPC「門檻隱形」的對比點。', // 23 Multisig 白話文
+  undefined, // 24 MPC 白話文
+  undefined, // 25 正面對決
+  undefined, // 26 大評比總覽
+  'DKLs = Doerner · Kondi · Lee · shelat（Brown / Northeastern 系）；CMP = Canetti · Makriyannis · Peled（Boston University）。兩個協議名都是作者姓氏縮寫 — 可以開玩笑說檯面上是 BitGo vs Fireblocks，檯面下是密碼學家的校際較勁。', // 27 Key Management
+  'ZKP 怎麼講：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大數字搞破壞（out-of-bound attack）？CMP 要求每則密文附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。術語：Paillier 在做 secret share 的同態運算；VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議。Proactive refresh 在 CMP 中相對重要，因為 Paillier 的 key generation 運算成本較高。', // 28 CMP vs TSS
+  '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 29 效能對決
+  undefined, // 30 Feature & UX
+  undefined, // 31 TEE vs HSM
+  undefined, // 32 Compliance
+  undefined, // 33 MPC 加分題
+  undefined, // 34 Part 3 divider
+  undefined, // 35 三維度
+  undefined, // 36 個人指南
+  undefined, // 37 團隊指南
+  undefined, // 38 Closing
+  undefined, // 39 Thanks
+];
 
 export const meta: SlideMeta = {
   title: '2026 錢包大盤點',
