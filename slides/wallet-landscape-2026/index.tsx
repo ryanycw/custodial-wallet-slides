@@ -423,77 +423,114 @@ const AgenticWallets: Page = () => (
   </div>
 );
 
-/* ------------------------------------------------ 08 · Evolution flow */
+/* ------------------------------------------------ 08 · Evolution flow (horizontal) */
 
-const EraRow = ({ bg, name, desc }: { bg: string; name: string; desc: string }) => (
-  <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-    <span
+const FlowCard = ({
+  bg,
+  emoji,
+  name,
+  years,
+  desc,
+  pain,
+}: {
+  bg: string;
+  emoji: string;
+  name: string;
+  years: string;
+  desc: string;
+  pain?: string;
+}) => (
+  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24, minWidth: 0 }}>
+    <div
       style={{
         background: bg,
         color: '#ffffff',
-        borderRadius: 999,
-        padding: '8px 26px',
-        fontSize: 30,
-        fontWeight: 800,
-        flexShrink: 0,
+        borderRadius: 'var(--osd-radius)',
+        padding: '40px 28px',
+        height: 360,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        gap: 18,
       }}
     >
-      {name}
-    </span>
-    <span style={{ fontSize: 30 }}>{desc}</span>
+      <div style={{ fontSize: 60, lineHeight: 1 }}>{emoji}</div>
+      <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: 34, fontWeight: 900, lineHeight: 1.2 }}>
+        {name}
+      </div>
+      <div
+        style={{
+          fontSize: 22,
+          fontWeight: 800,
+          background: 'rgba(255,255,255,0.22)',
+          borderRadius: 999,
+          padding: '6px 20px',
+        }}
+      >
+        {years}
+      </div>
+      <div style={{ fontSize: 25, lineHeight: 1.45, opacity: 0.95 }}>{desc}</div>
+    </div>
+    {pain ? (
+      <div style={{ fontSize: 23, lineHeight: 1.45, fontWeight: 700, color: muted, textAlign: 'center' }}>
+        ⚡ {pain}
+      </div>
+    ) : (
+      <div style={{ fontSize: 23, lineHeight: 1.45, fontWeight: 800, color: green, textAlign: 'center' }}>
+        🚀 現在進行式
+      </div>
+    )}
   </div>
 );
 
-const PainRow = ({ children }: { children: ReactNode }) => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: 16,
-      marginLeft: 32,
-      color: muted,
-      fontSize: 26,
-      fontWeight: 600,
-    }}
-  >
-    <span>↓</span>
-    <span>⚡ 痛點：{children}</span>
-  </div>
+const FlowArrow = () => (
+  <div style={{ fontSize: 46, fontWeight: 900, color: ink, marginTop: 155, flexShrink: 0 }}>→</div>
 );
 
 const EvolutionFlow: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '110px 100px' }}>
     <Heading>
       一張圖看懂：<span style={{ color: blue }}>痛點推著錢包演化</span>
     </Heading>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 22, marginTop: 48 }}>
-      <Steps>
-        <EraRow bg={ink} name="⌨️ CLI / Mist" desc="2009–2016：一切靠指令列與桌面錢包" />
-        <Step>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <PainRow>難用到勸退普通人，跟不上多鏈與 DeFi</PainRow>
-            <EraRow bg={blue} name="🧩 擴充 & 硬體" desc="2016–：MetaMask 讓人人能上鏈" />
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <PainRow>一把私鑰單點風險，助記詞一丟全歸零</PainRow>
-            <EraRow bg={purple} name="🔐 Multisig" desc="2017–：多把鑰匙互相制衡（Safe）" />
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <PainRow>跨鏈不通用、改組要上鏈、流程死板</PainRow>
-            <EraRow bg={pink} name="🧮 MPC & AA" desc="2019–：碎片化私鑰＋合約帳戶救 UX" />
-          </div>
-        </Step>
-        <Step>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <PainRow>安全搞定了，但還是要人盯著按簽名</PainRow>
-            <EraRow bg={green} name="🤖 Agentic" desc="2025–：AI 代理自己管錢包、自動執行" />
-          </div>
-        </Step>
-      </Steps>
+    <div style={{ display: 'flex', gap: 20, marginTop: 72, alignItems: 'flex-start' }}>
+      <FlowCard
+        bg={ink}
+        emoji="⌨️"
+        name="CLI / Mist"
+        years="2009–2016"
+        desc="指令列與桌面錢包"
+        pain="難用勸退普通人，跟不上多鏈 DeFi"
+      />
+      <FlowArrow />
+      <FlowCard
+        bg={blue}
+        emoji="🧩"
+        name="擴充 & 硬體"
+        years="2016–"
+        desc="MetaMask 讓人人能上鏈"
+        pain="一把私鑰單點風險，助記詞丟了歸零"
+      />
+      <FlowArrow />
+      <FlowCard
+        bg={purple}
+        emoji="🔐"
+        name="Multisig"
+        years="2017–"
+        desc="多把鑰匙互相制衡（Safe）"
+        pain="跨鏈不通用，改組還要上鏈"
+      />
+      <FlowArrow />
+      <FlowCard
+        bg={pink}
+        emoji="🧮"
+        name="MPC & AA"
+        years="2019–"
+        desc="碎片私鑰＋合約帳戶救 UX"
+        pain="安全搞定了，但還是要人按簽名"
+      />
+      <FlowArrow />
+      <FlowCard bg={green} emoji="🤖" name="Agentic" years="2025–" desc="AI 代理自己管錢包、自動執行" />
     </div>
   </div>
 );
