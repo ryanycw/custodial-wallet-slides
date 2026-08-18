@@ -626,18 +626,6 @@ const AgenticWallets: Page = () => (
         玩家：<B c={pink}>Circle · Coinbase · Cloudflare · MetaMask</B>
       </Bullet>
     </div>
-    <div
-      style={{
-        marginTop: 44,
-        background: '#f4f1ea',
-        borderRadius: 'var(--osd-radius)',
-        padding: '24px 44px',
-        fontSize: 28,
-        fontWeight: 600,
-      }}
-    >
-      而多簽老大哥 <B c={purple}>Safe</B>（前 Gnosis Safe）依然是金庫標配 → 下一章詳談
-    </div>
   </div>
 );
 
@@ -1084,6 +1072,18 @@ const CustodyTimeline: Page = () => (
           </div>
         </Step>
       </Steps>
+    </div>
+    <div
+      style={{
+        marginTop: 56,
+        background: '#f4f1ea',
+        borderRadius: 'var(--osd-radius)',
+        padding: '24px 44px',
+        fontSize: 28,
+        fontWeight: 600,
+      }}
+    >
+      而多簽老大哥 <B c={purple}>Safe</B>（前 Gnosis Safe）依然是個人與機構的金庫標配 → 下一章詳談
     </div>
   </div>
 );

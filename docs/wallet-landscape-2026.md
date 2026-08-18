@@ -146,8 +146,6 @@
 - 機器對機器的付款協議（如 **x402**）開始成形
 - 玩家：**Circle · Coinbase · Cloudflare · MetaMask**
 
-> 【底部備註】而多簽老大哥 **Safe**（前 Gnosis Safe）依然是金庫標配 → 下一章詳談
-
 > 參考：[Narval](https://www.narval.xyz/) · [Fireblocks: Wallet Infrastructure](https://www.fireblocks.com/blog/wallet-infrastructure-institution-competitive-edge)
 
 ---
@@ -228,6 +226,8 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 | 2013（藍） | BitGo | Multisig 2-of-3 開山，後來也擁抱 MPC-TSS |
 | 2018（紫） | Coinbase Custody | 合規機構託管正式上線 |
 | 現在（綠） | Fireblocks 等 | MPC 成為機構標配（Anchorage · Cobo · Fidelity） |
+
+> 【底部備註】而多簽老大哥 **Safe**（前 Gnosis Safe）依然是個人與機構的金庫標配 → 下一章詳談
 
 > 參考：[BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/) · [Fireblocks: Custody Strategy for Banks](https://www.fireblocks.com/blog/digital-asset-custody-strategy-banks)
 
