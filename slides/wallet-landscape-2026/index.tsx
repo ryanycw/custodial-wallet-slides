@@ -477,17 +477,68 @@ const CAStack: Page = () => (
   />
 );
 
+const ProblemRow = ({ dot, children }: { dot: string; children: ReactNode }) => (
+  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20 }}>
+    <span style={{ width: 18, height: 18, borderRadius: 999, background: dot, flexShrink: 0, marginTop: 13 }} />
+    <span style={{ fontSize: 30, lineHeight: 1.45 }}>{children}</span>
+  </div>
+);
+
 const AbstractionProblems: Page = () => (
-  <ImageSlide
-    title={
-      <>
-        開始收斂：<span style={{ color: purple }}>Abstraction 要解決什麼</span>
-      </>
-    }
-    lead="接下來幾年，各家想解的問題漸漸對齊"
-    img={imgAbstractionProblems}
-    cap="來源：@AustinKing"
-  />
+  <div
+    style={{
+      ...fill,
+      background: 'var(--osd-bg)',
+      color: 'var(--osd-text)',
+      padding: '90px 100px',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <h2
+      style={{
+        fontFamily: 'var(--osd-font-display)',
+        fontSize: 64,
+        fontWeight: 900,
+        margin: 0,
+        lineHeight: 1.2,
+        letterSpacing: -1,
+      }}
+    >
+      開始收斂：<span style={{ color: purple }}>Abstraction 要解決什麼</span>
+    </h2>
+    <p style={{ fontSize: 32, fontWeight: 600, color: muted, margin: '24px 0 0' }}>
+      接下來幾年，各家想解的問題漸漸對齊成四大塊
+    </p>
+    <div style={{ display: 'flex', gap: 56, marginTop: 36, flex: 1, minHeight: 0 }}>
+      <div style={{ width: 720, display: 'flex', flexDirection: 'column', gap: 30, justifyContent: 'center' }}>
+        <ProblemRow dot={blue}>
+          <B c={blue}>Intents + Solvers</B>：使用者只表達意圖，「怎麼做」交給 solver
+        </ProblemRow>
+        <ProblemRow dot={pink}>
+          <B c={pink}>Account Abstraction</B>：帳戶可編程，簽名與 gas 都能抽象
+        </ProblemRow>
+        <ProblemRow dot={green}>
+          <B c={green}>Interoperability</B>：跨鏈互通，資產與訊息自由移動
+        </ProblemRow>
+        <ProblemRow dot={purple}>
+          <B c={purple}>Alternative DA Networks</B>：更便宜的資料可用性層
+        </ProblemRow>
+        <ProblemRow dot={yellow}>
+          四者的交集，就是 <B c={ink}>Chain Abstraction</B> 的完整拼圖
+        </ProblemRow>
+      </div>
+      <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <img
+          src={imgAbstractionProblems}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 16 }}
+        />
+      </div>
+    </div>
+    <div style={{ marginTop: 20, fontSize: 22, fontWeight: 600, color: muted, textAlign: 'right' }}>
+      來源：@AustinKing
+    </div>
+  </div>
 );
 
 const L2BeatPage: Page = () => (
@@ -645,6 +696,7 @@ const FlowNode = ({
   top,
   w,
   bg,
+  fg = '#ffffff',
   emoji,
   title,
   years,
@@ -654,6 +706,7 @@ const FlowNode = ({
   top: number;
   w: number;
   bg: string;
+  fg?: string;
   emoji: string;
   title: string;
   years: string;
@@ -666,7 +719,7 @@ const FlowNode = ({
       top,
       width: w,
       background: bg,
-      color: '#ffffff',
+      color: fg,
       borderRadius: 'var(--osd-radius)',
       padding: '32px 36px',
       display: 'flex',
@@ -683,7 +736,7 @@ const FlowNode = ({
         alignSelf: 'flex-start',
         fontSize: 20,
         fontWeight: 800,
-        background: 'rgba(255,255,255,0.22)',
+        background: fg === '#ffffff' ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.10)',
         borderRadius: 999,
         padding: '4px 16px',
       }}
@@ -766,6 +819,45 @@ const AANode = ({ left, top }: { left: number; top: number }) => (
   </MorphElement>
 );
 
+// Extension Base node appears on flow pages A and Mid with the same morph id.
+const ExtensionNode = ({ left, top, w }: { left: number; top: number; w: number }) => (
+  <MorphElement id="extension-node">
+    <div
+      style={{
+        position: 'absolute',
+        left,
+        top,
+        width: w,
+        background: blue,
+        color: '#ffffff',
+        borderRadius: 'var(--osd-radius)',
+        padding: '32px 36px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 14,
+      }}
+    >
+      <div style={{ fontSize: 44, lineHeight: 1 }}>🧩</div>
+      <div style={{ fontFamily: 'var(--osd-font-display)', fontSize: 36, fontWeight: 900, lineHeight: 1.2 }}>
+        Extension Base
+      </div>
+      <div
+        style={{
+          alignSelf: 'flex-start',
+          fontSize: 20,
+          fontWeight: 800,
+          background: 'rgba(255,255,255,0.22)',
+          borderRadius: 999,
+          padding: '4px 16px',
+        }}
+      >
+        2016–
+      </div>
+      <div style={{ fontSize: 24, lineHeight: 1.45, opacity: 0.95 }}>MetaMask 世代，日常操作主力</div>
+    </div>
+  </MorphElement>
+);
+
 const EvolutionFlowA: Page = () => (
   <div style={flowStage}>
     <FlowHeading>
@@ -775,7 +867,7 @@ const EvolutionFlowA: Page = () => (
       <FlowNode
         left={100}
         top={420}
-        w={360}
+        w={400}
         bg={ink}
         emoji="⌨️"
         title="CLI / Mist"
@@ -784,22 +876,13 @@ const EvolutionFlowA: Page = () => (
       />
       <Step>
         <div>
-          <FlowLink x1={460} y1={570} x2={630} y2={402} />
-          <FlowLink x1={460} y1={570} x2={630} y2={762} />
+          <FlowLink x1={500} y1={570} x2={890} y2={382} />
+          <FlowLink x1={500} y1={570} x2={890} y2={772} />
+          <ExtensionNode left={900} top={250} w={520} />
           <FlowNode
-            left={640}
-            top={270}
-            w={420}
-            bg={blue}
-            emoji="🧩"
-            title="Extension Base"
-            years="2016–"
-            desc="MetaMask 世代，日常操作主力"
-          />
-          <FlowNode
-            left={640}
-            top={630}
-            w={420}
+            left={900}
+            top={640}
+            w={520}
             bg={purple}
             emoji="🧊"
             title="Cold Wallet"
@@ -809,24 +892,61 @@ const EvolutionFlowA: Page = () => (
           <FlowLabel left={100} top={745}>
             ⚡ 難用，一般人進不來
           </FlowLabel>
-          <FlowLabel left={640} top={915}>
-            🥶 安全，但日常用不動
+          <FlowLabel left={900} top={928}>
+            🥶 安全，但日常用不動（此路到此為止）
           </FlowLabel>
-        </div>
-      </Step>
-      <Step>
-        <div>
-          <FlowLink x1={1060} y1={402} x2={1310} y2={400} />
-          <FlowLabel left={640} top={554}>
-            ⚡ 助記詞＋gas 太勸退人
+          <FlowLabel left={900} top={540}>
+            🌱 生態在這條路上百花齊放 →
           </FlowLabel>
-          <AANode left={1320} top={270} />
         </div>
       </Step>
     </Steps>
   </div>
 );
 EvolutionFlowA.transition = morphTransition;
+
+const EvolutionFlowMid: Page = () => (
+  <div style={flowStage}>
+    <FlowHeading>
+      演化中場：<span style={{ color: purple }}>抽象化的浪潮</span>
+    </FlowHeading>
+    <Steps>
+      <ExtensionNode left={100} top={400} w={420} />
+      <Step>
+        <div>
+          <FlowLink x1={520} y1={532} x2={710} y2={545} />
+          <FlowNode
+            left={720}
+            top={400}
+            w={480}
+            bg={yellow}
+            fg={ink}
+            emoji="🌐"
+            title="L2-Centric 時代"
+            years="2020–"
+            desc="Infinite Garden 開花，53 條 L2 齊發"
+          />
+          <FlowLabel left={100} top={690}>
+            ⚡ 生態百花齊放，鏈越開越多
+          </FlowLabel>
+          <FlowLabel left={720} top={740}>
+            ⚡ 流動性破碎、相容性差、UX 爛
+          </FlowLabel>
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1200} y1={545} x2={1310} y2={532} />
+          <AANode left={1320} top={400} />
+          <FlowLabel left={1320} top={690}>
+            💡 一切都要 Abstraction
+          </FlowLabel>
+        </div>
+      </Step>
+    </Steps>
+  </div>
+);
+EvolutionFlowMid.transition = morphTransition;
 
 const EvolutionFlowB: Page = () => (
   <div style={flowStage}>
@@ -1630,6 +1750,7 @@ export default [
   AgenticWallets,
   AAToAgentic,
   EvolutionFlowA,
+  EvolutionFlowMid,
   EvolutionFlowB,
   WalletbeatPage,
   SelfCustodyFading,

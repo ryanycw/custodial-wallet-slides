@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 37 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 38 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 
@@ -101,10 +101,16 @@
 
 ---
 
-## Page 11 · 開始收斂：Abstraction 要解決什麼【圖】
+## Page 11 · 開始收斂：Abstraction 要解決什麼【左列點＋右圖】
 
-- Lead：接下來幾年，各家想解的問題漸漸對齊
-- 圖：`assets/Abstraction Problems.png`
+- Lead：接下來幾年，各家想解的問題漸漸對齊成四大塊
+- 左側列點（對應圖中四個圓）：
+  - **Intents + Solvers**：使用者只表達意圖，「怎麼做」交給 solver
+  - **Account Abstraction**：帳戶可編程，簽名與 gas 都能抽象
+  - **Interoperability**：跨鏈互通，資產與訊息自由移動
+  - **Alternative DA Networks**：更便宜的資料可用性層
+  - 四者的交集，就是 **Chain Abstraction** 的完整拼圖
+- 右側圖：`assets/Abstraction Problems.png`
 
 > 參考：[@AustinKing 推文](https://x.com/AustinKing/status/1841599481344606498)
 
@@ -156,21 +162,35 @@
 
 ## Page 16 · 演化上半場：私鑰的分岔路（分岔流程圖・逐步顯示）
 
-橫向分岔圖：CLI / Mist 起點 → 分岔成兩條路 → Extension 那條路長出 AA。
-AA 節點會用 morph 動畫「滑」到下一頁，兩頁形成連貫 timeline。
+三頁連貫 timeline 之一：Extension Base 節點會用 morph 動畫「滑」到下一頁。
 
 - 起點：⌨️ **CLI / Mist**（黑卡）2009–2016 — 指令列與桌面錢包，工程師限定
   - ⚡ 痛點：難用，一般人進不來 → 分岔出兩條路
 - 分岔 ①：🧩 **Extension Base**（藍卡）2016– — MetaMask 世代，日常操作主力
+  - 🌱 生態在這條路上百花齊放 →（接下一頁）
 - 分岔 ②：🧊 **Cold Wallet**（紫卡）2014– — Ledger · Trezor，大額冷保管
-  - 🥶 安全，但日常用不動（此路線到此為止）
-- Extension Base → ⚡ 助記詞＋gas 勸退人 → 🪄 **Account Abstraction**（粉卡）2023– — 為了 UX 而生：免助記詞、gas 代付
+  - 🥶 安全，但日常用不動（此路到此為止）
 
-> 參考：[帳戶抽象（AA）與智能合約錢包完整解析（vocus）](https://vocus.cc/article/6a30eb88fd8978000120723c) · [EIP-4337](https://eips.ethereum.org/EIPS/eip-4337)
+> 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/)
 
 ---
 
-## Page 17 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
+## Page 17 · 演化中場：抽象化的浪潮（流程圖・逐步顯示）
+
+承接 Page 6–11 的生態脈絡：Extension Base 從上一頁 morph 滑入左側，AA 再 morph 到下一頁。
+
+- 🧩 **Extension Base**（藍卡，與上一頁同一顆節點）
+  - ⚡ 生態百花齊放，鏈越開越多
+- → 🌐 **L2-Centric 時代**（黃卡）2020– — Infinite Garden 開花，53 條 L2 齊發
+  - ⚡ 流動性破碎、相容性差、UX 爛
+- → 🪄 **Account Abstraction**（粉卡）2023– — 為了 UX 而生：免助記詞、gas 代付
+  - 💡 一切都要 Abstraction
+
+> 參考：[帳戶抽象（AA）與智能合約錢包完整解析（vocus）](https://vocus.cc/article/6a30eb88fd8978000120723c) · [Vitalik: L2 culture](https://vitalik.eth.limo/general/2024/05/29/l2culture.html) · [The Rollup: Chain Abstraction Market Map](https://therollup.co/research/chain-abstraction-market-map-and-ecosystem-overivew)
+
+---
+
+## Page 18 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
 
 AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
@@ -183,7 +203,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 18 · 錢包界的 L2Beat：Walletbeat【圖】
+## Page 19 · 錢包界的 L2Beat：Walletbeat【圖】
 
 - Lead：把各家錢包一字排開，逐項檢視功能與去中心化程度
 - 圖：`assets/Walletbeat.png`
@@ -192,7 +212,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 19 · Self Custody 漸漸式微？【圖】
+## Page 20 · Self Custody 漸漸式微？【圖】
 
 - Lead：UX 與 Mass Adoption 的浪潮下，自我保管越來越小眾
 - 圖：`assets/Self Custody.png`（原檔名含 `???` 已改名，`?` 會讓打包工具誤判）
@@ -200,7 +220,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 20 · 支線任務：機構託管進化史（時間軸・逐步顯示）
+## Page 21 · 支線任務：機構託管進化史（時間軸・逐步顯示）
 
 | 年份 | 事件 | 說明 |
 |------|------|------|
@@ -213,7 +233,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 21 · Part 2 章節頁【紫底】
+## Page 22 · Part 2 章節頁【紫底】
 
 - PART 02
 - 主標：Multisig vs. MPC 白話文
@@ -221,7 +241,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 22 · Multisig：多把鑰匙開一個保險箱
+## Page 23 · Multisig：多把鑰匙開一個保險箱
 
 > 【紫色橫幅】「保險箱配 N 把鑰匙，開箱要同時湊滿 M 把」
 
@@ -233,7 +253,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 23 · MPC：一把鑰匙磨成碎片
+## Page 24 · MPC：一把鑰匙磨成碎片
 
 > 【粉色橫幅】「完整私鑰，從頭到尾都沒存在過」
 
@@ -246,7 +266,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 24 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
+## Page 25 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
 
 **Multisig 的痛點（米色卡）**
 - 每條鏈實作不同，跨鏈不通用
@@ -264,7 +284,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 25 · Multisig vs. MPC 大評比：四個維度
+## Page 26 · Multisig vs. MPC 大評比：四個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -275,7 +295,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 26 · 大評比 ①：Key Management
+## Page 27 · 大評比 ①：Key Management
 
 - **BitGo × Silence Labs**：採 DKLs 協議，走 MPC-TSS 路線
 - 執筆人 Jack Doerner、Yashvanth Kondi — **Brown / Northeastern** 學派
@@ -287,7 +307,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 27 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
+## Page 28 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
 - Paillier 同態加密處理跨項相乘
@@ -305,7 +325,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 28 · 大評比 ②：Feature & UX
+## Page 29 · 大評比 ②：Feature & UX
 
 - **Fireblocks**：政策引擎長在託管層，直通交易所 / OTC 流動性
 - **BitGo**：多簽＋TSS 雙產品線，HSM 保管，UTXO 鏈最硬
@@ -317,7 +337,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 29 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 30 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -335,7 +355,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 30 · 大評比 ④：Compliance Level
+## Page 31 · 大評比 ④：Compliance Level
 
 - **基本盤**：牌照、KYC / CDD、AML 交易監控、Travel Rule
 - **進階**：資產隔離、儲備證明（PoR）、稅務申報
@@ -348,7 +368,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 31 · MPC 加分題：還是講白話
+## Page 32 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -360,7 +380,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 32 · Part 3 章節頁【綠底】
+## Page 33 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -368,7 +388,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 33 · 挑錢包前，先問三個維度
+## Page 34 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -378,7 +398,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 34 · 個人指南：看金額對號入座
+## Page 35 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -389,7 +409,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 35 · 團隊指南：透明 or 靈活，選一邊
+## Page 36 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -401,7 +421,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 36 · Closing「帶走三件事 🎒」【黃底】
+## Page 37 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -411,7 +431,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 37 · 特別感謝【粉底】
+## Page 38 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐
