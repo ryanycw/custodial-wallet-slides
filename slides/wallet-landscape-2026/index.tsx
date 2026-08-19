@@ -234,7 +234,6 @@ const PhotoCall: Page = () => (
     }}
   >
     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 40 }}>
-      <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 6 }}>互動環節 📸</div>
       <h2
         style={{
           fontFamily: 'var(--osd-font-display)',
@@ -248,19 +247,18 @@ const PhotoCall: Page = () => (
         拍照換 Burner！
       </h2>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 28, fontSize: 36, lineHeight: 1.5, fontWeight: 600 }}>
-        <div>🙈 很害羞（哈茲咖西）地請大家幫個忙</div>
-        <div>📷 等等隨手拍拍照 — 不一定要拍我 XD，拍活動也可以</div>
+        <div>🙈 恥ずかしい 請大家幫個忙</div>
+        <div>📷 隨手拍拍照（不一定要拍我）拍活動也可以</div>
         <div>
-          🎁 傳給我，就能跟我<strong style={{ color: pink }}>領一顆 Burner</strong>
+          🎁 傳給我<strong style={{ color: pink }}>換一張 Burner</strong>
         </div>
       </div>
     </div>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, flexShrink: 0 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
       <img
         src={imgTelegram}
-        style={{ width: 560, height: 660, objectFit: 'contain', borderRadius: 24, background: '#ffffff' }}
+        style={{ width: 560, height: 680, objectFit: 'contain', borderRadius: 24, background: '#ffffff' }}
       />
-      <div style={{ fontSize: 30, fontWeight: 800 }}>Telegram 私我 →</div>
     </div>
   </div>
 );
