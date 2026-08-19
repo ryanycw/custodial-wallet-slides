@@ -53,8 +53,8 @@
 | 卡片 | 內容 |
 |------|------|
 | 🧩 瀏覽器擴充（藍） | MetaMask · Rabby · Phantom · Rainbow · Trust |
-| 🧊 硬體冷錢包（紫） | Ledger · Trezor · OneKey · Keystone · imKey |
-| 📱 行動優先新勢力（粉） | Fluidkey · Peanut · Payy |
+| 🧊 硬體冷錢包（紫） | Ledger · Trezor · OneKey · Keystone · imKey · CoolWallet |
+| 📱 行動優先新勢力（粉） | Fluidkey · Peanut · Payy · Burner |
 | 🏦 交易所錢包（綠） | Coinbase · Binance · OKX · Bybit · Bitget |
 
 > 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/)

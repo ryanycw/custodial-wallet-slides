@@ -356,8 +356,8 @@ const EverydayWallets: Page = () => (
       }}
     >
       <CatCard bg={blue} title="🧩 瀏覽器擴充" names="MetaMask · Rabby · Phantom · Rainbow · Trust" />
-      <CatCard bg={purple} title="🧊 硬體冷錢包" names="Ledger · Trezor · OneKey · Keystone · imKey" />
-      <CatCard bg={pink} title="📱 行動優先新勢力" names="Fluidkey · Peanut · Payy" />
+      <CatCard bg={purple} title="🧊 硬體冷錢包" names="Ledger · Trezor · OneKey · Keystone · imKey · CoolWallet" />
+      <CatCard bg={pink} title="📱 行動優先新勢力" names="Fluidkey · Peanut · Payy · Burner" />
       <CatCard bg={green} title="🏦 交易所錢包" names="Coinbase · Binance · OKX · Bybit · Bitget" />
     </div>
     <PageRefs>ethereum.org/wallets/find-wallet</PageRefs>
