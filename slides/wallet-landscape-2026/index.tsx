@@ -811,7 +811,19 @@ const FlowNode = ({
   </div>
 );
 
-const FlowLink = ({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: number }) => {
+const FlowLink = ({
+  x1,
+  y1,
+  x2,
+  y2,
+  dir = 'right',
+}: {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+  dir?: 'right' | 'left' | 'down';
+}) => {
   const pad = 24;
   const left = Math.min(x1, x2) - pad;
   const top = Math.min(y1, y2) - pad;
@@ -822,16 +834,23 @@ const FlowLink = ({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: 
   const bx = x2 - left;
   const by = y2 - top;
   const mx = ax + (bx - ax) / 2;
+  const my = ay + (by - ay) / 2;
+  const path =
+    dir === 'down'
+      ? `M ${ax} ${ay} C ${ax} ${my}, ${bx} ${my}, ${bx} ${by - 12}`
+      : dir === 'left'
+        ? `M ${ax} ${ay} C ${mx} ${ay}, ${mx} ${by}, ${bx + 12} ${by}`
+        : `M ${ax} ${ay} C ${mx} ${ay}, ${mx} ${by}, ${bx - 12} ${by}`;
+  const head =
+    dir === 'down'
+      ? `${bx - 12},${by - 20} ${bx},${by} ${bx + 12},${by - 20}`
+      : dir === 'left'
+        ? `${bx + 20},${by - 12} ${bx},${by} ${bx + 20},${by + 12}`
+        : `${bx - 20},${by - 12} ${bx},${by} ${bx - 20},${by + 12}`;
   return (
     <svg style={{ position: 'absolute', left, top, pointerEvents: 'none' }} width={wdt} height={hgt}>
-      <path
-        d={`M ${ax} ${ay} C ${mx} ${ay}, ${mx} ${by}, ${bx - 12} ${by}`}
-        stroke="#111111"
-        strokeWidth={5}
-        fill="none"
-        strokeLinecap="round"
-      />
-      <polygon points={`${bx - 20},${by - 12} ${bx},${by} ${bx - 20},${by + 12}`} fill="#111111" />
+      <path d={path} stroke="#111111" strokeWidth={5} fill="none" strokeLinecap="round" />
+      <polygon points={head} fill="#111111" />
     </svg>
   );
 };
@@ -1891,6 +1910,91 @@ const SafeEnterprise: Page = () => (
   </div>
 );
 
+/* ------------------------------------------------ Custodial compliance transaction flow */
+
+const ComplianceTxFlow: Page = () => (
+  <div style={flowStage}>
+    <FlowHeading>
+      託管交易的一生：<span style={{ color: green }}>Compliance 全程站崗</span>
+    </FlowHeading>
+    <Steps>
+      <FlowNode left={100} top={210} w={480} bg={ink} emoji="🧾" title="① 交易發起" desc="用戶 / API 提出出金請求" />
+      <Step>
+        <div>
+          <FlowLink x1={580} y1={330} x2={710} y2={330} />
+          <FlowNode
+            left={720}
+            top={210}
+            w={480}
+            bg={blue}
+            emoji="🛡"
+            title="② Policy Engine"
+            desc="限額、白名單、審批矩陣自動把關"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1200} y1={330} x2={1330} y2={330} />
+          <FlowNode
+            left={1340}
+            top={210}
+            w={480}
+            bg={purple}
+            emoji="🔍"
+            title="③ 合規篩查"
+            desc="AML 風險評分、制裁名單、Travel Rule"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1580} y1={470} x2={1580} y2={630} dir="down" />
+          <FlowNode
+            left={1340}
+            top={640}
+            w={480}
+            bg={pink}
+            emoji="👀"
+            title="④ 人工審核"
+            desc="高風險或超額 → 四眼原則放行"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={1330} y1={760} x2={1210} y2={760} dir="left" />
+          <FlowNode
+            left={720}
+            top={640}
+            w={480}
+            bg={yellow}
+            fg={ink}
+            emoji="✍️"
+            title="⑤ MPC / HSM 簽名"
+            desc="碎片協同簽名，完整私鑰永不現身"
+          />
+        </div>
+      </Step>
+      <Step>
+        <div>
+          <FlowLink x1={710} y1={760} x2={590} y2={760} dir="left" />
+          <FlowNode
+            left={100}
+            top={640}
+            w={480}
+            bg={green}
+            emoji="⛓"
+            title="⑥ 上鏈與申報"
+            desc="廣播結算、審計軌跡、可疑申報 SAR"
+          />
+        </div>
+      </Step>
+    </Steps>
+    <PageRefs>fireblocks.com（custody compliance）· bitgo.com</PageRefs>
+  </div>
+);
+
 /* ------------------------------------------------ 12 · MPC bonus */
 
 const MpcBonus: Page = () => (
@@ -2261,23 +2365,24 @@ export const notes: (string | undefined)[] = [
   'ZKP 怎麼講：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大數字搞破壞（out-of-bound attack）？CMP 要求每則密文附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。術語：Paillier 在做 secret share 的同態運算；VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議。Proactive refresh 在 CMP 中相對重要，因為 Paillier 的 key generation 運算成本較高。', // 29 CMP vs TSS
   undefined, // 30 MPC 效能瓶頸【圖】
   '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 31 效能對決
-  undefined, // 32 MPC 加分題
-  undefined, // 33 Feature & UX（結算網路對決）
-  undefined, // 34 TEE vs HSM
-  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 35 Compliance 六大要件
-  undefined, // 36 合規成績單
-  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 37 Travel Rule 流程
-  undefined, // 38 Travel Rule 生態系
-  undefined, // 39 Travel Rule 開放標準
-  undefined, // 40 Safe in Enterprise
-  undefined, // 41 Part 3 divider
-  undefined, // 42 三維度
-  undefined, // 43 個人指南
-  undefined, // 44 團隊指南
-  undefined, // 45 Closing
-  undefined, // 46 Thanks
-  undefined, // 47 場外宣傳（ETHTaipei · TLDR）
-  undefined, // 48 FUTUREMODE 雙連發
+  '典型分工：篩查交給 Chainalysis / Elliptic，Travel Rule 交給 Notabene；整條管線最慢的就是 ③④ — 呼應上一頁「瓶頸不是 MPC」。', // 32 Compliance 交易流程
+  undefined, // 33 MPC 加分題
+  undefined, // 34 Feature & UX（結算網路對決）
+  undefined, // 35 TEE vs HSM
+  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 36 Compliance 六大要件
+  undefined, // 37 合規成績單
+  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 38 Travel Rule 流程
+  undefined, // 39 Travel Rule 生態系
+  undefined, // 40 Travel Rule 開放標準
+  undefined, // 41 Safe in Enterprise
+  undefined, // 42 Part 3 divider
+  undefined, // 43 三維度
+  undefined, // 44 個人指南
+  undefined, // 45 團隊指南
+  undefined, // 46 Closing
+  undefined, // 47 Thanks
+  undefined, // 48 場外宣傳（ETHTaipei · TLDR）
+  undefined, // 49 FUTUREMODE 雙連發
 ];
 
 export const meta: SlideMeta = {
@@ -2317,6 +2422,7 @@ export default [
   CmpVsTss,
   MpcBottleneck,
   PerfShowdown,
+  ComplianceTxFlow,
   MpcBonus,
   FeatureUx,
   SecurityShowdown,
