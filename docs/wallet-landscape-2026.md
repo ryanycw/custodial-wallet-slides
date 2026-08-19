@@ -415,8 +415,6 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 > 【藍色橫幅】一個鏈多、一個資產多 — 選邊站看你的交易對手住在哪 ⚖️
 
-（連結用途待確認，先留存：https://i.fluidkey.com/8TPI7X）
-
 > 參考：[Fireblocks: Compare Treasury Management](https://www.fireblocks.com/report/compare-treasury-management) · [BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/)
 
 ---
@@ -568,7 +566,8 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 - Eyebrow：`互動時間 🔮`
 - 主標：**換你了：測測你的錢包 MBTI**
-- 副文：10 題、1 分鐘，用 UX × Feature × Safety 找出你的錢包人格 🏃🧊🤝🏛🪄🤖
+- 副文：一分鐘，用 UX × Feature × Safety × Privacy 找出你的錢包人格 🏃🧊🤝🏛🪄🤖
+- 測驗結果頁固定附「講者私心推薦 Fluidkey」卡片（stealth address 隱私），連到 https://i.fluidkey.com/8TPI7X
 - 右側大 QR：`assets/QR_WalletMBTI.png` → https://wallet-mbti.ryanycw.dev/
 - 小字：wallet-mbti.ryanycw.dev
 

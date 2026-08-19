@@ -2129,7 +2129,7 @@ const WalletMbtiQuiz: Page = () => (
         測測你的錢包 MBTI
       </h2>
       <div style={{ fontSize: 36, fontWeight: 600, lineHeight: 1.5 }}>
-        10 題、1 分鐘，用 UX × Feature × Safety
+        一分鐘，用 UX × Feature × Safety × Privacy
         <br />
         找出你的錢包人格 🏃🧊🤝🏛🪄🤖
       </div>
