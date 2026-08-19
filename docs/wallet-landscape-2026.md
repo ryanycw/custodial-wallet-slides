@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 49 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 50 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 > 參考資料在 slide 上的呈現：內容頁左下角有「參考：…」小字（短網域），圖片頁右下角有「來源：…」；本文件保留完整連結。
@@ -62,8 +62,8 @@
 
 | 卡片 | 內容 |
 |------|------|
-| 🧩 瀏覽器擴充（藍） | MetaMask · Rabby · Phantom · Rainbow · Trust |
-| 🧊 硬體冷錢包（紫） | Ledger · Trezor · OneKey · Keystone · imKey · CoolWallet |
+| 🧩 瀏覽器擴充（藍） | MetaMask · Rabby · Phantom · Ambire |
+| 🧊 硬體冷錢包（紫） | Trezor · OneKey · Ledger · Keystone · imKey · CoolWallet |
 | 📱 行動優先新勢力（粉） | Fluidkey · Peanut · Payy · Burner |
 | 🏦 交易所錢包（綠） | Coinbase · Binance · OKX · Bybit · Bitget |
 
@@ -177,7 +177,7 @@
   - ⚡ 痛點：難用，一般人進不來 → 分岔出兩條路
 - 分岔 ①：🧩 **Extension Base**（藍卡）2016– — MetaMask 世代，日常操作主力
   - 🌱 生態在這條路上百花齊放 →（接下一頁）
-- 分岔 ②：🧊 **Cold Wallet**（紫卡）2014– — Ledger · Trezor，大額冷保管
+- 分岔 ②：🧊 **Cold Wallet**（紫卡）2014– — Trezor · OneKey，大額冷保管
   - 🥶 安全，但日常用不動（此路到此為止）
 
 > 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/)
@@ -401,19 +401,21 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 ## Page 34 · 大評比 ②：Feature & UX — 結算網路對決（左右兩欄）
 
 **Fireblocks Network（米色卡）**
-- 2,400+ 交易對手，月結算 $70B+
-- 穩定幣月流量 $200B+，150+ 條鏈
-- CEX off-exchange 結算：Deribit · Bybit · OKX
-- 原生 DeFi、NFT、raw signing 全都有
-- 可編程 treasury：排程歸集、閾值再平衡
+- Network：2,400+ 交易對手
+- 支援 150+ 條鏈
+- CEX 串接：Deribit · Bybit · OKX
+- WalletConnect：原生 DeFi、NFT、raw signing
+- 獨有：deposit routing 入金路由
 
 **BitGo Go Network（黃卡）**
-- 450 交易對手
-- 69+ 條鏈、20+ 交易所整合
-- DeFi 靠第三方串接（非原生）
-- 無 raw signing、無 deposit routing
+- Network：4,900+ 機構
+- 支援 1,550+ 種數位資產
+- CEX 串接：OKX · Deribit · HTX · KuCoin · Gate.io
+- WalletConnect：原生 DeFi、NFT、raw signing
 
-> 【藍色橫幅】結算網路的規模差距，往往就是機構選邊站的主因 ⚖️
+> 【藍色橫幅】一個鏈多、一個資產多 — 選邊站看你的交易對手住在哪 ⚖️
+
+（連結用途待確認，先留存：https://i.fluidkey.com/8TPI7X）
 
 > 參考：[Fireblocks: Compare Treasury Management](https://www.fireblocks.com/report/compare-treasury-management) · [BitGo: Institutional Crypto Wallets](https://www.bitgo.com/resources/blog/institutional-crypto-wallets-how-they-work/)
 
@@ -541,28 +543,40 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 43 · 挑錢包前，先問三個維度
+## Page 43 · 挑錢包前，先問四個維度
 
 | 卡片 | 說明 |
 |------|------|
 | UX（藍） | 上手難度、簽名流程順不順、行動端體驗好不好 |
 | Feature（粉） | 多鏈支援、DeFi 串接、自動化與政策控制 |
 | Safety（綠） | 金鑰管理、災難復原、供應商與單點風險 |
+| Privacy（紫） | 鏈上足跡、地址關聯、資料誰看得到 |
 
 ---
 
 ## Page 44 · 個人指南：看金額對號入座
 
-- **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
-- **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
+- **日常小額** → 瀏覽器 / 行動錢包（Rabby、Ambire、imToken）
+- **中額儲蓄** → 硬體冷錢包（Trezor、OneKey）
 - **大額長期** → Safe 多簽或 MPC 服務，拒絕單點失誤歸零
-- **加分題** → AA 錢包 social recovery，「弄丟助記詞」變可救
 
 > 參考：[ethereum.org 錢包總覽](https://ethereum.org/zh-tw/wallets/find-wallet/)
 
 ---
 
-## Page 45 · 團隊指南：透明 or 靈活，選一邊
+## Page 45 · 換你了：測測你的錢包 MBTI【粉底・互動】
+
+- Eyebrow：`互動時間 🔮`
+- 主標：**換你了：測測你的錢包 MBTI**
+- 副文：10 題、1 分鐘，用 UX × Feature × Safety 找出你的錢包人格 🏃🧊🤝🏛🪄🤖
+- 右側大 QR：`assets/QR_WalletMBTI.png` → https://wallet-mbti.ryanycw.dev/
+- 小字：wallet-mbti.ryanycw.dev
+
+> 參考：[錢包 MBTI 測驗](https://wallet-mbti.ryanycw.dev/)
+
+---
+
+## Page 46 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -574,7 +588,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 46 · Closing「帶走三件事 🎒」【黃底】
+## Page 47 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -584,7 +598,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 47 · 特別感謝【粉底】
+## Page 48 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐
@@ -593,7 +607,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 48 · 場外宣傳 📣（左右兩欄）
+## Page 49 · 場外宣傳 📣（左右兩欄）
 
 - 左欄：**ETHTaipei** — 大合照 `assets/ETHTaipei_Group.png` + QR `assets/QR_ETHTaipei.png`（掃碼加入 · luma.com/8z5ys4rl）
 - 右欄：**TLDR** — 影片 `assets/TLDR.mov`（自動循環播放）+ QR `assets/QR_TLDR.png`（掃碼報名 · luma.com/5wmofnwc）
@@ -602,7 +616,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 49 · FUTUREMODE 雙連發 ⚡
+## Page 50 · FUTUREMODE 雙連發 ⚡
 
 - 上排：**ETH Panel** — 橫幅 `assets/FUTUREMODE_Panel.png`
 - 下排：**ZK Workshop** — 橫幅 `assets/FUTUREMODE_Workshop.png` + QR `assets/QR_FUTUREMODE.png`（掃碼報名）

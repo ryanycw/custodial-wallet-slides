@@ -20,6 +20,7 @@ import imgMPCFeature from '@assets/MPCFeature.png';
 import qrETHTaipei from '@assets/QR_ETHTaipei.png';
 import qrTLDR from '@assets/QR_TLDR.png';
 import qrFUTUREMODE from '@assets/QR_FUTUREMODE.png';
+import qrWalletMBTI from '@assets/QR_WalletMBTI.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#ffffff', text: '#111111', accent: '#fe5100' },
@@ -408,8 +409,8 @@ const EverydayWallets: Page = () => (
         marginTop: 64,
       }}
     >
-      <CatCard bg={blue} title="🧩 瀏覽器擴充" names="MetaMask · Rabby · Phantom · Rainbow · Trust" />
-      <CatCard bg={purple} title="🧊 硬體冷錢包" names="Ledger · Trezor · OneKey · Keystone · imKey · CoolWallet" />
+      <CatCard bg={blue} title="🧩 瀏覽器擴充" names="MetaMask · Rabby · Phantom · Ambire" />
+      <CatCard bg={purple} title="🧊 硬體冷錢包" names="Trezor · OneKey · Ledger · Keystone · imKey · CoolWallet" />
       <CatCard bg={pink} title="📱 行動優先新勢力" names="Fluidkey · Peanut · Payy · Burner" />
       <CatCard bg={green} title="🏦 交易所錢包" names="Coinbase · Binance · OKX · Bybit · Bitget" />
     </div>
@@ -970,7 +971,7 @@ const EvolutionFlowA: Page = () => (
             emoji="🧊"
             title="Cold Wallet"
             years="2014–"
-            desc="Ledger · Trezor，大額冷保管"
+            desc="Trezor · OneKey，大額冷保管"
           />
           <FlowLabel left={100} top={745}>
             ⚡ 難用，一般人進不來
@@ -1553,11 +1554,11 @@ const FeatureUx: Page = () => (
         title="Fireblocks Network"
         rows={
           <>
-            <VsRow dot={pink}>2,400+ 交易對手，月結算 $70B+</VsRow>
-            <VsRow dot={pink}>穩定幣月流量 $200B+，150+ 條鏈</VsRow>
-            <VsRow dot={pink}>CEX off-exchange 結算：Deribit · Bybit · OKX</VsRow>
-            <VsRow dot={pink}>原生 DeFi、NFT、raw signing 全都有</VsRow>
-            <VsRow dot={pink}>可編程 treasury：排程歸集、閾值再平衡</VsRow>
+            <VsRow dot={pink}>Network：2,400+ 交易對手</VsRow>
+            <VsRow dot={pink}>支援 150+ 條鏈</VsRow>
+            <VsRow dot={pink}>CEX 串接：Deribit · Bybit · OKX</VsRow>
+            <VsRow dot={pink}>WalletConnect：原生 DeFi、NFT、raw signing</VsRow>
+            <VsRow dot={pink}>獨有：deposit routing 入金路由</VsRow>
           </>
         }
       />
@@ -1566,10 +1567,10 @@ const FeatureUx: Page = () => (
         title="BitGo Go Network"
         rows={
           <>
-            <VsRow dot={ink}>450 交易對手</VsRow>
-            <VsRow dot={ink}>69+ 條鏈、20+ 交易所整合</VsRow>
-            <VsRow dot={ink}>DeFi 靠第三方串接（非原生）</VsRow>
-            <VsRow dot={ink}>無 raw signing、無 deposit routing</VsRow>
+            <VsRow dot={ink}>Network：4,900+ 機構</VsRow>
+            <VsRow dot={ink}>支援 1,550+ 種數位資產</VsRow>
+            <VsRow dot={ink}>CEX 串接：OKX · Deribit · HTX · KuCoin · Gate.io</VsRow>
+            <VsRow dot={ink}>WalletConnect：原生 DeFi、NFT、raw signing</VsRow>
           </>
         }
       />
@@ -1586,7 +1587,7 @@ const FeatureUx: Page = () => (
         lineHeight: 1.45,
       }}
     >
-      結算網路的規模差距，往往就是機構選邊站的主因 ⚖️
+      一個鏈多、一個資產多 — 選邊站看你的交易對手住在哪 ⚖️
     </div>
     <PageRefs>fireblocks.com（compare treasury）· bitgo.com</PageRefs>
   </div>
@@ -2064,12 +2065,13 @@ const DimCard = ({ bg, title, desc }: { bg: string; title: string; desc: string 
 const Dimensions: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120 }}>
     <Heading>
-      挑錢包前，先問<span style={{ color: green }}>三個維度</span>
+      挑錢包前，先問<span style={{ color: green }}>四個維度</span>
     </Heading>
-    <div style={{ display: 'flex', gap: 32, marginTop: 72, height: 480 }}>
-      <DimCard bg={blue} title="UX" desc="上手難度、簽名流程順不順、行動端體驗好不好" />
+    <div style={{ display: 'flex', gap: 28, marginTop: 72, height: 500 }}>
+      <DimCard bg={blue} title="UX" desc="上手難度、簽名流程順不順、行動端體驗" />
       <DimCard bg={pink} title="Feature" desc="多鏈支援、DeFi 串接、自動化與政策控制" />
       <DimCard bg={green} title="Safety" desc="金鑰管理、災難復原、供應商與單點風險" />
+      <DimCard bg={purple} title="Privacy" desc="鏈上足跡、地址關聯、資料誰看得到" />
     </div>
   </div>
 );
@@ -2083,19 +2085,62 @@ const PersonalGuide: Page = () => (
     </Heading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 36, marginTop: 64 }}>
       <Bullet dot={green}>
-        <B c={green}>日常小額</B> → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
+        <B c={green}>日常小額</B> → 瀏覽器 / 行動錢包（Rabby、Ambire、imToken）
       </Bullet>
       <Bullet dot={green}>
-        <B c={green}>中額儲蓄</B> → 硬體冷錢包（Ledger、Trezor、Keystone）
+        <B c={green}>中額儲蓄</B> → 硬體冷錢包（Trezor、OneKey）
       </Bullet>
       <Bullet dot={green}>
         <B c={green}>大額長期</B> → Safe 多簽或 MPC 服務，拒絕單點失誤歸零
       </Bullet>
-      <Bullet dot={green}>
-        <B c={green}>加分題</B> → AA 錢包 social recovery，「弄丟助記詞」變可救
-      </Bullet>
     </div>
     <PageRefs>ethereum.org/wallets/find-wallet</PageRefs>
+  </div>
+);
+
+/* ------------------------------------------------ Wallet MBTI quiz */
+
+const WalletMbtiQuiz: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: pink,
+      color: '#ffffff',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 100,
+      padding: '100px 160px',
+    }}
+  >
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 40 }}>
+      <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 6, opacity: 0.9 }}>互動時間 🔮</div>
+      <h2
+        style={{
+          fontFamily: 'var(--osd-font-display)',
+          fontSize: 100,
+          fontWeight: 900,
+          margin: 0,
+          lineHeight: 1.15,
+          letterSpacing: -2,
+        }}
+      >
+        換你了：
+        <br />
+        測測你的錢包 MBTI
+      </h2>
+      <div style={{ fontSize: 36, fontWeight: 600, lineHeight: 1.5 }}>
+        10 題、1 分鐘，用 UX × Feature × Safety
+        <br />
+        找出你的錢包人格 🏃🧊🤝🏛🪄🤖
+      </div>
+      <div style={{ fontSize: 28, fontWeight: 700, opacity: 0.9 }}>wallet-mbti.ryanycw.dev</div>
+    </div>
+    <div style={{ flexShrink: 0 }}>
+      <img
+        src={qrWalletMBTI}
+        style={{ width: 520, height: 520, borderRadius: 28, background: '#ffffff', padding: 24 }}
+      />
+    </div>
   </div>
 );
 
@@ -2378,11 +2423,12 @@ export const notes: (string | undefined)[] = [
   undefined, // 42 Part 3 divider
   undefined, // 43 三維度
   undefined, // 44 個人指南
-  undefined, // 45 團隊指南
-  undefined, // 46 Closing
-  undefined, // 47 Thanks
-  undefined, // 48 場外宣傳（ETHTaipei · TLDR）
-  undefined, // 49 FUTUREMODE 雙連發
+  undefined, // 45 錢包 MBTI 測驗 QR
+  undefined, // 46 團隊指南
+  undefined, // 47 Closing
+  undefined, // 48 Thanks
+  undefined, // 49 場外宣傳（ETHTaipei · TLDR）
+  undefined, // 50 FUTUREMODE 雙連發
 ];
 
 export const meta: SlideMeta = {
@@ -2435,6 +2481,7 @@ export default [
   Divider3,
   Dimensions,
   PersonalGuide,
+  WalletMbtiQuiz,
   TeamGuide,
   Closing,
   Thanks,
