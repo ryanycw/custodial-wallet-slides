@@ -11,6 +11,14 @@ import imgAbstractionProblems from '@assets/Abstraction Problems.png';
 import imgFromAAToAgentic from '@assets/From AA to Agentic.png';
 import imgWalletbeat from '@assets/Walletbeat.png';
 import imgSelfCustody from '@assets/Self Custody.png';
+import imgTelegram from '@assets/Telegram.jpeg';
+import imgETHTaipeiGroup from '@assets/ETHTaipei_Group.png';
+import imgFutremodePanel from '@assets/FUTUREMODE_Panel.png';
+import imgFuturemodeWorkshop from '@assets/FUTUREMODE_Workshop.png';
+import vidTLDR from '@assets/TLDR.mov';
+import qrETHTaipei from '@assets/QR_ETHTaipei.png';
+import qrTLDR from '@assets/QR_TLDR.png';
+import qrFUTUREMODE from '@assets/QR_FUTUREMODE.png';
 
 export const design: DesignSystem = {
   palette: { bg: '#ffffff', text: '#111111', accent: '#fe5100' },
@@ -210,6 +218,52 @@ Cover.transition = {
     ],
   },
 };
+
+/* ------------------------------------------------ 02 · Photo call */
+
+const PhotoCall: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: yellow,
+      color: 'var(--osd-text)',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 80,
+      padding: '100px 140px',
+    }}
+  >
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 40 }}>
+      <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: 6 }}>互動環節 📸</div>
+      <h2
+        style={{
+          fontFamily: 'var(--osd-font-display)',
+          fontSize: 110,
+          fontWeight: 900,
+          margin: 0,
+          lineHeight: 1.1,
+          letterSpacing: -2,
+        }}
+      >
+        拍照換 Burner！
+      </h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 28, fontSize: 36, lineHeight: 1.5, fontWeight: 600 }}>
+        <div>🙈 很害羞（哈茲咖西）地請大家幫個忙</div>
+        <div>📷 等等隨手拍拍照 — 不一定要拍我 XD，拍活動也可以</div>
+        <div>
+          🎁 傳給我，就能跟我<strong style={{ color: pink }}>領一顆 Burner</strong>
+        </div>
+      </div>
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24, flexShrink: 0 }}>
+      <img
+        src={imgTelegram}
+        style={{ width: 560, height: 660, objectFit: 'contain', borderRadius: 24, background: '#ffffff' }}
+      />
+      <div style={{ fontSize: 30, fontWeight: 800 }}>Telegram 私我 →</div>
+    </div>
+  </div>
+);
 
 /* ------------------------------------------------ 02 · Agenda */
 
@@ -1650,7 +1704,8 @@ const ComplianceScorecard: Page = () => (
         title="BitGo：牌照與保險路線"
         rows={
           <>
-            <VsRow dot={ink}>Qualified Custodian：多轄區牌照</VsRow>
+            <VsRow dot={ink}>CCSS Level 3、ISO 27001、SOC 2 Type II</VsRow>
+            <VsRow dot={ink}>Qualified Custodian：多轄區牌照＋100% 冷存儲</VsRow>
             <VsRow dot={ink}>$250M 保險</VsRow>
             <VsRow dot={ink}>TRUST Network 成員</VsRow>
             <VsRow dot={ink}>Travel Rule 流程內建（下頁詳解）</VsRow>
@@ -1671,7 +1726,7 @@ const ComplianceScorecard: Page = () => (
     >
       一個走技術認證路線，一個走牌照與保險路線 📜
     </div>
-    <PageRefs>bitgo.com（crypto regulation compliance）· fireblocks.com（compare treasury）</PageRefs>
+    <PageRefs>bitgo.com（regulation · withdrawal safeguards）· fireblocks.com（compare treasury）</PageRefs>
   </div>
 );
 
@@ -1742,7 +1797,7 @@ const TravelRuleEco: Page = () => (
       <TimeNode bg={blue} year="2,100+" name="Sumsub" desc="覆蓋最廣的合規服務商" />
       <TimeNode bg={purple} year="200+" name="TRUST Alliance" desc="Coinbase · Kraken · OKX · PayPal · Circle…" />
       <TimeNode bg={pink} year="200+" name="Chainalysis × Notabene" desc="鏈上鑑識 × Travel Rule 訊息層" />
-      <TimeNode bg={green} year="150+" name="VerifyVASP" desc="Bitfinex · Crypto.com · Bitget · WooX…" />
+      <TimeNode bg={green} year="150+" name="VerifyVASP" desc="亞洲為主：Bitfinex · Crypto.com · Bitget · WooX · BingX · FTX…" />
       <TimeNode bg={ink} year="116" name="Global Travel Rule" desc="Binance 主導，Sumsub × Fireblocks 助攻" />
     </div>
     <div style={{ marginTop: 48, fontSize: 26, fontWeight: 600, color: muted }}>
@@ -1767,7 +1822,7 @@ const TravelRuleStandard: Page = () => (
         <B c={purple}>IVMS 101</B>：inter-VASP 訊息統一格式，大家先講同一種語言
       </Bullet>
       <Bullet dot={purple}>
-        站台的有：<B c={purple}>Sygna · Notabene · VerifyVASP · TRUST Alliance</B>
+        站台的有：<B c={purple}>Sygna（VerifyVASP）· Notabene · TRUST Alliance</B>
       </Bullet>
     </div>
     <div
@@ -2066,52 +2121,150 @@ const Thanks: Page = () => (
   </div>
 );
 
+/* ------------------------------------------------ Promo pages */
+
+const PromoEvents: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: 'var(--osd-bg)',
+      color: 'var(--osd-text)',
+      padding: '90px 120px',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <Heading>
+      場外宣傳 <span style={{ color: pink }}>📣</span>
+    </Heading>
+    <div style={{ display: 'flex', gap: 48, marginTop: 48, flex: 1, minHeight: 0 }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <img
+          src={imgETHTaipeiGroup}
+          style={{ width: '100%', height: 430, objectFit: 'cover', borderRadius: 20 }}
+        />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+          <img src={qrETHTaipei} style={{ width: 180, height: 180, borderRadius: 12 }} />
+          <div>
+            <div style={{ fontSize: 40, fontWeight: 900 }}>ETHTaipei</div>
+            <div style={{ fontSize: 24, fontWeight: 600, color: muted, marginTop: 10 }}>
+              掃碼加入 · luma.com/8z5ys4rl
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <video
+          src={vidTLDR}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: '100%', height: 430, objectFit: 'cover', borderRadius: 20 }}
+        />
+        <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+          <img src={qrTLDR} style={{ width: 180, height: 180, borderRadius: 12 }} />
+          <div>
+            <div style={{ fontSize: 40, fontWeight: 900 }}>TLDR</div>
+            <div style={{ fontSize: 24, fontWeight: 600, color: muted, marginTop: 10 }}>
+              掃碼報名 · luma.com/5wmofnwc
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const PromoFuturemode: Page = () => (
+  <div
+    style={{
+      ...fill,
+      background: 'var(--osd-bg)',
+      color: 'var(--osd-text)',
+      padding: '90px 120px',
+      display: 'flex',
+      flexDirection: 'column',
+    }}
+  >
+    <Heading>
+      FUTUREMODE <span style={{ color: purple }}>雙連發 ⚡</span>
+    </Heading>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 48, marginTop: 48 }}>
+      <img
+        src={imgFutremodePanel}
+        style={{ flex: 1, minWidth: 0, height: 310, objectFit: 'contain', borderRadius: 20 }}
+      />
+      <div style={{ width: 420, flexShrink: 0 }}>
+        <div style={{ fontSize: 40, fontWeight: 900 }}>ETH Panel</div>
+        <div style={{ fontSize: 24, fontWeight: 600, color: muted, marginTop: 10 }}>座談即將登場</div>
+      </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 48, marginTop: 40 }}>
+      <img
+        src={imgFuturemodeWorkshop}
+        style={{ flex: 1, minWidth: 0, height: 310, objectFit: 'contain', borderRadius: 20 }}
+      />
+      <div style={{ width: 420, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 24 }}>
+        <img src={qrFUTUREMODE} style={{ width: 170, height: 170, borderRadius: 12 }} />
+        <div>
+          <div style={{ fontSize: 40, fontWeight: 900 }}>ZK Workshop</div>
+          <div style={{ fontSize: 24, fontWeight: 600, color: muted, marginTop: 10 }}>掃碼報名</div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 // Presenter-mode speaker notes — one entry per page, aligned with the export default order.
 export const notes: (string | undefined)[] = [
-  undefined, // 01 Cover
-  undefined, // 02 Agenda
-  undefined, // 03 Part 1 divider
-  undefined, // 04 早期時代
-  undefined, // 05 四大流派
-  undefined, // 06 Infinite Garden
-  undefined, // 07 Mass Adoption
-  undefined, // 08 L2-Centric
-  undefined, // 09 大 Abstraction 時代
-  undefined, // 10 CA Stack
-  undefined, // 11 Abstraction Problems
-  undefined, // 12 L2Beat
-  undefined, // 13 AA
-  undefined, // 14 Agentic
-  undefined, // 15 From AA to Agentic
-  undefined, // 16 演化上半場
-  undefined, // 17 演化中場
-  undefined, // 18 演化下半場
-  undefined, // 19 Walletbeat
-  undefined, // 20 Self Custody
-  undefined, // 21 機構託管進化史
-  undefined, // 22 Part 2 divider
-  'P2SH / P2WSH 白話：比特幣的「腳本式付款」格式 — 錢付給一段規則（腳本）的雜湊，開箱花錢時必須攤開完整規則（哪三把公鑰、湊滿幾個簽名）給全網驗證。P2SH 是 2012 年 BIP-16、地址 3 開頭；P2WSH 是 SegWit 升級版、bc1q 開頭，手續費更便宜，但門檻與簽名者照樣全公開。這正是下一頁 MPC「門檻隱形」的對比點。', // 23 Multisig 白話文
-  undefined, // 24 MPC 白話文
-  undefined, // 25 正面對決
-  undefined, // 26 大評比總覽
-  'DKLs = Doerner · Kondi · Lee · shelat（Brown / Northeastern 系）；CMP = Canetti · Makriyannis · Peled（Boston University）。兩個協議名都是作者姓氏縮寫 — 可以開玩笑說檯面上是 BitGo vs Fireblocks，檯面下是密碼學家的校際較勁。', // 27 Key Management
-  'ZKP 怎麼講：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大數字搞破壞（out-of-bound attack）？CMP 要求每則密文附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。術語：Paillier 在做 secret share 的同態運算；VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議。Proactive refresh 在 CMP 中相對重要，因為 Paillier 的 key generation 運算成本較高。', // 28 CMP vs TSS
-  '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 29 效能對決
-  undefined, // 30 MPC 加分題
-  undefined, // 31 Feature & UX（結算網路對決）
-  undefined, // 32 TEE vs HSM
-  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 33 Compliance 六大要件
-  undefined, // 34 合規成績單
-  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 35 Travel Rule 流程
-  undefined, // 36 Travel Rule 生態系
-  undefined, // 37 Travel Rule 開放標準
-  undefined, // 38 Safe in Enterprise
-  undefined, // 39 Part 3 divider
-  undefined, // 40 三維度
-  undefined, // 41 個人指南
-  undefined, // 42 團隊指南
-  undefined, // 43 Closing
-  undefined, // 44 Thanks
+  undefined, // 1 Cover
+  undefined, // 2 拍照換 Burner
+  undefined, // 3 Agenda
+  undefined, // 4 Part 1 divider
+  undefined, // 5 早期時代
+  undefined, // 6 四大流派
+  undefined, // 7 Infinite Garden
+  undefined, // 8 Mass Adoption
+  undefined, // 9 L2-Centric
+  undefined, // 10 大 Abstraction 時代
+  undefined, // 11 CA Stack
+  undefined, // 12 Abstraction Problems
+  undefined, // 13 L2Beat
+  undefined, // 14 AA
+  undefined, // 15 Agentic
+  undefined, // 16 From AA to Agentic
+  undefined, // 17 演化上半場
+  undefined, // 18 演化中場
+  undefined, // 19 演化下半場
+  undefined, // 20 Walletbeat
+  undefined, // 21 Self Custody
+  undefined, // 22 機構託管進化史
+  undefined, // 23 Part 2 divider
+  'P2SH / P2WSH 白話：比特幣的「腳本式付款」格式 — 錢付給一段規則（腳本）的雜湊，開箱花錢時必須攤開完整規則（哪三把公鑰、湊滿幾個簽名）給全網驗證。P2SH 是 2012 年 BIP-16、地址 3 開頭；P2WSH 是 SegWit 升級版、bc1q 開頭，手續費更便宜，但門檻與簽名者照樣全公開。這正是下一頁 MPC「門檻隱形」的對比點。', // 24 Multisig 白話文
+  undefined, // 25 MPC 白話文
+  undefined, // 26 正面對決
+  undefined, // 27 大評比總覽
+  'DKLs = Doerner · Kondi · Lee · shelat（Brown / Northeastern 系）；CMP = Canetti · Makriyannis · Peled（Boston University）。兩個協議名都是作者姓氏縮寫 — 可以開玩笑說檯面上是 BitGo vs Fireblocks，檯面下是密碼學家的校際較勁。', // 28 Key Management
+  'ZKP 怎麼講：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大數字搞破壞（out-of-bound attack）？CMP 要求每則密文附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。術語：Paillier 在做 secret share 的同態運算；VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議。Proactive refresh 在 CMP 中相對重要，因為 Paillier 的 key generation 運算成本較高。', // 29 CMP vs TSS
+  '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 30 效能對決
+  undefined, // 31 MPC 加分題
+  undefined, // 32 Feature & UX（結算網路對決）
+  undefined, // 33 TEE vs HSM
+  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 34 Compliance 六大要件
+  undefined, // 35 合規成績單
+  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 36 Travel Rule 流程
+  undefined, // 37 Travel Rule 生態系
+  undefined, // 38 Travel Rule 開放標準
+  undefined, // 39 Safe in Enterprise
+  undefined, // 40 Part 3 divider
+  undefined, // 41 三維度
+  undefined, // 42 個人指南
+  undefined, // 43 團隊指南
+  undefined, // 44 Closing
+  undefined, // 45 Thanks
+  undefined, // 46 場外宣傳（ETHTaipei · TLDR）
+  undefined, // 47 FUTUREMODE 雙連發
 ];
 
 export const meta: SlideMeta = {
@@ -2121,6 +2274,7 @@ export const meta: SlideMeta = {
 
 export default [
   Cover,
+  PhotoCall,
   Agenda,
   Divider1,
   EarlyEra,
@@ -2164,4 +2318,6 @@ export default [
   TeamGuide,
   Closing,
   Thanks,
+  PromoEvents,
+  PromoFuturemode,
 ] satisfies Page[];

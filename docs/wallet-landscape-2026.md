@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 44 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 47 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 > 參考資料在 slide 上的呈現：內容頁左下角有「參考：…」小字（短網域），圖片頁右下角有「來源：…」；本文件保留完整連結。
@@ -18,7 +18,18 @@
 
 ---
 
-## Page 2 · Agenda「今天聊三件事」
+## Page 2 · 拍照換 Burner！【黃底・互動環節】
+
+- Eyebrow：`互動環節 📸`
+- 主標：**拍照換 Burner！**
+- 🙈 很害羞（哈茲咖西）地請大家幫個忙
+- 📷 等等隨手拍拍照 — 不一定要拍我 XD，拍活動也可以
+- 🎁 傳給我，就能跟我**領一顆 Burner**
+- 右側圖：`assets/Telegram.jpeg`（Telegram 私我 →）
+
+---
+
+## Page 3 · Agenda「今天聊三件事」
 
 | # | 標題 | 副標 |
 |---|------|------|
@@ -28,7 +39,7 @@
 
 ---
 
-## Page 3 · Part 1 章節頁【藍底】
+## Page 4 · Part 1 章節頁【藍底】
 
 - PART 01
 - 主標：錢包進化史の盤點
@@ -36,7 +47,7 @@
 
 ---
 
-## Page 4 · 早期時代：從 CLI 到 Mist
+## Page 5 · 早期時代：從 CLI 到 Mist
 
 - **CLI 工具**：工程師限定，指令列直接簽名、廣播交易
 - **Mist / Ethereum Wallet**：官方桌面錢包，最終停止維護
@@ -48,7 +59,7 @@
 
 ---
 
-## Page 5 · 百花齊放：日常錢包四大流派
+## Page 6 · 百花齊放：日常錢包四大流派
 
 | 卡片 | 內容 |
 |------|------|
@@ -61,14 +72,14 @@
 
 ---
 
-## Page 6 · EF 的新論述：Infinite Garden【圖】
+## Page 7 · EF 的新論述：Infinite Garden【圖】
 
 - Lead：隨著生態百花齊放，以太坊基金會開啟一個新敘事
 - 圖：`assets/Infinite Garden.png`（來源標註：Ethereum Foundation）
 
 ---
 
-## Page 7 · 迎來 Mass Adoption 年代【圖】
+## Page 8 · 迎來 Mass Adoption 年代【圖】
 
 - Lead：所有東西都要 Abstraction
 - 圖：`assets/Ethereum is different.png`
@@ -77,7 +88,7 @@
 
 ---
 
-## Page 8 · 迎接 L2-Centric 時代【圖】
+## Page 9 · 迎接 L2-Centric 時代【圖】
 
 - 三顆膠囊：`流動性破碎`（藍）｜`相容性問題`（紫）｜`UX 很差`（粉）
 - 圖：`assets/53L2s.png`
@@ -86,14 +97,14 @@
 
 ---
 
-## Page 9 · 大 Abstraction 時代【圖】
+## Page 10 · 大 Abstraction 時代【圖】
 
 - Lead：L2 大戰之後，大家開始重新思考既有的解法
 - 圖：`assets/JacksonPollock.png`
 
 ---
 
-## Page 10 · 發展出各種技術和產品【圖】
+## Page 11 · 發展出各種技術和產品【圖】
 
 - Lead：Chain Abstraction 的生態地圖
 - 圖：`assets/CAStack.png`
@@ -102,7 +113,7 @@
 
 ---
 
-## Page 11 · 開始收斂：Abstraction 要解決什麼【左列點＋右圖】
+## Page 12 · 開始收斂：Abstraction 要解決什麼【左列點＋右圖】
 
 - Lead：接下來幾年，各家想解的問題漸漸對齊成四大塊
 - 左側列點（對應圖中四個圓）：
@@ -117,7 +128,7 @@
 
 ---
 
-## Page 12 · 看不完的 L2？交給 L2Beat【圖】
+## Page 13 · 看不完的 L2？交給 L2Beat【圖】
 
 - 圖：`assets/L2Beat.png`（來源標註：l2beat.com）
 
@@ -125,7 +136,7 @@
 
 ---
 
-## Page 13 · 新物種 I：帳戶抽象 AA
+## Page 14 · 新物種 I：帳戶抽象 AA
 
 > 【藍色橫幅】「帳戶不再是一把私鑰，而是一個可編程的合約」
 
@@ -138,7 +149,7 @@
 
 ---
 
-## Page 14 · 新物種 II：Agentic 錢包
+## Page 15 · 新物種 II：Agentic 錢包
 
 > 【粉色橫幅】「人類設規則，AI 自己花錢」
 
@@ -151,7 +162,7 @@
 
 ---
 
-## Page 15 · AA 也從 Account 變成 Agentic【圖】
+## Page 16 · AA 也從 Account 變成 Agentic【圖】
 
 - 圖：`assets/From AA to Agentic.png`
 
@@ -159,7 +170,7 @@
 
 ---
 
-## Page 16 · 演化上半場：私鑰的分岔路（分岔流程圖・逐步顯示）
+## Page 17 · 演化上半場：私鑰的分岔路（分岔流程圖・逐步顯示）
 
 三頁連貫 timeline 之一：Extension Base 節點會用 morph 動畫「滑」到下一頁。
 
@@ -174,7 +185,7 @@
 
 ---
 
-## Page 17 · 演化中場：抽象化的浪潮（流程圖・逐步顯示）
+## Page 18 · 演化中場：抽象化的浪潮（流程圖・逐步顯示）
 
 承接 Page 6–11 的生態脈絡：Extension Base 從上一頁 morph 滑入左側，AA 再 morph 到下一頁。
 
@@ -189,7 +200,7 @@
 
 ---
 
-## Page 18 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
+## Page 19 · 演化下半場：AA 開枝散葉（扇形流程圖・逐步顯示）
 
 AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
@@ -202,7 +213,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 19 · 錢包界的 L2Beat：Walletbeat【圖】
+## Page 20 · 錢包界的 L2Beat：Walletbeat【圖】
 
 - Lead：把各家錢包一字排開，逐項檢視功能與去中心化程度
 - 圖：`assets/Walletbeat.png`
@@ -211,7 +222,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 20 · Self Custody 漸漸式微？【圖】
+## Page 21 · Self Custody 漸漸式微？【圖】
 
 - Lead：UX 與 Mass Adoption 的浪潮下，自我保管越來越小眾
 - 圖：`assets/Self Custody.png`（原檔名含 `???` 已改名，`?` 會讓打包工具誤判）
@@ -219,7 +230,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 21 · 支線任務：機構託管進化史（時間軸・逐步顯示）
+## Page 22 · 支線任務：機構託管進化史（時間軸・逐步顯示）
 
 | 年份 | 事件 | 說明 |
 |------|------|------|
@@ -234,7 +245,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 22 · Part 2 章節頁【紫底】
+## Page 23 · Part 2 章節頁【紫底】
 
 - PART 02
 - 主標：Multisig vs. MPC 白話文
@@ -242,7 +253,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 23 · Multisig：多把鑰匙開一個保險箱
+## Page 24 · Multisig：多把鑰匙開一個保險箱
 
 > 【紫色橫幅】「保險箱配 N 把鑰匙，開箱要同時湊滿 M 把」
 
@@ -256,7 +267,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 24 · MPC：一把鑰匙磨成碎片
+## Page 25 · MPC：一把鑰匙磨成碎片
 
 > 【粉色橫幅】「完整私鑰，從頭到尾都沒存在過」
 
@@ -269,7 +280,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 25 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
+## Page 26 · 正面對決：Multisig vs. MPC（左右兩欄・逐步顯示）
 
 **Multisig 的痛點（米色卡）**
 - 每條鏈實作不同，跨鏈不通用
@@ -287,7 +298,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 26 · Multisig vs. MPC 大評比：四個維度
+## Page 27 · Multisig vs. MPC 大評比：四個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -298,7 +309,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 27 · 大評比 ①：Key Management
+## Page 28 · 大評比 ①：Key Management
 
 - **BitGo × Silence Labs**：採 DKLs 協議，走 MPC-TSS 路線
 - 執筆人 Jack Doerner、Yashvanth Kondi — **Brown / Northeastern** 學派
@@ -312,7 +323,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 28 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
+## Page 29 · 加映場：MPC-CMP vs. MPC-TSS（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
 - Paillier 同態加密算跨項相乘
@@ -334,7 +345,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 29 · 加映場 II：效能對決（左右兩欄）
+## Page 30 · 加映場 II：效能對決（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
 - 頻寬較低：每 party 約 15 KB
@@ -350,7 +361,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 30 · MPC 加分題：還是講白話
+## Page 31 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -364,7 +375,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 31 · 大評比 ②：Feature & UX — 結算網路對決（左右兩欄）
+## Page 32 · 大評比 ②：Feature & UX — 結算網路對決（左右兩欄）
 
 **Fireblocks Network（米色卡）**
 - 2,400+ 交易對手，月結算 $70B+
@@ -385,7 +396,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 32 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 33 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -403,7 +414,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 33 · 大評比 ④：Compliance 六大要件
+## Page 34 · 大評比 ④：Compliance 六大要件
 
 六顆彩色數字圈，專有名詞保留英文：
 
@@ -422,7 +433,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 34 · 合規成績單：Fireblocks vs. BitGo（左右兩欄）
+## Page 35 · 合規成績單：Fireblocks vs. BitGo（左右兩欄）
 
 **Fireblocks：技術認證路線（米色卡）**
 - SOC 1 & SOC 2 Type II 雙認證
@@ -431,18 +442,19 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 - 整合 Chainalysis · Elliptic · Notabene
 
 **BitGo：牌照與保險路線（黃卡）**
-- Qualified Custodian：多轄區牌照
+- CCSS Level 3、ISO 27001、SOC 2 Type II
+- Qualified Custodian：多轄區牌照＋100% 冷存儲
 - $250M 保險
 - TRUST Network 成員
 - Travel Rule 流程內建（下頁詳解）
 
 > 【黑色橫幅】一個走技術認證路線，一個走牌照與保險路線 📜
 
-> 參考：[BitGo: Understanding Crypto Regulation](https://www.bitgo.com/resources/blog/understanding-crypto-regulation-compliance/) · [Fireblocks: Compare Treasury Management](https://www.fireblocks.com/report/compare-treasury-management)
+> 參考：[BitGo: Understanding Crypto Regulation](https://www.bitgo.com/resources/blog/understanding-crypto-regulation-compliance/) · [BitGo: Withdrawal Safeguards](https://www.bitgo.com/resource-center/custody-wallet-withdrawal-safeguards/) · [Fireblocks: Compare Treasury Management](https://www.fireblocks.com/report/compare-treasury-management)
 
 ---
 
-## Page 35 · BitGo 的 Travel Rule 實戰（決策流程圖・逐步顯示）
+## Page 36 · BitGo 的 Travel Rule 實戰（決策流程圖・逐步顯示）
 
 流程圖：💸 出金一筆（黑卡）→ 分岔：
 - 🏛 **對象：VASP**（紫卡・交易所、託管商）→ 再分岔：
@@ -458,14 +470,14 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 36 · Travel Rule 生態系：合規也要拉幫結派
+## Page 37 · Travel Rule 生態系：合規也要拉幫結派
 
 | 規模 | 聯盟 | 說明 |
 |------|------|------|
 | 2,100+（藍） | Sumsub | 覆蓋最廣的合規服務商 |
 | 200+（紫） | TRUST Alliance | Coinbase · Kraken · OKX · PayPal · Circle… |
 | 200+（粉） | Chainalysis × Notabene | 鏈上鑑識 × Travel Rule 訊息層 |
-| 150+（綠） | VerifyVASP | Bitfinex · Crypto.com · Bitget · WooX… |
+| 150+（綠） | VerifyVASP | 亞洲為主：Bitfinex · Crypto.com · Bitget · WooX · BingX · FTX… |
 | 116（黑） | Global Travel Rule | Binance 主導，Sumsub × Fireblocks 助攻 |
 
 > 【灰字註解】※ 不少交易所腳踏多條船：Crypto.com、Bitget、Amber 都同時掛在兩個聯盟
@@ -474,11 +486,11 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 37 · 下一步：Travel Rule 的開放標準
+## Page 38 · 下一步：Travel Rule 的開放標準
 
 - 各聯盟各說各話 → **21 Analytics** 推動 **TRP**（Travel Rule Protocol）
 - **IVMS 101**：inter-VASP 訊息統一格式，大家先講同一種語言
-- 站台的有：**Sygna · Notabene · VerifyVASP · TRUST Alliance**
+- 站台的有：**Sygna(VerifyVASP) · Notabene · TRUST Alliance**
 
 > 【紫色橫幅】從拉幫結派走向開放標準 — 合規的 TCP/IP 時刻 🌐
 
@@ -486,7 +498,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 38 · Safe 也殺進企業戰場
+## Page 39 · Safe 也殺進企業戰場
 
 - **Liminal**：基於 Safe 打造的企業級託管平台
 - AML 交給 **TRM Labs**，Travel Rule 交給 **Notabene**
@@ -498,7 +510,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 39 · Part 3 章節頁【綠底】
+## Page 40 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -506,7 +518,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 40 · 挑錢包前，先問三個維度
+## Page 41 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -516,7 +528,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 41 · 個人指南：看金額對號入座
+## Page 42 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -527,7 +539,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 42 · 團隊指南：透明 or 靈活，選一邊
+## Page 43 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -539,7 +551,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 43 · Closing「帶走三件事 🎒」【黃底】
+## Page 44 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -549,15 +561,27 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 44 · 特別感謝【粉底】
+## Page 45 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐
 - **Nic · Mason · PJ**
 - 還有跟我一起 cowork 的遠距工作閒人們
 
---- 
+---
 
-加一頁：
-宣傳 ETHTaipei
-宣傳 AMD
+## Page 46 · 場外宣傳 📣（左右兩欄）
+
+- 左欄：**ETHTaipei** — 大合照 `assets/ETHTaipei_Group.png` + QR `assets/QR_ETHTaipei.png`（掃碼加入 · luma.com/8z5ys4rl）
+- 右欄：**TLDR** — 影片 `assets/TLDR.mov`（自動循環播放）+ QR `assets/QR_TLDR.png`（掃碼報名 · luma.com/5wmofnwc）
+
+> 參考：[ETHTaipei（Luma）](https://luma.com/8z5ys4rl) · [TLDR（Luma）](https://luma.com/5wmofnwc)
+
+---
+
+## Page 47 · FUTUREMODE 雙連發 ⚡
+
+- 上排：**ETH Panel** — 橫幅 `assets/FUTUREMODE_Panel.png`
+- 下排：**ZK Workshop** — 橫幅 `assets/FUTUREMODE_Workshop.png` + QR `assets/QR_FUTUREMODE.png`（掃碼報名）
+
+> 參考：[FUTUREMODE ZK Workshop（Accupass）](https://www.accupass.com/event/2608150320231989460593)
