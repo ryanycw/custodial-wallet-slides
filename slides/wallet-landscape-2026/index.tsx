@@ -16,6 +16,7 @@ import imgETHTaipeiGroup from '@assets/ETHTaipei_Group.png';
 import imgFutremodePanel from '@assets/FUTUREMODE_Panel.png';
 import imgFuturemodeWorkshop from '@assets/FUTUREMODE_Workshop.png';
 import vidTLDR from '@assets/TLDR.mov';
+import imgMPCFeature from '@assets/MPCFeature.png';
 import qrETHTaipei from '@assets/QR_ETHTaipei.png';
 import qrTLDR from '@assets/QR_TLDR.png';
 import qrFUTUREMODE from '@assets/QR_FUTUREMODE.png';
@@ -1459,6 +1460,19 @@ const CmpVsTss: Page = () => (
   </div>
 );
 
+/* ------------------------------------------------ Showdown ①+ · MPC bottleneck */
+
+const MpcBottleneck: Page = () => (
+  <ImageSlide
+    title={
+      <>
+        MPC 最大的瓶頸：<span style={{ color: pink }}>效能</span>
+      </>
+    }
+    img={imgMPCFeature}
+  />
+);
+
 /* ------------------------------------------------ Showdown ①++ · Performance */
 
 const PerfShowdown: Page = () => (
@@ -2245,24 +2259,25 @@ export const notes: (string | undefined)[] = [
   undefined, // 27 大評比總覽
   'DKLs = Doerner · Kondi · Lee · shelat（Brown / Northeastern 系）；CMP = Canetti · Makriyannis · Peled（Boston University）。兩個協議名都是作者姓氏縮寫 — 可以開玩笑說檯面上是 BitGo vs Fireblocks，檯面下是密碼學家的校際較勁。', // 28 Key Management
   'ZKP 怎麼講：簽名過程每個人傳的都是加密後的數字，怎麼確定沒人偷塞超大數字搞破壞（out-of-bound attack）？CMP 要求每則密文附上零知識證明 —「證明我的數字在合法範圍內，但不透露數字本身」，像交密封考卷附防偽章。術語：Paillier 在做 secret share 的同態運算；VOLE = Vector Oblivious Linear Evaluation，驗證 OT 乘法結果正確性的協議。Proactive refresh 在 CMP 中相對重要，因為 Paillier 的 key generation 運算成本較高。', // 29 CMP vs TSS
-  '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 30 效能對決
-  undefined, // 31 MPC 加分題
-  undefined, // 32 Feature & UX（結算網路對決）
-  undefined, // 33 TEE vs HSM
-  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 34 Compliance 六大要件
-  undefined, // 35 合規成績單
-  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 36 Travel Rule 流程
-  undefined, // 37 Travel Rule 生態系
-  undefined, // 38 Travel Rule 開放標準
-  undefined, // 39 Safe in Enterprise
-  undefined, // 40 Part 3 divider
-  undefined, // 41 三維度
-  undefined, // 42 個人指南
-  undefined, // 43 團隊指南
-  undefined, // 44 Closing
-  undefined, // 45 Thanks
-  undefined, // 46 場外宣傳（ETHTaipei · TLDR）
-  undefined, // 47 FUTUREMODE 雙連發
+  undefined, // 30 MPC 效能瓶頸【圖】
+  '數據難以一比一比較（測試環境、參與方數都不同），但綜合來說 MPC 都不會是瓶頸 — qualified custodial 的真正 bottleneck 在其他 manual checks 和 regulatory checks。', // 31 效能對決
+  undefined, // 32 MPC 加分題
+  undefined, // 33 Feature & UX（結算網路對決）
+  undefined, // 34 TEE vs HSM
+  '銀行級還要再疊：MiCA、DORA、Basel、NIST CSF 2.0；託管商通常代勞制裁名單篩查、鏈上鑑識、行為基線分析。', // 35 Compliance 六大要件
+  undefined, // 36 合規成績單
+  'TRUST = Travel Rule Universal Solution Technology。Small Deposit Test 又叫 Satoshi Test：24 小時內從該地址轉入小額，證明外部硬體／軟體錢包歸你所有。不明入金時，錢包管理員會被要求補寄件人分類與居住地。', // 37 Travel Rule 流程
+  undefined, // 38 Travel Rule 生態系
+  undefined, // 39 Travel Rule 開放標準
+  undefined, // 40 Safe in Enterprise
+  undefined, // 41 Part 3 divider
+  undefined, // 42 三維度
+  undefined, // 43 個人指南
+  undefined, // 44 團隊指南
+  undefined, // 45 Closing
+  undefined, // 46 Thanks
+  undefined, // 47 場外宣傳（ETHTaipei · TLDR）
+  undefined, // 48 FUTUREMODE 雙連發
 ];
 
 export const meta: SlideMeta = {
@@ -2300,6 +2315,7 @@ export default [
   ShowdownOverview,
   KeyManagement,
   CmpVsTss,
+  MpcBottleneck,
   PerfShowdown,
   MpcBonus,
   FeatureUx,

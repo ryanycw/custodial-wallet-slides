@@ -1,6 +1,6 @@
 # 2026 錢包大盤點 — 內容稿
 
-> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 47 頁）。
+> 這份文件對應 `slides/wallet-landscape-2026/index.tsx` 的逐頁內容（共 48 頁）。
 > 直接編輯這裡的文字，再請 Claude 同步回 slide 即可。
 > 標記說明：【底色】= 該頁或色塊的背景色；**粗體** = 頁面上的彩色強調字；每頁下方附參考連結。
 > 參考資料在 slide 上的呈現：內容頁左下角有「參考：…」小字（短網域），圖片頁右下角有「來源：…」；本文件保留完整連結。
@@ -344,7 +344,13 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 30 · 加映場 II：效能對決（左右兩欄）
+## Page 30 · MPC 最大的瓶頸：效能【圖】
+
+- 圖：`assets/MPCFeature.png`
+
+---
+
+## Page 31 · 加映場 II：效能對決（左右兩欄）
 
 **MPC-CMP（Fireblocks・米色卡）**
 - 頻寬較低：每 party 約 15 KB
@@ -360,7 +366,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 31 · MPC 加分題：還是講白話
+## Page 32 · MPC 加分題：還是講白話
 
 - **Key Refresh**：定期把碎片重新洗牌，地址、公鑰都不變
 - 攻擊者必須在**同一輪 refresh 內**集滿碎片，難度暴增
@@ -374,7 +380,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 32 · 大評比 ②：Feature & UX — 結算網路對決（左右兩欄）
+## Page 33 · 大評比 ②：Feature & UX — 結算網路對決（左右兩欄）
 
 **Fireblocks Network（米色卡）**
 - 2,400+ 交易對手，月結算 $70B+
@@ -395,7 +401,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 33 · 大評比 ③：TEE vs. HSM（左右兩欄）
+## Page 34 · 大評比 ③：TEE vs. HSM（左右兩欄）
 
 **TEE：處理器裡的隔離小房間（藍卡）**
 - 主晶片劃出的安全區（SGX、AWS Nitro）
@@ -413,7 +419,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 34 · 大評比 ④：Compliance 六大要件
+## Page 35 · 大評比 ④：Compliance 六大要件
 
 六顆彩色數字圈，專有名詞保留英文：
 
@@ -432,7 +438,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 35 · 合規成績單：Fireblocks vs. BitGo（左右兩欄）
+## Page 36 · 合規成績單：Fireblocks vs. BitGo（左右兩欄）
 
 **Fireblocks：技術認證路線（米色卡）**
 - SOC 1 & SOC 2 Type II 雙認證
@@ -453,7 +459,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 36 · BitGo 的 Travel Rule 實戰（決策流程圖・逐步顯示）
+## Page 37 · BitGo 的 Travel Rule 實戰（決策流程圖・逐步顯示）
 
 流程圖：💸 出金一筆（黑卡）→ 分岔：
 - 🏛 **對象：VASP**（紫卡・交易所、託管商）→ 再分岔：
@@ -469,7 +475,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 37 · Travel Rule 生態系：合規也要拉幫結派
+## Page 38 · Travel Rule 生態系：合規也要拉幫結派
 
 | 規模 | 聯盟 | 說明 |
 |------|------|------|
@@ -481,11 +487,11 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 > 【灰字註解】※ 不少交易所腳踏多條船：Crypto.com、Bitget、Amber 都同時掛在兩個聯盟
 
-> 參考：[TRUST VASP 名單（PDF）](https://25554024.fs1.hubspotusercontent-eu1.net/hubfs/25554024/TRUST%20list%20of%20VASPs%20download.pdf) · [VerifyVASP Alliance](https://www.verifyvasp.com/en/alliance/) · [Global Travel Rule](https://www.globaltravelrule.com/en/home) · [TRUST × 擴張報導（LinkedIn）](https://www.linkedin.com/pulse/trust-expands-travel-rule-network-adoption-through-partnership-wivqc/)
+> 參考：[TRUST VASP 名單（PDF）](https://25554024.fs1.hubspotusercontent-eu1.net/hubfs/25554024/TRUST%20list%20of%20VASPs%20download.pdf) · [VerifyVASP Alliance](https://www.verifyvasp.com/en/alliance/) · [Global Travel Rule](https://www.globaltravelrule.com/en/home) · [TRUST × 擴張報導（LinkedIn）](https://www.linkedin.com/pulse/trust-expands-travel-rule-network-adoption-through-partnership-wivqc/) · [Sumsub: Crypto Travel Rule Protocols](https://sumsub.com/blog/crypto-travel-rule-protocols/)
 
 ---
 
-## Page 38 · 下一步：Travel Rule 的開放標準
+## Page 39 · 下一步：Travel Rule 的開放標準
 
 - 各聯盟各說各話 → **21 Analytics** 推動 **TRP**（Travel Rule Protocol）
 - **IVMS 101**：inter-VASP 訊息統一格式，大家先講同一種語言
@@ -497,7 +503,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 39 · Safe 也殺進企業戰場
+## Page 40 · Safe 也殺進企業戰場
 
 - **Liminal**：基於 Safe 打造的企業級託管平台
 - AML 交給 **TRM Labs**，Travel Rule 交給 **Notabene**
@@ -509,7 +515,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 40 · Part 3 章節頁【綠底】
+## Page 41 · Part 3 章節頁【綠底】
 
 - PART 03
 - 主標：個人 & 團隊錢包挑選指南
@@ -517,7 +523,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 41 · 挑錢包前，先問三個維度
+## Page 42 · 挑錢包前，先問三個維度
 
 | 卡片 | 說明 |
 |------|------|
@@ -527,7 +533,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 42 · 個人指南：看金額對號入座
+## Page 43 · 個人指南：看金額對號入座
 
 - **日常小額** → 瀏覽器 / 行動錢包（Rabby、Rainbow、imToken）
 - **中額儲蓄** → 硬體冷錢包（Ledger、Trezor、Keystone）
@@ -538,7 +544,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 43 · 團隊指南：透明 or 靈活，選一邊
+## Page 44 · 團隊指南：透明 or 靈活，選一邊
 
 - **小團隊 / DAO** → Safe：鏈上透明、治理友善、生態最成熟
 - **機構 / 公司** → MPC 託管（Fireblocks、BitGo、Cobo）＋政策引擎
@@ -550,7 +556,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 44 · Closing「帶走三件事 🎒」【黃底】
+## Page 45 · Closing「帶走三件事 🎒」【黃底】
 
 1. （藍）錢包一直在進化：從一把私鑰，走向「沒有完整私鑰」
 2. （紫）Multisig 鏈上透明、MPC 鏈下靈活 — 沒有絕對贏家
@@ -560,7 +566,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 45 · 特別感謝【粉底】
+## Page 46 · 特別感謝【粉底】
 
 - Eyebrow：`SPECIAL THANKS`
 - 主標：特別感謝 💐
@@ -569,7 +575,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 46 · 場外宣傳 📣（左右兩欄）
+## Page 47 · 場外宣傳 📣（左右兩欄）
 
 - 左欄：**ETHTaipei** — 大合照 `assets/ETHTaipei_Group.png` + QR `assets/QR_ETHTaipei.png`（掃碼加入 · luma.com/8z5ys4rl）
 - 右欄：**TLDR** — 影片 `assets/TLDR.mov`（自動循環播放）+ QR `assets/QR_TLDR.png`（掃碼報名 · luma.com/5wmofnwc）
@@ -578,7 +584,7 @@ AA 節點從上一頁 morph 滑入左側，向右扇出三條路：
 
 ---
 
-## Page 47 · FUTUREMODE 雙連發 ⚡
+## Page 48 · FUTUREMODE 雙連發 ⚡
 
 - 上排：**ETH Panel** — 橫幅 `assets/FUTUREMODE_Panel.png`
 - 下排：**ZK Workshop** — 橫幅 `assets/FUTUREMODE_Workshop.png` + QR `assets/QR_FUTUREMODE.png`（掃碼報名）
